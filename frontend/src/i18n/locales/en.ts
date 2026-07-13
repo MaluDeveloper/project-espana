@@ -1,0 +1,876 @@
+// English UI strings.
+// Learning content (example phrases, exercises, vocabulary, lessons)
+// stays in Spanish in the data files — do not translate that here.
+
+export const en = {
+  nav: {
+    cursos: "Courses",
+    comoFunciona: "How it works",
+    destinos: "Destinations",
+    jogos: "Games",
+    precos: "Pricing",
+    entrar: "Sign in",
+    comecarGratis: "Start free",
+    menu: "Menu",
+    idioma: "Language",
+  },
+
+  appHeader: {
+    inicio: "Home",
+    cursos: "Courses",
+    jogos: "Games",
+    perfil: "Profile",
+    sair: "Sign out",
+    dias: "days",
+    entrar: "Sign in",
+    comecarGratis: "Start free",
+  },
+
+  auth: {
+    login: {
+      title: "Welcome back",
+      subtitle: "Sign in and continue your Spanish journey.",
+      email: "Email",
+      senha: "Password",
+      entrar: "Sign in",
+      semConta: "Don't have an account yet?",
+      criar: "Create one now",
+      preenchaCampos: "Fill in email and password",
+      bemVindo: "¡Bienvenido de nuevo!",
+    },
+    cadastro: {
+      title: "Start free today",
+      subtitle: "3 minutes to create your account. No credit card.",
+      nome: "Name",
+      email: "Email",
+      senha: "Password",
+      criar: "Create my account",
+      jaTemConta: "Already have an account?",
+      entrar: "Sign in",
+      preenchaTodos: "Fill in all fields",
+      senhaCurta: "Password must be at least 6 characters",
+      contaCriada: (name: string) => `¡Hola, ${name}! Tu cuenta está lista.`,
+      termos: "By creating an account you agree to the Terms and Privacy Policy.",
+      placeholderNome: "Your name",
+    },
+    layout: {
+      title: "Learn Spanish",
+      title2: "with a real method.",
+      subtitle:
+        "You move forward step by step. Wins, mistakes and discoveries — it's all part of the journey.",
+    },
+    google: {
+      continue: "Continue with Google",
+      or: "or",
+      success: "¡Bienvenido! Signed in with Google.",
+      error: "Couldn't sign in with Google. Please try again.",
+    },
+  },
+
+  hero: {
+    titlePart1: "Learn",
+    titleHighlight: "Spanish",
+    titlePart2: "with artificial intelligence.",
+    subtitle:
+      "Courses from A1–C2, games, smart AI correction, and content on the DELE exam. Learn at your own pace.",
+    ctaPrimary: "Start free now",
+    ctaSecondary: "See how it works",
+    badgeNoCard: "No credit card",
+    badgeMinutes: "5 min/day",
+    badgeStudents: "+12,000 students",
+  },
+
+  features: {
+    eyebrow: "Features",
+    titlePart1: "Everything you need.",
+    titleHighlight: "Nothing you don't.",
+    subtitle:
+      "A complete platform, designed for those who really want to speak Spanish.",
+    items: {
+      book: {
+        title: "Online book A1 → C1",
+        desc: "Structured curriculum with grammar, professional vocabulary, and practice exercises.",
+      },
+      ai: {
+        title: "AI that corrects you",
+        desc: "Instant feedback on your writing, with suggestions for connectors and vocabulary.",
+      },
+      games: {
+        title: "Interactive games",
+        desc: "Memory, word search, gap-fill and more — learn by playing, never bored.",
+      },
+      tests: {
+        title: "Tests to level up",
+        desc: "Every level ends with a 10-question test. Only those who really learn move on.",
+      },
+      spain: {
+        title: "Spanish from Spain",
+        desc: "Real vocabulary, expressions, and cultural context — not generic translations.",
+      },
+      progress: {
+        title: "Visible progress",
+        desc: "Streaks, XP, achievements, and ranking. Your evolution in real time.",
+      },
+    },
+  },
+
+  landingCourses: {
+    eyebrow: "LEVELS · A1 → C2",
+    titlePart1: "Your path to",
+    titleHighlight: "Iberian Spanish.",
+    subtitle:
+      "Three stages. A complete cultural journey through the language of Spain — from your first hola to the refined fluency of an educated native.",
+    explorar: "Explore level",
+    ctaStartFree: "Start for free",
+    ctaStartNow: "Start now",
+    ctaLocked: "Locked",
+    levels: {
+      a1: {
+        module: "MODULE 01",
+        level: "A1 — A2 · Beginner",
+        title: "First steps in the peninsula",
+        description:
+          "The first step in your journey. Learn the essential foundations, greetings and everyday situations with the clear accent of the peninsula.",
+        imageAlt: "City of Arts and Sciences in Valencia at sunset",
+      },
+      b1: {
+        module: "MODULE 02",
+        level: "B1 — B2 · Intermediate",
+        title: "Fluency in the heart of Madrid",
+        description:
+          "Gain independence. Start debating ideas, deeply understanding Iberian culture and speaking fluently in social and professional contexts.",
+        imageAlt: "Madrid's Gran Vía lit up with vibrant nightlife",
+      },
+      c1: {
+        module: "MODULE 03",
+        level: "C1 — C2 · Advanced",
+        title: "Mastery with Andalusian soul",
+        description:
+          "Total mastery. Refine linguistic nuances, master complex regional expressions and reach the level of an educated native.",
+        imageAlt: "Plaza de España in Seville with its monumental architecture",
+      },
+    },
+  },
+
+  landingGames: {
+    eyebrow: "Platform games",
+    titlePart1: "Learn Spanish",
+    titleHighlight: "by really playing",
+    subtitle: (available: number, total: number) =>
+      `${available} games available and more on the way — ${total}+ stages to train vocabulary, grammar and comprehension without falling into routine.`,
+    emBreve: "Soon",
+    fases: "stages",
+    jogar: "Play",
+    verTodos: "See all games",
+    cards: {
+      memoria: {
+        title: "Memory game",
+        tagline: "Match word and translation",
+        description: "Find the pairs of hidden cards. Train vocabulary fast.",
+      },
+      "caza-palabras": {
+        title: "Word search",
+        tagline: "Find words in the grid",
+        description: "Themed word search. Find all words before time runs out.",
+      },
+      lacunas: {
+        title: "Fill the gaps",
+        tagline: "Sentences with missing words",
+        description: "Pick the right word to complete the sentence. Grammar in context.",
+      },
+      crucigrama: {
+        title: "Crossword",
+        tagline: "Clues and crossed words",
+        description: "Solve definitions and complete the grid. Coming soon.",
+      },
+      historias: {
+        title: "Read stories",
+        tagline: "Reading comprehension",
+        description: "Short tales with questions. Learn by reading. Coming soon.",
+      },
+      objetos: {
+        title: "Find objects",
+        tagline: "Search in the image",
+        description: "Locate objects in real scenes. Visual vocabulary. Coming soon.",
+      },
+      describir: {
+        title: "Describe images",
+        tagline: "Write what you see",
+        description: "AI evaluates your description. Coming soon.",
+      },
+      "crear-historia": {
+        title: "Create stories",
+        tagline: "Write with given words",
+        description: "AI gives you words and you create the story. Coming soon.",
+      },
+    },
+  },
+
+  landingCities: {
+    eyebrow: "🇪🇸 Destinations",
+    titlePart1: "Cities that",
+    titleHighlight: "speak Spanish",
+    subtitle:
+      "Each region has its accent, its rhythm, its soul. Click on a city to discover how Spanish is spoken there.",
+    sobreCidade: "About the city",
+    comoSeFala: "How Spanish sounds here",
+    saibaMais: (name: string) => `Learn more about ${name}`,
+  },
+
+  landingTestimonials: {
+    eyebrow: "Testimonials",
+    titlePart1: "Students who are already",
+    titleHighlight: "speaking Spanish.",
+  },
+
+  pricing: {
+    eyebrow: "Pricing",
+    titlePart1: "Simple.",
+    titleHighlight: "As it should be.",
+    subtitle: "Cancel anytime. No fine print.",
+    mostPopular: "Most popular",
+    plans: {
+      free: {
+        name: "Free",
+        price: "$0",
+        period: "/forever",
+        desc: "Start learning today, no strings attached.",
+        features: ["Full A1 course", "5 games per day", "Basic AI corrector", "Community"],
+        cta: "Start free",
+      },
+      pro: {
+        name: "Pro",
+        price: "$6",
+        period: "/month",
+        desc: "For those who want real fluency.",
+        features: [
+          "All A1 → C1 courses",
+          "Unlimited games",
+          "Premium AI with explanations",
+          "Level tests",
+          "Professional vocabulary",
+          "No ads",
+        ],
+        cta: "Get Pro",
+      },
+      teams: {
+        name: "Teams",
+        price: "Custom",
+        period: "",
+        desc: "For companies and schools.",
+        features: ["Everything in Pro", "Admin dashboard", "Reports", "Dedicated support"],
+        cta: "Talk to sales",
+      },
+    },
+  },
+
+  cta: {
+    title: "Ready to actually speak Spanish?",
+    subtitle: "Start today and improve every day. Your first lesson takes 5 minutes.",
+    button: "Start free now",
+  },
+
+  inlineCtas: {
+    afterFeatures: {
+      label: "I want to start now",
+      subtext: "Takes less than 1 minute",
+    },
+    afterCourses: {
+      label: "Start at level A1",
+      subtext: "Not sure of your level? Take the test after signing up.",
+    },
+  },
+
+  pricingTeaser: {
+    eyebrow: "Plans",
+    title: "Plans from $6/month",
+    subtitle: "Full access to every level and feature.",
+    button: "See plans",
+  },
+
+  footer: {
+    tagline:
+      "Learn Spanish from Spain the smart way — with AI, games, and structured courses from A1 to C1.",
+    product: "Product",
+    company: "Company",
+    legal: "Legal",
+    support: "Support",
+    links: {
+      cursos: "Courses",
+      comoFunciona: "How it works",
+      jogos: "Games",
+      precos: "Pricing",
+      sobre: "About",
+      blog: "Blog",
+      contato: "Contact",
+      termos: "Terms",
+      privacidade: "Privacy",
+      cookies: "Cookies",
+      ajuda: "Help Center",
+      faq: "FAQ",
+      emailSuporte: "support@spanishai.app",
+    },
+    socialLabel: "Social media",
+    madeWith: "Made with ❤️ for those who love Spain",
+    rights: (year: number) => `© ${year} Spanish AI. All rights reserved.`,
+  },
+
+  preloader: {
+    tagline: "Domina el español de España",
+  },
+
+  dashboard: {
+    ola: (name: string) => `¡Hola, ${name}!`,
+    titulo1: "Keep building your",
+    tituloHighlight: "Spanish",
+    nivel: "Level",
+    intermedio: "Intermediate",
+    dias: "days",
+    global: "global",
+    proxNivel: (current: number, remaining: number) =>
+      `Level ${current + 1} in ${remaining} XP`,
+
+    cardProgresso: {
+      badge: "Your progress",
+      titulo1: "Track your",
+      tituloHighlight: "advance",
+      descricao:
+        "See how many chapters and levels you have completed.",
+      capitulosLabel: "Chapters",
+      niveisLabel: "Levels",
+      quizLabel: "Quiz avg",
+      cta: "View courses",
+    },
+    cardJogos: {
+      badge: "8 categories",
+      titulo: "Practice by playing",
+      descricao:
+        "Memory, word search, gap-fill and more. Earn XP while having fun.",
+      cta: "Explore games",
+    },
+
+    missoes: {
+      eyebrow: "Daily missions",
+      tituloFmt: (done: number, total: number) => `${done} of ${total} completed`,
+      reiniciaEm: (time: string) => `Resets in ${time}`,
+      reclamada: "Reward claimed!",
+      items: [
+        "Complete 1 chapter of the course",
+        "Play 3 memory games",
+        "Learn 10 new words",
+      ],
+    },
+
+    ranking: {
+      eyebrow: "Weekly ranking",
+      titulo: "Top students",
+      voce: "You",
+      verCompleto: "See full ranking",
+    },
+
+    conquistas: {
+      eyebrow: "Achievements",
+      tituloFmt: (unlocked: number, total: number) =>
+        `${unlocked} of ${total} unlocked`,
+      verTodas: "See all",
+      items: {
+        primerPaso: { name: "First step", desc: "Complete your first lesson" },
+        racha: { name: "Burning streak", desc: "7 days in a row" },
+        memoria: { name: "Golden memory", desc: "Win 10 games" },
+        poliglota: { name: "Polyglot", desc: "Learn 100 words" },
+        conversador: { name: "Conversationalist", desc: "Complete level A2" },
+        maestro: { name: "Master", desc: "Reach level B2" },
+        imparable: { name: "Unstoppable", desc: "30 days in a row" },
+        fluente: { name: "Fluent", desc: "Complete level C1" },
+      },
+    },
+
+    motivacao: {
+      titulo: "¡Sigue así, vas genial!",
+      subtitulo:
+        "Every day counts. Keep your streak and unlock new achievements very soon.",
+    },
+
+    cursoOverview: {
+      eyebrow: "Your course",
+      titulo: "Level overview",
+      nivelAtual: "Current level",
+      capitulosConcluidos: "Chapters completed",
+      mediaQuizzes: "Quiz average",
+      streak: "Day streak",
+      proxRecomendado: "Recommended next",
+      semNivel: "Start level A1",
+      sequencia: "days",
+      irCapitulo: "Go to chapter",
+      verCursos: "See all courses",
+    },
+  },
+
+  // ============= DASHBOARD SIDEBAR =============
+  dashboardSidebar: {
+    menu: "Menu",
+    conta: "Account",
+    visaoGeral: "Overview",
+    cursos: "Courses",
+    jogos: "Games",
+    progresso: "Progress",
+    perfil: "Profile",
+    configuracoes: "Settings",
+    sair: "Log out",
+    dias: "days",
+  },
+
+  // ============= DASHBOARD VIEWS =============
+  dashboardViews: {
+    progresso: {
+      titulo: "Your progress",
+      subtitulo: "Track your evolution week by week.",
+      cards: {
+        concluido: "Completed",
+        tempo: "Study time",
+        sequencia: "Current streak",
+        xpTotal: "Total XP",
+        geral: "Overall progress",
+        capitulos: "Completed chapters",
+        mediaQuiz: "Quiz average",
+      },
+      semana: "Weekly activity",
+      semanaSub: "Minutes studied over the last 7 days",
+      conquistasRecentes: "Recent achievements",
+      niveis: "Progress by level",
+      historico: "Quiz history",
+      semHistorico: "No quizzes taken yet. Start a chapter to record your first result.",
+    },
+    perfil: {
+      titulo: "Your profile",
+      subtitulo: "View and edit your personal data.",
+      planoLabel: "Current plan",
+      planoFree: "Free",
+      planoPremium: "Premium",
+      upgrade: "Upgrade",
+      editar: "Edit profile",
+      campos: {
+        nome: "Name",
+        email: "Email",
+        objetivo: "Learning goal",
+        membroDesde: "Member since",
+      },
+      objetivos: {
+        travel: "Travel",
+        work: "Work",
+        study: "Studies / DELE",
+        culture: "Culture & leisure",
+        other: "Other",
+      },
+      espanhol: "Spanish (Spain)",
+      desde: "January 2025",
+      zonaPerigo: "Danger zone",
+      sairConta: "Sign out",
+      sairContaSub: "End your session on this device",
+      sairBtn: "Sign out",
+      excluirConta: "Delete account",
+      excluirContaSub: "Permanently removes all your progress",
+      excluirBtn: "Delete",
+      confirmarSair: "Are you sure you want to sign out?",
+      confirmarSairDesc: "You'll need to sign in again to access your progress.",
+      confirmarExcluir: "Permanently delete account",
+      confirmarExcluirDesc: (palavra: string) =>
+        `This action cannot be undone. All your progress, achievements and data will be erased. To confirm, type ${palavra} below.`,
+      confirmarExcluirPalavra: "DELETE",
+      confirmarExcluirPlaceholder: (palavra: string) => `Type ${palavra}`,
+      confirmarExcluirBotao: "Delete account",
+      cancelar: "Cancel",
+      sessaoEncerrada: "Session ended",
+      contaExcluida: "Account deleted",
+    },
+    perfilEditar: {
+      titulo: "Edit profile",
+      subtitulo: "Update your personal information",
+      trocarFoto: "Change photo",
+      enviarFoto: "Upload photo",
+      remover: "Remove",
+      avatarHint: "JPG or PNG, up to 2MB. Optional.",
+      semNome: "No name",
+      infBasicas: "Basic information",
+      nomeCompleto: "Full name",
+      nomePlaceholder: "What should we call you",
+      objetivoAprendizado: "Learning goal",
+      goals: {
+        travel: "Travel",
+        work: "Work",
+        study: "Studies / DELE",
+        culture: "Culture & leisure",
+        other: "Other",
+      },
+      cancelar: "Cancel",
+      salvar: "Save changes",
+      salvando: "Saving...",
+      alterarEmail: "Change email",
+      emailAtual: "Current email",
+      novoEmail: "New email",
+      senhaAtualConfirmar: "Current password (to confirm)",
+      atualizarEmail: "Update email",
+      alterarSenha: "Change password",
+      definirSenha: "Set password",
+      semSenha: "You don't have a password set yet. Add one to protect your account.",
+      senhaAtual: "Current password",
+      novaSenha: "New password",
+      confirmarNovaSenha: "Confirm new password",
+      novaSenhaMin: "Minimum 6 characters",
+      atualizarSenha: "Update password",
+      perfilAtualizado: "Profile updated",
+      emailAtualizado: "Email updated",
+      senhaAtualizada: "Password updated",
+      senhaDefinida: "Password set",
+    },
+    config: {
+      titulo: "Settings",
+      subtitulo: "Personalize your experience.",
+      idioma: "Interface language",
+      notificacoes: "Notifications",
+      notificacoesSub: "Daily reminders to keep your streak alive",
+      som: "Sounds & effects",
+      somSub: "Sound feedback during exercises and games",
+      conta: "Account",
+      logout: "Sign out",
+      logoutSub: "End session on this device",
+      prefGerais: "General preferences",
+      horarioLembrete: "Preferred reminder time",
+      horarioLembreteSub: "When to send the daily reminder",
+      reminderOptions: {
+        morning: "Morning (8am)",
+        afternoon: "Afternoon (2pm)",
+        evening: "Evening (8pm)",
+      },
+      secaoEstudo: "Study",
+      metaDiaria: "Daily study goal",
+      metaDiariaSub: "Used in daily dashboard missions",
+      dificuldade: "Exercise difficulty",
+      dificuldadeSub: "Adjusts the complexity of activities",
+      diffOptions: {
+        auto: "Automatic (recommended)",
+        easy: "Easy",
+        hard: "Hard",
+      },
+      mostrarTraducao: "Show translation in flashcards",
+      mostrarTraducaoSub: "When off, hides the translation and forces you to guess",
+      configSalva: "Setting saved",
+    },
+  },
+
+  cursos: {
+    listing: {
+      badge: "Online book · A1 → C1",
+      titulo1: "Your",
+      tituloHighlight: "complete Spanish",
+      tituloFim: "course",
+      subtitulo:
+        "Chapters with theory, examples, professional vocabulary and exercises. Pass the final test with 70% to move to the next level.",
+      aprovado: "Passed",
+      bloqueado: "Locked",
+      capitulos: "chapters",
+      provaFinal: "10 questions · final test",
+      melhorNota: (score: number, total: number) => `Best score: ${score}/${total}`,
+      empezar: "Start",
+      repasar: "Review",
+      continuar: "Continue",
+      concluido: "Completed",
+      capituloFmt: (current: number, total: number) => `Chapter ${current} of ${total}`,
+      aindaNaoIniciado: "Not started yet",
+      completePara: (pct: number, level: string) => `Complete ${pct}% of level ${level} to unlock`,
+      deleTitulo: "Guide",
+      deleDescricao: "Official Spanish as a Foreign Language diploma: format, assessment criteria and level-specific tips.",
+      deleVerDetalhes: "View details",
+      preciseAprovar: "Pass the previous level",
+      levels: {
+        A1: { title: "Spanish A1 · Beginner", description: "Language basics: alphabet, greetings, present tense and essential vocabulary." },
+        A2: { title: "Spanish A2 · Elementary", description: "Simple past, descriptions and everyday vocabulary." },
+        B1: { title: "Spanish B1 · Intermediate", description: "Master the past tenses, the present subjunctive, the future and the conditional. Express opinions, hypotheses and complex everyday situations." },
+        B2: { title: "Spanish B2 · Upper intermediate", description: "Advanced subjunctive, business Spanish and professional vocabulary." },
+        C1: { title: "Spanish C1 · Advanced", description: "Nuances, registers and mastery of idiomatic expressions." },
+        C2: { title: "Spanish C2 · Mastery", description: "Full command of Castilian. Read, write and think like an educated native speaker from Spain." },
+      },
+    },
+    nivel: {
+      voltar: "Back to courses",
+      capitulo: "Chapter",
+      topicos: "topics",
+      lexico: "vocabulary entries",
+      lidos: "read",
+      continuar: "Continue",
+      ler: "Read",
+      provaEyebrow: "Final level test",
+      provaTitulo: "15 questions · you need 70% to pass",
+      melhorNotaFmt: (score: number, total: number, passed: boolean) =>
+        `Best score: ${score}/${total} ${passed ? "· Passed ✓" : "· Keep trying"}`,
+      naoFeita: "You haven't taken the test yet.",
+      repetir: "Retake",
+      fazer: "Take test",
+      leiaTodos: "Read all chapters",
+    },
+    capitulo: {
+      voltar: (level: string) => `Back to level ${level}`,
+      capitulo: "Chapter",
+      ejemplo: "Example",
+      exerciciosTitulo: "Practice exercises",
+      respostaPlaceholder: "Your answer…",
+      correto: "Correct!",
+      tenteOutra: "Almost… try again.",
+      comprovar: "Check",
+      lexicoTitulo: "Chapter vocabulary",
+      lexicoSubtitulo:
+        "Words and expressions that separate basic Spanish from professional/native level.",
+      todosCapitulos: "All chapters",
+      proxCapitulo: "Next chapter",
+      fazerProva: "Take final test",
+      tags: {
+        profesional: "professional",
+        coloquial: "colloquial",
+        formal: "formal",
+        expresión: "expression",
+      },
+      tabs: {
+        conteudo: "Content",
+        exercicios: "Exercises",
+        quiz: "Quiz",
+        revisao: "Review",
+      },
+      vocabularioTitulo: "Vocabulary flashcards",
+      vocabularioSub: "Click the card to flip and see the translation. 'Know it' removes the card; 'Don't know' sends it to the end.",
+      flashcards: {
+        front: "Spanish",
+        back: "Translation",
+        know: "Know it",
+        review: "Don't know",
+        completed: "Vocabulary reviewed!",
+        restart: "Restart",
+        flip: "Tap to flip",
+        of: "of",
+      },
+      quizTitulo: "Chapter quiz",
+      quizSub: "Answer the questions and reach 70% to earn the badge.",
+      quizLabels: {
+        title: "Quiz",
+        subtitle: "Reach 70% to complete",
+        question: (c: number, t: number) => `Question ${c} of ${t}`,
+        check: "Check",
+        next: "Next",
+        finish: "Finish",
+        correct: "Correct!",
+        incorrect: "Incorrect",
+        answer: "Correct answer:",
+        score: (s: number, t: number) => `Score: ${s}/${t}`,
+        passed: "Chapter mastered!",
+        failed: "Almost there!",
+        retake: "Retake quiz",
+        badge: "Badge unlocked",
+        bestScore: (s: number, t: number) => `Best: ${s}/${t}`,
+        placeholder: "Your answer…",
+        noQuestions: "This chapter has no quiz yet.",
+      },
+      revisaoTitulo: "Chapter review",
+      revisaoResumo: "Summary",
+      revisaoErros: "Common mistakes",
+      revisaoTopicos: "Chapter topics",
+      revisaoVocab: "Key vocabulary",
+      audioOuvir: "Listen",
+      audioLento: "Slow",
+      progressoLabel: "Chapter progress",
+    },
+    prueba: {
+      voltar: "Back to level",
+      provaFinal: (pct: number) => `Final test · ${pct}% to pass`,
+      perguntaFmt: (current: number, total: number) =>
+        `Question ${current} of ${total}`,
+      respostaPlaceholder: "Your answer…",
+      finalizar: "Finish test",
+      proxima: "Next",
+      aprovado: "Passed!",
+      aprovadoMsg: (score: number, total: number) =>
+        `You scored ${score}/${total}. The next level is unlocked.`,
+      quase: "Almost there",
+      quaseMsg: (score: number, total: number, min: number) =>
+        `You scored ${score}/${total}. You need at least ${min}.`,
+      revise: "Review the chapters and try again.",
+      respostaCorreta: "Answer:",
+      repetir: "Retake test",
+      voltarCursos: "Back to courses",
+    },
+  },
+
+  jogos: {
+    listing: {
+      eyebrow: "Game categories",
+      titulo1: "Learn by playing,",
+      tituloHighlight: "from A1 to C1",
+      subtitulo:
+        "Choose a category. Each one has levels and many different stages.",
+      proximamente: "Soon",
+      nivelLabel: "levels",
+      fases: "stages",
+      niveis: "5 levels",
+    },
+    levels: {
+      labels: {
+        A1: "Beginner",
+        A2: "Elementary",
+        B1: "Intermediate",
+        B2: "Upper intermediate",
+        C1: "Advanced",
+        C2: "Mastery",
+      } as Record<"A1" | "A2" | "B1" | "B2" | "C1" | "C2", string>,
+    },
+    categories: {
+      memoria: {
+        title: "Memory game",
+        tagline: "Match word and translation",
+        description: "Find the pairs of hidden cards. Train vocabulary fast.",
+      },
+      "caza-palabras": {
+        title: "Word search",
+        tagline: "Find words in the grid",
+        description: "Themed word search. Find all words before time runs out.",
+      },
+      lacunas: {
+        title: "Fill the gaps",
+        tagline: "Sentences with missing words",
+        description: "Pick the right word to complete the sentence. Grammar in context.",
+      },
+      crucigrama: {
+        title: "Crossword",
+        tagline: "Clues and crossed words",
+        description: "Solve definitions and complete the grid. Coming soon.",
+      },
+      historias: {
+        title: "Read stories",
+        tagline: "Reading comprehension",
+        description: "Short tales with questions. Learn by reading. Coming soon.",
+      },
+      objetos: {
+        title: "Find objects",
+        tagline: "Search in the image",
+        description: "Locate objects in real scenes. Visual vocabulary. Coming soon.",
+      },
+      describir: {
+        title: "Describe images",
+        tagline: "Write what you see",
+        description: "AI evaluates your description. Coming soon.",
+      },
+      "crear-historia": {
+        title: "Create stories",
+        tagline: "Write with given words",
+        description: "AI gives you words and you create the story. Coming soon.",
+      },
+    } as Record<string, { title: string; tagline: string; description: string }>,
+    categoria: {
+      voltar: "Categories",
+      progresso: (level: string) => `Progress in ${level}`,
+      fasesXp: (done: number, total: number, xp: number) =>
+        `${done} / ${total} stages · ${xp} XP`,
+      faseBloqueada: (n: number) => `Stage ${n} locked`,
+      nivelBloqueadoTitulo: (level: string) => `Level ${level} locked`,
+      nivelBloqueadoDesc: (level: string) =>
+        `To unlock ${level} games, first pass the previous level's test in the course.`,
+      irCurso: "Go to course",
+    },
+    fase: {
+      tituloFmt: (cat: string, n: number) => `${cat} · Stage ${n}`,
+      nivelFmt: (level: string) => `Level ${level}`,
+      siguienteFase: "Next stage",
+    },
+    stageComplete: {
+      titulo: "¡Bien hecho!",
+      subtitulo: "You completed this stage.",
+      repetir: "Retry",
+      proxFase: "Next stage",
+      voltar: "Back",
+      fasesCompletadas: "Stages completed",
+    },
+    shell: {
+      voltar: "Back",
+    },
+    memory: {
+      encuentraPares: "Find the pairs",
+      tema: "Theme",
+      intentos: "Attempts",
+      cartaOculta: "Hidden card",
+    },
+    wordSearch: {
+      palabras: "Words",
+    },
+    gaps: {
+      fraseFmt: (current: number, total: number) =>
+        `Sentence ${current} of ${total}`,
+      calculando: "Calculating result…",
+      correctasFmt: (correct: number, total: number) =>
+        `${correct} of ${total} correct`,
+      muyBien: "Great job!",
+      respuestaFmt: (answer: string) => `Answer: ${answer}`,
+      siguiente: "Next",
+    },
+  },
+
+  aula: {
+    etapas: ["Image", "Gaps", "Writing", "Result"] as const,
+    etapaFmt: (lesson: string, current: number, total: number) =>
+      `${lesson} · Step ${current} of ${total}`,
+
+    imagem: {
+      titulo1: "What do you see in the",
+      tituloHighlight: "image?",
+      subtitulo: "Write at least 3 Spanish words that describe the scene.",
+      placeholder: "Escribe una palabra...",
+      jaAdicionou: "You already added that word",
+      naoEsta: (word: string) => `"${word}" is not in this image`,
+      acertoToast: (word: string) => `¡Correcto! "${word}"`,
+      acertosFmt: "Correct:",
+      continuar: "Continue",
+    },
+
+    lacunas: {
+      titulo1: "Complete the",
+      tituloHighlight: "sentences",
+      subtitulo: "Use vocabulary words to fill in the gaps.",
+      corretas: "Correct:",
+      voltar: "Back",
+      continuar: "Continue",
+    },
+
+    escrita: {
+      titulo1: "Write your",
+      tituloHighlight: "story",
+      placeholder: "Empieza tu historia aquí...",
+      dica: "Tip:",
+      dicaTexto: "use connectors like",
+      palavras: "words",
+      voltar: "Back",
+      analisar: "Analyze with AI",
+    },
+
+    resultado: {
+      pensando: "Pensando en español...",
+      analisando: "AI is analyzing your writing.",
+      concluida: "Lesson complete · +80 XP",
+      textoCorrigido: "Corrected text",
+      errosMelhorias: "Errors and improvements",
+      conectores: "Suggested connectors",
+      vocabulario: "Extra vocabulary",
+      voltarDashboard: "Back to dashboard",
+      proxAula: "Next lesson",
+      falhaAnalise: "Failed to analyze. Try again.",
+    },
+  },
+
+  common: {
+    voltar: "Back",
+    proximo: "Next",
+    cancelar: "Cancel",
+    confirmar: "Confirm",
+  },
+
+  notFound: {
+    title: "404",
+    subtitle: "Oops! Page not found",
+    home: "Return to home",
+  },
+} as const;

@@ -1,0 +1,22 @@
+# H2 em modo de compatibilidade Postgres -- para rodar sem precisar de credenciais
+# do Supabase. Migrations do Flyway rodam aqui tambem, mas sintaxe especifica de
+# Postgres (JSONB, funcoes nativas) pode nao ser 100% equivalente no H2; ao
+# escrever migrations com esses recursos, validar contra Postgres real (perfil
+# "supabase") antes de dar como pronto.
+# DATABASE_TO_LOWER=TRUE: sem isso, o schema default do H2 e "PUBLIC" (maiusculo),
+# mas spring.flyway.schemas=public (minusculo) faz o Flyway criar/migrar um schema
+# "public" distinto -- Hibernate validaria contra o schema errado e nunca acharia
+# as tabelas. Com essa flag, identificadores nao-quotados (schema/tabela) ficam em
+# minusculo por padrao, igual ao Postgres real.
+spring:
+  datasource:
+    url: jdbc:h2:mem:spanishai;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    show-sql: true

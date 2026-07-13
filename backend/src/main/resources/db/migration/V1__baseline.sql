@@ -1,0 +1,2 @@
+-- Baseline: estabelece o schema "public" versionado pelo Flyway.
+-- Nenhuma tabela de negocio ainda -- entra na Fase 1 (profiles, user_preferences).

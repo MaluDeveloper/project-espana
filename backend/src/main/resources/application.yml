@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+
+  # --- Migrations ---
+  # So gerencia o schema "public": os schemas auth/storage/realtime sao do Supabase.
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    schemas: public
+    baseline-on-migrate: true
+    baseline-version: "0"
+
+  # Flyway e a unica fonte de verdade do schema -- Hibernate so confere, nunca altera.
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+server:
+  port: 8081
+
+# --- Supabase Auth (JWT) ---
+# Sempre aponta para o Supabase Auth hospedado, mesmo quando o banco de dados
+# de negocio (perfil "local") ainda e o H2 -- Auth e um servico gerenciado a parte.
+supabase:
+  auth:
+    project-url: https://kxjoytldjxloakueqdbx.supabase.co
+    jwks-uri: ${supabase.auth.project-url}/auth/v1/.well-known/jwks.json
+    issuer-uri: ${supabase.auth.project-url}/auth/v1
+
+app:
+  cors:
+    allowed-origin: http://localhost:8080
+
+# --- Swagger UI / OpenAPI ---
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+logging:
+  level:
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+    org.springframework.security.oauth2.jwt: TRACE

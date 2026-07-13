@@ -1,0 +1,41 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Env files — never commit real secrets/keys
+.env
+.env.*
+!.env.example
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.claude
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Java / Maven (backend)
+backend/target/
+*.class
+HELP.md
+
+# Maven Wrapper (backend/mvnw, backend/mvnw.cmd, backend/.mvn/wrapper/) is
+# intentionally NOT ignored -- it must be committed so `./mvnw` works without
+# a pre-installed Maven. This wrapper (plugin 3.3.4, distributionType=only-script)
+# has no maven-wrapper.jar to ignore in the first place -- mvnw downloads the
+# Maven distribution directly.
