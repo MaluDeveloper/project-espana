@@ -27,12 +27,12 @@ class FlywayMigrationTests {
     }
 
     @Test
-    void allMigrationsUpToAndIncludingProfilesAreAppliedWithNothingPending() {
+    void allMigrationsUpToAndIncludingUserPreferencesAreAppliedWithNothingPending() {
         MigrationInfo current = flyway.info().current();
 
         assertThat(current).isNotNull();
-        assertThat(current.getVersion().toString()).isEqualTo("2");
-        assertThat(current.getDescription()).isEqualTo("create profiles table");
+        assertThat(current.getVersion().toString()).isEqualTo("3");
+        assertThat(current.getDescription()).isEqualTo("create user preferences table");
         assertThat(current.getState()).isEqualTo(MigrationState.SUCCESS);
         assertThat(flyway.info().pending()).isEmpty();
     }

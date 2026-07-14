@@ -55,7 +55,7 @@ Ordem de implementação e dependências entre módulos: ver [ROADMAP.md](../ROA
 
 | # | Módulo | Endpoints representativos | Depende de |
 |---|---|---|---|
-| 2 | **user** | `GET/PUT /api/users/me` ✅, `PUT /api/users/me/preferences` 🔲 | auth |
+| 2 | **user** | `GET/PUT /api/users/me` ✅, `GET/PUT /api/users/me/preferences` ✅ | auth |
 | 3 | **course.catalog** | `GET /api/courses`, `GET /api/courses/{level}/chapters/{id}` | auth |
 | 4 | **course.progress** | `POST /api/progress/topics/{id}/read`, `POST /api/progress/exercises/{id}/attempts`, `POST /api/progress/chapters/{id}/quiz`, `POST /api/progress/exams` | user, course.catalog |
 | 5 | **study** | `POST /api/study/heartbeat`, `GET /api/study/streak` | user |

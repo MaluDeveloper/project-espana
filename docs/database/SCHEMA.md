@@ -33,7 +33,7 @@ Convenções gerais: toda tabela usa `id UUID` como chave primária (`gen_random
 
 A entidade JPA `Profile` implementa `Persistable<UUID>` (em vez de estender `BaseEntity`) porque o id é sempre atribuído externamente e nunca nulo — a heurística default do Spring Data (id nulo = entidade nova) trataria toda entidade como existente e chamaria `merge()` em vez de `persist()`. `isNew()` usa `createdAt` (só preenchido pelo listener de auditoria no `@PrePersist`) para diferenciar inserção de atualização.
 
-**`user_preferences`** 🔲 planejado (1:1 com `profiles`)
+**`user_preferences`** ✅ implementado (1:1 com `profiles`, migration `V3__create_user_preferences_table.sql`)
 
 | Coluna | Tipo |
 |---|---|

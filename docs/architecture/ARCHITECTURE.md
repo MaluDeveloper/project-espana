@@ -100,7 +100,7 @@ com.spanishai.backend
 ├── security/                     ✅ SupabaseJwtDecoderConfig (JWKS/ES256), CurrentUserProvider
 │
 ├── user/                         ✅ Profile (provisionamento lazy), GET/PUT /api/users/me
-│                                  🔲 UserPreferences
+│                                  ✅ UserPreferences (provisionamento lazy), GET/PUT /api/users/me/preferences
 ├── course/
 │   ├── catalog/                  🔲 Course, Chapter, Topic, TopicBlock, Exercise, LexiconEntry
 │   └── progress/                 🔲 TopicRead, ExerciseAttempt, ChapterQuizResult, ExamResult

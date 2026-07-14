@@ -18,7 +18,7 @@
 - [x] `profiles` (migration `V2__create_profiles_table.sql` + entidade `Profile`)
 - [x] Provisionamento lazy de perfil (`ProfileService`)
 - [x] `GET/PUT /api/users/me`
-- [ ] `user_preferences` (tabela + entidade + repository)
+- [x] `user_preferences` (tabela + entidade + repository)
 - [ ] Frontend trocar login/cadastro mockado pelo `supabase-js` real + chamada ao backend
 
 ### Fase 2 — Catálogo de cursos (somente leitura) 🔲
