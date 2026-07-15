@@ -35,6 +35,26 @@ Backend (from `backend/`):
 ./mvnw test              # run tests
 ```
 
+## Architecture (backend)
+
+The backend follows a hexagonal (ports & adapters) layout under `backend/src/main/java/com/spanishai/backend/`:
+
+- `domain/model` — domain entities (framework-free).
+- `domain/exception` — domain-level exceptions.
+- `domain/ports/in/<context>` — inbound ports (use case interfaces + command records), one subpackage per bounded context (e.g. `user`).
+- `domain/ports/out/<context>` — outbound ports (repository interfaces), one subpackage per bounded context.
+- `application/service/<context>` — use case implementations (`@Service`), one subpackage per bounded context.
+- `adapter/in/rest/api` — all `@RestController` classes live here directly (not split by context).
+- `adapter/in/rest/mapper/<context>` — REST-layer mappers (domain <-> response DTO), one subpackage per bounded context.
+- `adapter/in/rest/request/<context>` / `adapter/in/rest/response/<context>` — request/response DTOs, one subpackage per bounded context.
+- `adapter/out/persistence/<context>` — JPA repositories + persistence adapters implementing the outbound ports, one subpackage per bounded context.
+- `adapter/out/persistence/mapper/<context>` — persistence-layer mappers (domain <-> JPA entity), one subpackage per bounded context.
+- `adapter/out/persistence/entity` — JPA entities, shared/flat (not split by context) since they're framework plumbing, not domain boundaries.
+- `infrastructure/config` — cross-cutting Spring config (CORS, security, OpenAPI, JPA auditing).
+- Cross-cutting REST concerns that aren't controllers (e.g. `GlobalExceptionHandler`) stay directly under `adapter/in/rest`, not inside `api`.
+
+**Rule for new backend work:** when adding a new bounded context (e.g. `course`, `game`), mirror the `user` context's package layout exactly — create the same `<context>` subpackage in each of `domain/ports/in`, `domain/ports/out`, `application/service`, `adapter/out/persistence`, `adapter/out/persistence/mapper`, and `adapter/in/rest/mapper` (plus `request`/`response` if it has its own DTOs). Controllers always go in the single shared `adapter/in/rest/api`, not a per-context subpackage.
+
 ## Architecture (frontend)
 
 **No real backend yet.** Every feature — auth, course progress, game scores, streaks, preferences — persists to `localStorage` under versioned keys. `TanStack Query` is wired into `App.tsx` but does no remote fetching; it's scaffolding for the eventual Supabase/backend integration.
