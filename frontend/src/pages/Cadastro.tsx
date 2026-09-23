@@ -36,9 +36,9 @@ const Cadastro = () => {
   };
 
   const fields = [
-    { id: "name", label: t.auth.cadastro.nome, value: name, set: setName, type: "text", icon: User, ph: t.auth.cadastro.placeholderNome },
-    { id: "email", label: t.auth.cadastro.email, value: email, set: setEmail, type: "email", icon: Mail, ph: "tu@email.com" },
-    { id: "password", label: t.auth.cadastro.senha, value: password, set: setPassword, type: "password", icon: Lock, ph: "••••••••" },
+    { id: "name", label: t.auth.cadastro.nome, value: name, set: setName, type: "text", icon: User, ph: t.auth.cadastro.placeholderNome, autoComplete: "name" },
+    { id: "email", label: t.auth.cadastro.email, value: email, set: setEmail, type: "email", icon: Mail, ph: "tu@email.com", autoComplete: "email" },
+    { id: "password", label: t.auth.cadastro.senha, value: password, set: setPassword, type: "password", icon: Lock, ph: "••••••••", autoComplete: "new-password" },
   ];
 
   return (
@@ -82,6 +82,7 @@ const Cadastro = () => {
               <Input
                 id={f.id}
                 type={f.type}
+                autoComplete={f.autoComplete}
                 placeholder={f.ph}
                 value={f.value}
                 onChange={(e) => f.set(e.target.value)}

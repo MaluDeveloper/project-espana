@@ -1,6 +1,7 @@
 // Persistência de progresso do curso (livro online + provas + quizzes + streak) no localStorage.
 import type { LevelId } from "@/data/games";
 import { COURSE, PASS_THRESHOLD } from "@/data/courses";
+import { todayIso, localIso } from "./utils";
 
 const KEY = "spanish-ai-course-v1";
 
@@ -200,7 +201,6 @@ export const getLevelStats = (level: LevelId) => {
 };
 
 // Streak.
-const todayIso = () => new Date().toISOString().slice(0, 10);
 
 export const registerStudyToday = () => {
   if (typeof window === "undefined") return;
@@ -218,7 +218,7 @@ export const getStreak = (): number => {
   const cursor = new Date();
   // eslint-disable-next-line no-constant-condition
   while (true) {
-    const iso = cursor.toISOString().slice(0, 10);
+    const iso = localIso(cursor);
     if (days.has(iso)) {
       streak += 1;
       cursor.setDate(cursor.getDate() - 1);

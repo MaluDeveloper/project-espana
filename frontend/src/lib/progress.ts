@@ -37,9 +37,12 @@ export const saveStage = (
   const catState = state[cat] ?? {};
   const levelState = catState[level] ?? {};
   const previous = levelState[stage];
-  // Mantém o melhor resultado.
+  // Mantém as melhores estrelas/XP, mas sempre atualiza completedAt para a tentativa
+  // atual — senão repetir uma fase empatando o recorde não conta pra missão diária.
   const best: StageResult =
-    previous && previous.stars >= result.stars ? previous : result;
+    previous && previous.stars > result.stars
+      ? { ...previous, completedAt: result.completedAt }
+      : result;
   levelState[stage] = best;
   catState[level] = levelState;
   state[cat] = catState;

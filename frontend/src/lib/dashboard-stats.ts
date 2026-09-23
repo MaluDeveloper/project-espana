@@ -12,14 +12,13 @@ import {
 } from "./course-progress";
 import { loadProgress } from "./progress";
 import { GAME_CATEGORIES, type LevelId } from "@/data/games";
+import { todayIso, localIso } from "./utils";
 
 // ---------------------------------------------------------
 // Helpers de data
 // ---------------------------------------------------------
-const todayIso = () => new Date().toISOString().slice(0, 10);
 
-const isSameDay = (ts: number, isoDay: string) =>
-  new Date(ts).toISOString().slice(0, 10) === isoDay;
+const isSameDay = (ts: number, isoDay: string) => localIso(new Date(ts)) === isoDay;
 
 // ---------------------------------------------------------
 // Flashcards (rastreador próprio)

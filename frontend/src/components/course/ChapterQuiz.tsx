@@ -9,7 +9,7 @@ import type { Exercise } from "@/data/courses";
 import { pickL, pickLArr } from "@/data/courses";
 import type { LevelId } from "@/data/games";
 import { saveChapterQuiz, getChapterQuiz } from "@/lib/course-progress";
-import { cn } from "@/lib/utils";
+import { cn, normalizeAnswer } from "@/lib/utils";
 
 interface ChapterQuizProps {
   level: LevelId;
@@ -100,7 +100,7 @@ export const ChapterQuiz = ({ level, chapterId, questions, locale, labels }: Cha
   const progressPct = Math.round(((idx + (feedback !== "idle" ? 1 : 0)) / pool.length) * 100);
 
   const check = () => {
-    const ok = answer.trim().toLowerCase() === current.answer.trim().toLowerCase();
+    const ok = normalizeAnswer(answer) === normalizeAnswer(current.answer);
     setFeedback(ok ? "right" : "wrong");
     if (ok) {
       scoreRef.current += 1;
