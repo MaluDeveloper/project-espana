@@ -35,7 +35,15 @@ export const AudioButton = ({ text, slow = false, label, className }: AudioButto
     utt.onerror = () => setSpeaking(false);
     ref.current = utt;
     setSpeaking(true);
-    window.speechSynthesis.speak(utt);
+    // Firefox tem um bug conhecido em que speak() chamado logo após cancel()
+    // às vezes é silenciosamente descartado (corrida no motor de síntese) —
+    // adiar para o próximo tick evita isso sem efeito perceptível no Chrome.
+    setTimeout(() => window.speechSynthesis.speak(utt), 0);
+    // Rede de segurança: se onend/onerror nunca disparar (ex.: Firefox sem
+    // voz es-ES instalada no SO, que às vezes falha silenciosamente sem
+    // disparar nenhum dos dois eventos), destrava o botão de qualquer forma
+    // depois de um tempo generoso em vez de ficar pulsando pra sempre.
+    setTimeout(() => setSpeaking((current) => (ref.current === utt ? false : current)), 8000);
   };
 
   const Icon = slow ? Volume1 : Volume2;
