@@ -18,11 +18,16 @@ export function todayIso(): string {
   return localIso(new Date());
 }
 
-/** Lowercases, trims and strips accents — for tolerant free-text answer comparison (e.g. "esta"/"está"). */
+/**
+ * Normalizes a free-text answer for tolerant comparison: case, accents ("esta"/"está"),
+ * punctuation ("¿Dónde vives?"/"donde vives") and extra whitespace are ignored.
+ */
 export function normalizeAnswer(s: string): string {
   return s
-    .trim()
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "");
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[.,;:!?¡¿"'«»“”‘’…]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
 }

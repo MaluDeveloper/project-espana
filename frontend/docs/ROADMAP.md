@@ -25,6 +25,7 @@
 
   **Pendências concretas que saem desta auditoria:**
   - [ ] B1–C2 estão abaixo da meta de 3–5 tópicos/capítulo e 5–10 exercícios/tópico — precisam de mais tópicos e exercícios por capítulo, na mesma proporção do A2.
+    - B1: exercícios ✅ — +79 exercícios com explicação PT/EN, média subiu de 3.9 para 5.4 por tópico (todos os tópicos dos caps. 1–11 com 6–9). Tópicos ✅ — +15 tópicos (caps. 1–11 agora com 3 cada; média 3.2 tópicos/capítulo e 5.6 exercícios/tópico). **Falta no B1:** quiz dos capítulos (hoje 1–4 perguntas; A1 tem 10, A2 tem 20–30), léxico (3–6 entradas; meta ~8) e exercícios dos tópicos de projeto/referência dos caps. 12–13 (1–3 cada).
   - [ ] Nenhum capítulo de B2, C1 ou C2 tem `flashcards` — o componente `Flashcards.tsx` fica vazio nesses níveis inteiros. (B1 ✅ — 10 flashcards por capítulo.)
   - [x] ~~B1 tem `briefReview` só nos capítulos 12 e 13~~ — capítulos 1 a 11 preenchidos (PT/EN).
 
