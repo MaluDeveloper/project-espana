@@ -12,7 +12,7 @@
 2. **Cadastro** (`Cadastro.tsx`) — a pessoa cria a conta (nome/e-mail/senha ou login social Google) **e** informa os dados de pagamento da assinatura. Os dados bancários/cartão devem passar por um **gateway de pagamento externo** (nunca processados diretamente pela aplicação) — decisão de fornecedor (Stripe vs. Mercado Pago/Asaas) ainda pendente, ver [backend/docs/OVERVIEW.md §7](../../backend/docs/OVERVIEW.md#7-modelo-de-negócio-assinatura--sem-código-ainda).
 3. **Área logada** (`/dashboard/*`, `/jogos/*`, `/cursos/*`, `/aula/:id`, `/dele/:id`) — depois do cadastro/login, o usuário entra direto na experiência completa: dashboard com progresso, jogos, todos os níveis de curso, provas/exercícios, preparação para o DELE e configurações pessoais. Não existe uma área de administração separada para equipe interna — é a mesma área do aluno, só que logada (às vezes chamada informalmente de "backoffice" — é a mesma coisa).
 
-**Planos de assinatura:** Free (acesso limitado, escopo exato ainda a definir), Mensal (R$ 89,90/mês) e Anual (R$ 699,90/ano, ~35% mais barato que 12 meses do mensal) — os dois pagos dão acesso completo (todos os níveis, jogos, DELE, correção de IA). A tela de preços hoje (`LandingPricing.tsx`) ainda mostra um modelo antigo (Free/Pro R$29/Equipes) que **não reflete essa decisão** e precisa ser reescrita (ver [ROADMAP.md](ROADMAP.md)).
+**Planos de assinatura:** Free (acesso limitado, escopo exato ainda a definir), Mensal (R$ 89,90/mês) e Anual (R$ 699,90/ano, ~35% mais barato que 12 meses do mensal) — os dois pagos dão acesso completo (todos os níveis, jogos, DELE, correção de IA). A tela de preços (`LandingPricing.tsx`) já mostra esses três planos.
 
 ## 2. Stack técnica
 
@@ -136,6 +136,10 @@ Hoje todas calculadas em `src/lib/`; o roadmap do backend move este cálculo par
 
 - **Dark mode desativado** (`forcedTheme="light"` em `App.tsx`) — consistência visual da landing page, não esquecimento.
 - **Áudio via Web Speech API nativa** (`AudioButton.tsx`) — placeholder até existir áudio gravado real; comportamento inconsistente entre browsers é o trade-off conhecido (Firefox em particular).
+- **Variante do espanhol: base peninsular (Espanha), com notas das variantes latino-americanas** — vale para todo o conteúdo de `data/courses.ts` (A1 → C2) e deve ser seguido ao criar conteúdo novo:
+  - Gramática e vocabulário ensinados como padrão são os da Espanha: *vosotros* como plural informal (incluindo o imperativo *hablad/sentaos*), Pretérito Perfecto para o passado recente (*hoy he comido*), *móvil, ordenador, coche, piso, conducir, zumo, echar de menos, quedar con*.
+  - Onde a América Latina difere, o conteúdo **mostra a alternativa em nota/dica** em vez de omiti-la: *ustedes* para tudo, *extrañar*, Indefinido cobrindo o passado recente, *celular/computadora/carro/manejar*. O capítulo 13 do B1 (variantes regionais) concentra os contrastes.
+  - Exercícios e quizzes **não podem ter como única resposta certa uma forma que seria correta em uma variante e marcada errada na outra** (ex.: não pedir Perfecto × Indefinido com *hoy* como pergunta fechada).
 
 ## 9. Estado de integração com o backend
 
