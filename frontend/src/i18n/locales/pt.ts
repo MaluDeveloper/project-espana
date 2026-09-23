@@ -237,7 +237,7 @@ export const pt = {
     titlePart1: "Simples.",
     titleHighlight: "Como deve ser.",
     subtitle: "Cancele quando quiser. Sem letras miúdas.",
-    mostPopular: "Mais popular",
+    highlightBadge: "Melhor custo-benefício",
     plans: {
       free: {
         name: "Free",
@@ -246,39 +246,38 @@ export const pt = {
         desc: "Comece a aprender hoje, sem compromisso.",
         features: [
           "Curso A1 completo",
-          "5 jogos por dia",
+          "3 jogos por dia",
           "IA corretora básica",
           "Comunidade",
         ],
         cta: "Começar grátis",
       },
-      pro: {
-        name: "Pro",
-        price: "R$ 29",
+      monthly: {
+        name: "Mensal",
+        price: "R$ 89,90",
         period: "/mês",
-        desc: "Para quem quer fluência de verdade.",
+        desc: "Acesso completo, cancele quando quiser.",
         features: [
-          "Todos os cursos A1 → C1",
+          "Todos os cursos A1 → C2",
           "Jogos ilimitados",
-          "IA premium com explicações",
+          "Correção de IA em tempo real",
+          "Preparação para o DELE",
           "Provas de nível",
-          "Léxico profissional",
           "Sem anúncios",
         ],
-        cta: "Assinar Pro",
+        cta: "Assinar Mensal",
       },
-      teams: {
-        name: "Equipes",
-        price: "Personalizado",
-        period: "",
-        desc: "Para empresas e escolas.",
+      annual: {
+        name: "Anual",
+        price: "R$ 699,90",
+        period: "/ano",
+        desc: "Tudo do Mensal, pagando uma vez por ano.",
         features: [
-          "Tudo do Pro",
-          "Painel de administrador",
-          "Relatórios",
-          "Suporte dedicado",
+          "Tudo do plano Mensal",
+          "Equivalente a R$ 58,33/mês",
+          "Economize 35% em relação ao mensal",
         ],
-        cta: "Falar com vendas",
+        cta: "Assinar Anual",
       },
     },
   },
@@ -302,14 +301,14 @@ export const pt = {
 
   pricingTeaser: {
     eyebrow: "Planos",
-    title: "Planos a partir de R$ 29/mês",
+    title: "Grátis para começar, premium a partir de R$ 89,90/mês",
     subtitle: "Acesso completo a todos os níveis e recursos.",
     button: "Ver planos",
   },
 
   footer: {
     tagline:
-      "Aprenda espanhol da Espanha de forma inteligente com IA, jogos e cursos estruturados do A1 ao C1.",
+      "Aprenda espanhol da Espanha de forma inteligente com IA, jogos e cursos estruturados do A1 ao C2.",
     product: "Produto",
     company: "Empresa",
     legal: "Legal",
@@ -763,13 +762,13 @@ export const pt = {
     listing: {
       eyebrow: "Categorias de jogos",
       titulo1: "Aprenda jogando,",
-      tituloHighlight: "de A1 a C1",
+      tituloHighlight: "de A1 a C2",
       subtitulo:
         "Escolha uma categoria. Cada uma tem níveis e muitas fases distintas.",
       proximamente: "Em breve",
       nivelLabel: "níveis",
       fases: "fases",
-      niveis: "5 níveis",
+      niveis: "6 níveis",
     },
     levels: {
       labels: {

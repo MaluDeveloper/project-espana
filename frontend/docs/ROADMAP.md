@@ -13,7 +13,21 @@
 - [ ] Notificações/lembretes sem implementação real (`DashboardConfig.tsx`, `preferences.ts`) — toggles existem na UI mas não disparam nada.
 - [ ] Senha em texto puro no `localStorage` (`DashboardPerfilEditar.tsx`) — aceitável só até existir backend; nunca reintroduzir comparação client-side depois que a auth migrar.
 - [ ] Testar `AudioButton` em Firefox (Web Speech API tem suporte inconsistente).
-- [ ] Auditar profundidade/qualidade do conteúdo em `data/courses.ts` — os 6 níveis (A1–C2) já têm 13 capítulos cada estruturalmente; falta confirmar se todos atingem a meta de 3–5 tópicos/capítulo e 5–10 exercícios/tópico com a mesma qualidade do A1.
+- [x] ~~Auditar profundidade/qualidade do conteúdo em `data/courses.ts`~~ — feito. Todos os 6 níveis têm 13 capítulos, mas a densidade cai muito depois do A2 e **piora progressivamente** (o oposto do esperado num nível avançado):
+
+  | Nível | Tópicos/capítulo | Exercícios/tópico | Flashcards | `briefReview` |
+  |---|---|---|---|---|
+  | A1 | 1.9 | 8.7 | 13/13 | 13/13 |
+  | A2 | 6.3 | 8.2 | 12/13 | 13/13 |
+  | B1 | 2.0 | 3.9 | **0/13** | **2/13** (só cap. 12 e 13 — caps. 1–11 sem texto de revisão) |
+  | B2 | 2.4 | 3.6 | **0/13** | 13/13 |
+  | C1 | 2.5 | 2.8 | **0/13** | 13/13 |
+  | C2 | 3.1 | 2.5 | **0/13** | 13/13 |
+
+  **Pendências concretas que saem desta auditoria:**
+  - [ ] B1–C2 estão abaixo da meta de 3–5 tópicos/capítulo e 5–10 exercícios/tópico — precisam de mais tópicos e exercícios por capítulo, na mesma proporção do A2.
+  - [ ] Nenhum capítulo de B1, B2, C1 ou C2 tem `flashcards` — o componente `Flashcards.tsx` fica vazio nesses níveis inteiros.
+  - [ ] B1 tem `briefReview` só nos capítulos 12 e 13 — os capítulos 1 a 11 ficam sem texto na aba "Revisão".
 
 ## Integração com backend real
 

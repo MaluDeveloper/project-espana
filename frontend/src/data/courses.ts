@@ -1,4 +1,4 @@
-// Spanish AI — Livro online de espanhol (A1 → C1).
+// Spanish AI — Livro online de espanhol (A1 → C2).
 // Conteúdo estruturado em capítulos com teoria, exemplos, léxico,
 // exercícios de fixação por tópico e prova final por nível.
 //

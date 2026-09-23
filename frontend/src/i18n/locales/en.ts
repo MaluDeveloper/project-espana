@@ -228,38 +228,42 @@ export const en = {
     titlePart1: "Simple.",
     titleHighlight: "As it should be.",
     subtitle: "Cancel anytime. No fine print.",
-    mostPopular: "Most popular",
+    highlightBadge: "Best value",
     plans: {
       free: {
         name: "Free",
-        price: "$0",
+        price: "R$ 0",
         period: "/forever",
         desc: "Start learning today, no strings attached.",
-        features: ["Full A1 course", "5 games per day", "Basic AI corrector", "Community"],
+        features: ["Full A1 course", "3 games per day", "Basic AI corrector", "Community"],
         cta: "Start free",
       },
-      pro: {
-        name: "Pro",
-        price: "$6",
+      monthly: {
+        name: "Monthly",
+        price: "R$ 89.90",
         period: "/month",
-        desc: "For those who want real fluency.",
+        desc: "Full access, cancel anytime.",
         features: [
-          "All A1 → C1 courses",
+          "All A1 → C2 courses",
           "Unlimited games",
-          "Premium AI with explanations",
+          "Real-time AI correction",
+          "DELE exam prep",
           "Level tests",
-          "Professional vocabulary",
           "No ads",
         ],
-        cta: "Get Pro",
+        cta: "Get Monthly",
       },
-      teams: {
-        name: "Teams",
-        price: "Custom",
-        period: "",
-        desc: "For companies and schools.",
-        features: ["Everything in Pro", "Admin dashboard", "Reports", "Dedicated support"],
-        cta: "Talk to sales",
+      annual: {
+        name: "Annual",
+        price: "R$ 699.90",
+        period: "/year",
+        desc: "Everything in Monthly, billed once a year.",
+        features: [
+          "Everything in Monthly",
+          "Equivalent to R$ 58.33/month",
+          "Save 35% vs. monthly",
+        ],
+        cta: "Get Annual",
       },
     },
   },
@@ -283,14 +287,14 @@ export const en = {
 
   pricingTeaser: {
     eyebrow: "Plans",
-    title: "Plans from $6/month",
+    title: "Free to start, premium from R$ 89.90/month",
     subtitle: "Full access to every level and feature.",
     button: "See plans",
   },
 
   footer: {
     tagline:
-      "Learn Spanish from Spain the smart way — with AI, games, and structured courses from A1 to C1.",
+      "Learn Spanish from Spain the smart way — with AI, games, and structured courses from A1 to C2.",
     product: "Product",
     company: "Company",
     legal: "Legal",
@@ -702,13 +706,13 @@ export const en = {
     listing: {
       eyebrow: "Game categories",
       titulo1: "Learn by playing,",
-      tituloHighlight: "from A1 to C1",
+      tituloHighlight: "from A1 to C2",
       subtitulo:
         "Choose a category. Each one has levels and many different stages.",
       proximamente: "Soon",
       nivelLabel: "levels",
       fases: "stages",
-      niveis: "5 levels",
+      niveis: "6 levels",
     },
     levels: {
       labels: {

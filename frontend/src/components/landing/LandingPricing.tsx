@@ -10,8 +10,8 @@ export const LandingPricing = () => {
 
   const plans = [
     { ...t.pricing.plans.free, href: "/cadastro", highlight: false },
-    { ...t.pricing.plans.pro, href: "/cadastro", highlight: true },
-    { ...t.pricing.plans.teams, href: "/cadastro", highlight: false },
+    { ...t.pricing.plans.monthly, href: "/cadastro", highlight: false },
+    { ...t.pricing.plans.annual, href: "/cadastro", highlight: true },
   ];
 
   return (
@@ -48,7 +48,7 @@ export const LandingPricing = () => {
             >
               {p.highlight && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-wider shadow-card">
-                  {t.pricing.mostPopular}
+                  {t.pricing.highlightBadge}
                 </div>
               )}
               <div className="font-display font-extrabold text-lg mb-1">{p.name}</div>
