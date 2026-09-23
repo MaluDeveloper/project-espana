@@ -8,7 +8,6 @@
 
 - [ ] **Correção de IA real em "Aula"** (`Aula.tsx`, `mockAnalyze`) — hoje 100% mockada, devolve feedback fixo pra qualquer texto. É a promessa central do produto sem implementação real por trás; alto impacto. Depende da Fase 7 do [backend/docs/ROADMAP.md](../../backend/docs/ROADMAP.md).
 - [ ] **`GoogleAuthButton.tsx` é só visual** — não implementa OAuth real, grava um usuário fake no `localStorage`. Resolvido "de graça" assim que a Fase 1/2 de integração com o backend (Supabase Auth com Google como provider) entrar.
-- [ ] **Reescrever `LandingPricing.tsx`/`pt.ts`/`en.ts`** para os 3 planos atuais — Free, Mensal (R$ 89,90) e Anual (R$ 699,90) — hoje ainda mostram o modelo antigo (Free/Pro R$29/Equipes com "Painel de administrador") que não reflete a decisão de negócio atual (ver [OVERVIEW.md](OVERVIEW.md)).
 - [ ] **Cadastro precisa coletar dados de pagamento** — hoje `Cadastro.tsx` só pede nome/e-mail/senha. Falta integrar com o gateway de pagamento externo escolhido (ver [backend/docs/OVERVIEW.md §7](../../backend/docs/OVERVIEW.md#7-modelo-de-negócio-assinatura--sem-código-ainda)) antes de liberar acesso à área logada.
 - [ ] Notificações/lembretes sem implementação real (`DashboardConfig.tsx`, `preferences.ts`) — toggles existem na UI mas não disparam nada.
 - [ ] Senha em texto puro no `localStorage` (`DashboardPerfilEditar.tsx`) — aceitável só até existir backend; nunca reintroduzir comparação client-side depois que a auth migrar.
@@ -26,8 +25,8 @@
 
   **Pendências concretas que saem desta auditoria:**
   - [ ] B1–C2 estão abaixo da meta de 3–5 tópicos/capítulo e 5–10 exercícios/tópico — precisam de mais tópicos e exercícios por capítulo, na mesma proporção do A2.
-  - [ ] Nenhum capítulo de B1, B2, C1 ou C2 tem `flashcards` — o componente `Flashcards.tsx` fica vazio nesses níveis inteiros.
-  - [ ] B1 tem `briefReview` só nos capítulos 12 e 13 — os capítulos 1 a 11 ficam sem texto na aba "Revisão".
+  - [ ] Nenhum capítulo de B2, C1 ou C2 tem `flashcards` — o componente `Flashcards.tsx` fica vazio nesses níveis inteiros. (B1 ✅ — 10 flashcards por capítulo.)
+  - [x] ~~B1 tem `briefReview` só nos capítulos 12 e 13~~ — capítulos 1 a 11 preenchidos (PT/EN).
 
 ## Integração com backend real
 
@@ -66,6 +65,10 @@
 
 ## Concluído recentemente
 
+- [x] B1: `flashcards` (10 por capítulo, sem repetir o léxico) nos 13 capítulos e `briefReview`/`briefReviewEn` nos capítulos 1–11.
+- [x] `LandingPricing.tsx`/`pt.ts`/`en.ts` reescritos para Free, Mensal (R$ 89,90) e Anual (R$ 699,90).
+- [x] Hero da landing trocado por hero 3D interativo (`components/ui/orbit-delivery-hero.tsx`).
+- [x] Erro de tipo em `DashboardProgresso.tsx` (`course.titleEn` inexistente) — título do nível agora vem de `t.cursos.listing.levels`.
 - [x] `todayIso()` corrigido para horário local (era UTC) — centralizado em `lib/utils.ts` (`todayIso`/`localIso`), removida a duplicata em `dashboard-stats.ts`/`course-progress.ts`; `getStreak()` também corrigido.
 - [x] `saveStage` (`lib/progress.ts`) agora atualiza `completedAt` mesmo em empate de recorde — repetir uma fase hoje passa a contar pra missão diária.
 - [x] Quiz de texto livre agora tolera acentuação (`normalizeAnswer()` em `lib/utils.ts`).

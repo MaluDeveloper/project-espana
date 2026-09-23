@@ -5241,6 +5241,22 @@ const B1: CourseLevel = {
         { es: "recientemente", pt: "recentemente", en: "recently", example: "Lo he visto recientemente." },
         { es: "hace un rato", pt: "há pouco", en: "a while ago", example: "Ha llamado hace un rato." },
       ],
+      briefReview:
+        "Neste capítulo você aprendeu o Pretérito Perfecto: HABER no presente + participio (hablado, comido, vivido). Memorize os participios irregulares (hecho, dicho, visto, escrito, puesto, vuelto, roto, abierto). Use o Perfecto para experiências de vida sem data (¿Has estado en Perú?), ações recentes com marcadores como hoy, esta semana, ya e todavía no, e passados com efeito no presente. Nunca separe o auxiliar do participio.",
+      briefReviewEn:
+        "In this chapter you learned the Pretérito Perfecto: HABER in the present + past participle (hablado, comido, vivido). Memorize the irregular participles (hecho, dicho, visto, escrito, puesto, vuelto, roto, abierto). Use the Perfecto for undated life experiences (¿Has estado en Perú?), recent actions with markers like hoy, esta semana, ya and todavía no, and past events with present effects. Never separate the auxiliary from the participle.",
+      flashcards: [
+        { es: "la experiencia", pt: "a experiência", en: "the experience" },
+        { es: "el participio", pt: "o particípio", en: "the past participle" },
+        { es: "probar", pt: "provar, experimentar", en: "to try, to taste", example: "¿Has probado la paella?" },
+        { es: "conocer", pt: "conhecer", en: "to meet, to get to know", example: "He conocido a gente muy interesante." },
+        { es: "perder", pt: "perder", en: "to lose", example: "He perdido las llaves." },
+        { es: "romper", pt: "quebrar", en: "to break", example: "¿Quién ha roto el vaso?" },
+        { es: "descubrir", pt: "descobrir", en: "to discover", example: "Hemos descubierto un restaurante nuevo." },
+        { es: "nunca", pt: "nunca", en: "never", example: "Nunca he estado en Cuba." },
+        { es: "últimamente", pt: "ultimamente", en: "lately", example: "Últimamente he dormido poco." },
+        { es: "en lo que va de año", pt: "até agora neste ano", en: "so far this year", example: "En lo que va de año he leído seis libros.", tag: "expresión" },
+      ],
       quiz: [
         { id: "b1-1-q1", type: "fill-blank", question: "Nunca ___ (yo / ver) esa película.", answer: "he visto" },
         { id: "b1-1-q2", type: "multiple-choice", question: "Participio irregular de 'hacer':", options: ["hacido", "hecho", "hacho"], answer: "hecho" },
@@ -5317,6 +5333,22 @@ const B1: CourseLevel = {
         { es: "mientras", pt: "enquanto", en: "while", example: "Mientras leía, sonó el móvil." },
         { es: "en aquella época", pt: "naquela época", en: "in those days", example: "En aquella época, no había móviles." },
         { es: "una vez", pt: "uma vez", en: "once", example: "Una vez fui a Cuba." },
+      ],
+      briefReview:
+        "Neste capítulo você comparou os três passados. O Indefinido narra ações concluídas em um tempo fechado (ayer, en 2019); o Imperfecto descreve cenários, hábitos e ações em andamento (de niño, siempre, mientras); o Perfecto liga o passado ao presente (hoy, esta semana). Na narração, o Imperfecto monta o cenário e o Indefinido traz a ação que interrompe: Mientras cenábamos, sonó el teléfono.",
+      briefReviewEn:
+        "In this chapter you compared the three past tenses. The Indefinido narrates completed actions in a closed time frame (ayer, en 2019); the Imperfecto describes settings, habits and ongoing actions (de niño, siempre, mientras); the Perfecto links the past to the present (hoy, esta semana). In storytelling, the Imperfecto sets the scene and the Indefinido brings in the interrupting action: Mientras cenábamos, sonó el teléfono.",
+      flashcards: [
+        { es: "la anécdota", pt: "a anedota, o causo", en: "the anecdote" },
+        { es: "la infancia", pt: "a infância", en: "childhood" },
+        { es: "el recuerdo", pt: "a lembrança", en: "the memory" },
+        { es: "de niño", pt: "quando criança", en: "as a child", example: "De niño vivía en el campo.", tag: "expresión" },
+        { es: "soler", pt: "costumar", en: "to usually do", example: "Solíamos ir a la playa en verano." },
+        { es: "en ese momento", pt: "nesse momento", en: "at that moment", example: "En ese momento sonó el teléfono.", tag: "expresión" },
+        { es: "al principio", pt: "no começo", en: "at first", example: "Al principio no entendía nada." },
+        { es: "al final", pt: "no fim", en: "in the end", example: "Al final todo salió bien." },
+        { es: "ocurrir", pt: "acontecer", en: "to happen", example: "¿Qué ocurrió después?" },
+        { es: "darse cuenta de", pt: "perceber", en: "to realize", example: "Me di cuenta de que no tenía el móvil." },
       ],
       quiz: [
         { id: "b1-2-q1", type: "multiple-choice", question: "Marcador típico de Imperfecto:", options: ["ayer", "todos los días", "de repente"], answer: "todos los días" },
@@ -5396,6 +5428,22 @@ const B1: CourseLevel = {
         { es: "probablemente", pt: "provavelmente", en: "probably", example: "Probablemente llegará tarde." },
         { es: "dentro de", pt: "dentro de", en: "in (time)", example: "Dentro de dos años." },
       ],
+      briefReview:
+        "Neste capítulo você estudou o Futuro Simple (infinitivo + -é, -ás, -á, -emos, -éis, -án) e seus irregulares (tendré, haré, diré, podré, saldré, vendré). Ele serve para previsões, promessas e também para probabilidade no presente (Estará en casa = provavelmente está em casa). O Futuro Compuesto (habré terminado) expressa uma ação concluída antes de um momento futuro ou uma suposição sobre o passado recente.",
+      briefReviewEn:
+        "In this chapter you studied the Futuro Simple (infinitive + -é, -ás, -á, -emos, -éis, -án) and its irregular forms (tendré, haré, diré, podré, saldré, vendré). It is used for predictions, promises and also for present probability (Estará en casa = he's probably at home). The Futuro Compuesto (habré terminado) expresses an action completed before a future moment or a guess about the recent past.",
+      flashcards: [
+        { es: "el pronóstico", pt: "a previsão", en: "the forecast", example: "El pronóstico dice que lloverá mañana." },
+        { es: "la meta", pt: "a meta", en: "the goal" },
+        { es: "el porvenir", pt: "o futuro, o porvir", en: "the future (formal)", tag: "formal" },
+        { es: "a partir de mañana", pt: "a partir de amanhã", en: "starting tomorrow", example: "A partir de mañana haré deporte.", tag: "expresión" },
+        { es: "para entonces", pt: "até lá", en: "by then", example: "Para entonces ya habré terminado.", tag: "expresión" },
+        { es: "suponer", pt: "supor", en: "to suppose", example: "Supongo que llegará tarde." },
+        { es: "adivinar", pt: "adivinhar", en: "to guess" },
+        { es: "seguramente", pt: "provavelmente, com certeza", en: "probably, surely", example: "Seguramente estará en casa." },
+        { es: "prometer", pt: "prometer", en: "to promise", example: "Te prometo que te llamaré." },
+        { es: "jubilarse", pt: "aposentar-se", en: "to retire", example: "Me jubilaré a los sesenta y cinco." },
+      ],
       quiz: [
         { id: "b1-3-q1", type: "multiple-choice", question: "'A lo mejor' pede…", options: ["indicativo", "subjuntivo", "infinitivo"], answer: "indicativo" },
         { id: "b1-3-q2", type: "fill-blank", question: "Algún día ___ (yo / ser) famoso.", answer: "seré" },
@@ -5464,6 +5512,22 @@ const B1: CourseLevel = {
         { es: "debería", pt: "deveria", en: "should", example: "Deberías descansar." },
         { es: "podría", pt: "poderia", en: "could", example: "¿Podría hablar más despacio?" },
         { es: "ojalá", pt: "tomara que", en: "I wish / hopefully", example: "Ojalá venga." },
+      ],
+      briefReview:
+        "Neste capítulo você aprendeu o Condicional (infinitivo + -ía, -ías, -ía, -íamos, -íais, -ían), com os mesmos radicais irregulares do futuro (tendría, haría, podría). Use-o para conselhos (Deberías descansar), pedidos educados (¿Podría ayudarme?), desejos (Me gustaría viajar) e hipóteses. Revise as condicionais: tipo 0 e I com si + presente, e tipo II com si + imperfecto de subjuntivo + condicional (Si tuviera tiempo, iría).",
+      briefReviewEn:
+        "In this chapter you learned the Conditional (infinitive + -ía, -ías, -ía, -íamos, -íais, -ían), with the same irregular stems as the future (tendría, haría, podría). Use it for advice (Deberías descansar), polite requests (¿Podría ayudarme?), wishes (Me gustaría viajar) and hypotheses. Review the conditionals: types 0 and I with si + present, and type II with si + imperfect subjunctive + conditional (Si tuviera tiempo, iría).",
+      flashcards: [
+        { es: "el consejo", pt: "o conselho", en: "the advice" },
+        { es: "aconsejar", pt: "aconselhar", en: "to advise", example: "Te aconsejaría descansar más." },
+        { es: "la hipótesis", pt: "a hipótese", en: "the hypothesis" },
+        { es: "imaginar", pt: "imaginar", en: "to imagine" },
+        { es: "el sueño", pt: "o sonho", en: "the dream" },
+        { es: "en tu lugar", pt: "no seu lugar", en: "if I were you", example: "En tu lugar, yo hablaría con ella.", tag: "expresión" },
+        { es: "tocar la lotería", pt: "ganhar na loteria", en: "to win the lottery", example: "Si me tocara la lotería, viajaría por el mundo.", tag: "expresión" },
+        { es: "valer la pena", pt: "valer a pena", en: "to be worth it", example: "Valdría la pena intentarlo.", tag: "expresión" },
+        { es: "¿te importaría...?", pt: "você se importaria de...?", en: "would you mind...?", example: "¿Te importaría cerrar la ventana?", tag: "expresión" },
+        { es: "con gusto", pt: "com prazer", en: "gladly", example: "Con gusto te ayudaría, pero no puedo.", tag: "expresión" },
       ],
       quiz: [
         { id: "b1-4-q1", type: "multiple-choice", question: "Tipo II usa…", options: ["Si + Futuro + Presente", "Si + Imperfecto Subj. + Condicional", "Si + Presente + Imperfecto"], answer: "Si + Imperfecto Subj. + Condicional" },
@@ -5546,6 +5610,22 @@ const B1: CourseLevel = {
         { es: "es mejor que", pt: "é melhor que", en: "it's better that", example: "Es mejor que descanses." },
         { es: "para que", pt: "para que", en: "so that", example: "Te lo digo para que lo sepas." },
       ],
+      briefReview:
+        "Neste capítulo você conheceu o Presente de Subjuntivo: verbos em -AR trocam para -e (hable) e verbos em -ER/-IR para -a (coma, viva), partindo da 1ª pessoa do presente (tengo → tenga). Ele aparece depois de expressões de desejo (Quiero que vengas), emoção (Me alegro de que estés aquí), recomendação, dúvida (No creo que sea verdad), finalidade (para que) e futuro com cuando (Cuando llegues, llámame).",
+      briefReviewEn:
+        "In this chapter you met the Present Subjunctive: -AR verbs switch to -e (hable) and -ER/-IR verbs to -a (coma, viva), starting from the present-tense yo form (tengo → tenga). It follows expressions of wishing (Quiero que vengas), emotion (Me alegro de que estés aquí), recommendation, doubt (No creo que sea verdad), purpose (para que) and future time with cuando (Cuando llegues, llámame).",
+      flashcards: [
+        { es: "esperar que", pt: "esperar que", en: "to hope that", example: "Espero que te guste." },
+        { es: "querer que", pt: "querer que", en: "to want (someone) to", example: "Quiero que vengas a la fiesta." },
+        { es: "es importante que", pt: "é importante que", en: "it's important that", example: "Es importante que descanses." },
+        { es: "alegrarse de que", pt: "alegrar-se de que", en: "to be glad that", example: "Me alegro de que estés bien." },
+        { es: "tener miedo de que", pt: "ter medo de que", en: "to be afraid that", example: "Tengo miedo de que llueva." },
+        { es: "no creer que", pt: "não acreditar que", en: "not to believe that", example: "No creo que sea verdad." },
+        { es: "es posible que", pt: "é possível que", en: "it's possible that", example: "Es posible que llegue tarde." },
+        { es: "recomendar que", pt: "recomendar que", en: "to recommend that", example: "Te recomiendo que leas este libro." },
+        { es: "antes de que", pt: "antes que", en: "before", example: "Vámonos antes de que empiece a llover." },
+        { es: "cuando + subjuntivo", pt: "quando (futuro)", en: "when (future)", example: "Cuando llegues, llámame." },
+      ],
       quiz: [
         { id: "b1-5-q1", type: "multiple-choice", question: "No creo que ___ verdad.", options: ["es", "sea", "será"], answer: "sea" },
         { id: "b1-5-q2", type: "fill-blank", question: "Ojalá ___ (hacer) buen tiempo.", answer: "haga" },
@@ -5616,6 +5696,22 @@ const B1: CourseLevel = {
         { es: "dígame", pt: "diga / pois não", en: "tell me / hello?", example: "—¿Dígame? (al teléfono)" },
         { es: "pase", pt: "entre / passe", en: "come in", example: "Pase, por favor." },
       ],
+      briefReview:
+        "Neste capítulo você praticou o Imperativo. O afirmativo de tú usa a forma de 3ª pessoa do presente (habla, come), com irregulares como ten, haz, pon, sal, ven, di, ve e sé; usted, nosotros e ustedes usam o subjuntivo (hable, hablemos, hablen). Todo imperativo negativo usa o subjuntivo (no hables). Os pronomes vão colados no afirmativo (dímelo) e antes do verbo no negativo (no me lo digas).",
+      briefReviewEn:
+        "In this chapter you practiced the Imperative. The affirmative tú form uses the third-person present (habla, come), with irregulars like ten, haz, pon, sal, ven, di, ve and sé; usted, nosotros and ustedes use the subjunctive (hable, hablemos, hablen). Every negative command uses the subjunctive (no hables). Pronouns attach to affirmative commands (dímelo) and go before the verb in negative ones (no me lo digas).",
+      flashcards: [
+        { es: "la instrucción", pt: "a instrução", en: "the instruction" },
+        { es: "la receta", pt: "a receita", en: "the recipe", example: "Sigue la receta paso a paso." },
+        { es: "mezclar", pt: "misturar", en: "to mix", example: "Mezcla la harina con los huevos." },
+        { es: "añadir", pt: "acrescentar", en: "to add", example: "Añade un poco de sal." },
+        { es: "apagar", pt: "desligar, apagar", en: "to turn off", example: "Apaga el móvil, por favor." },
+        { es: "cruzar", pt: "atravessar", en: "to cross", example: "Cruza la calle en el semáforo." },
+        { es: "rellenar", pt: "preencher", en: "to fill in", example: "Rellene el formulario, por favor." },
+        { es: "no te preocupes", pt: "não se preocupe", en: "don't worry", example: "No te preocupes, todo saldrá bien.", tag: "expresión" },
+        { es: "¡cuidado!", pt: "cuidado!", en: "watch out!", tag: "expresión" },
+        { es: "oye", pt: "escuta, ei", en: "hey, listen", example: "Oye, ¿me ayudas con esto?", tag: "coloquial" },
+      ],
       quiz: [
         { id: "b1-6-q1", type: "multiple-choice", question: "Imperativo TÚ de 'venir':", options: ["viene", "ven", "vené"], answer: "ven" },
         { id: "b1-6-q2", type: "translate", question: "Não me diga isso!", answer: "¡No me lo digas!" },
@@ -5678,6 +5774,22 @@ const B1: CourseLevel = {
         { es: "hay que", pt: "é preciso", en: "one must", example: "Hay que respetar las normas." },
         { es: "se puede", pt: "pode-se", en: "one can", example: "Se puede pagar con tarjeta." },
       ],
+      briefReview:
+        "Neste capítulo você viu três formas de tirar o foco de quem faz a ação. A passiva com SER + participio concorda com o sujeito e é mais formal (La casa fue construida en 1900). A passiva reflexiva com SE é a mais comum no dia a dia e concorda com o objeto (Se venden pisos). As construções impessoais falam de forma geral: se + verbo no singular (Se vive bien aquí), hay que + infinitivo e se puede.",
+      briefReviewEn:
+        "In this chapter you saw three ways to take the focus off who performs the action. The passive with SER + participle agrees with the subject and is more formal (La casa fue construida en 1900). The reflexive passive with SE is the most common in everyday speech and agrees with the object (Se venden pisos). Impersonal constructions speak in general terms: se + singular verb (Se vive bien aquí), hay que + infinitive and se puede.",
+      flashcards: [
+        { es: "construir", pt: "construir", en: "to build", example: "El puente fue construido en 1990." },
+        { es: "fundar", pt: "fundar", en: "to found", example: "La ciudad fue fundada por los romanos." },
+        { es: "publicar", pt: "publicar", en: "to publish", example: "La noticia fue publicada ayer." },
+        { es: "inaugurar", pt: "inaugurar", en: "to open, to inaugurate", example: "El museo fue inaugurado en mayo." },
+        { es: "se alquila", pt: "aluga-se", en: "for rent", example: "Se alquila piso en el centro.", tag: "expresión" },
+        { es: "se vende", pt: "vende-se", en: "for sale", example: "Se vende coche en buen estado.", tag: "expresión" },
+        { es: "se dice que", pt: "dizem que", en: "it is said that", example: "Se dice que va a subir el precio.", tag: "expresión" },
+        { es: "el cartel", pt: "a placa, o cartaz", en: "the sign, the poster" },
+        { es: "el anuncio", pt: "o anúncio", en: "the ad, the announcement" },
+        { es: "la norma", pt: "a regra, a norma", en: "the rule" },
+      ],
       quiz: [
         { id: "b1-7-q1", type: "multiple-choice", question: "Concordância correta:", options: ["Se vende pisos", "Se venden pisos", "Se venda pisos"], answer: "Se venden pisos" },
       ],
@@ -5722,6 +5834,22 @@ const B1: CourseLevel = {
         { es: "preguntó si", pt: "perguntou se", en: "asked if", example: "Preguntó si venías." },
         { es: "al día siguiente", pt: "no dia seguinte", en: "the next day", example: "Llegó al día siguiente." },
         { es: "el día anterior", pt: "no dia anterior", en: "the day before", example: "Lo había visto el día anterior." },
+      ],
+      briefReview:
+        "Neste capítulo você aprendeu a relatar falas com o estilo indireto. Com o verbo introdutório no passado (dijo que, preguntó si), os tempos recuam: presente → imperfecto, perfecto e indefinido → pluscuamperfecto e futuro → condicional. Em perguntas de sim/não use si (Preguntó si venía); nas demais, mantenha o interrogativo (Preguntó dónde vivía). Ajuste também pronomes e expressões de tempo e lugar: hoy → ese día, mañana → al día siguiente, aquí → allí.",
+      briefReviewEn:
+        "In this chapter you learned to report speech. With a past-tense reporting verb (dijo que, preguntó si), tenses shift back: present → imperfect, perfect and preterite → pluperfect and future → conditional. For yes/no questions use si (Preguntó si venía); otherwise keep the question word (Preguntó dónde vivía). Also adjust pronouns and expressions of time and place: hoy → ese día, mañana → al día siguiente, aquí → allí.",
+      flashcards: [
+        { es: "contar", pt: "contar", en: "to tell", example: "Me contó que estaba cansado." },
+        { es: "explicar", pt: "explicar", en: "to explain", example: "Nos explicó que no podía venir." },
+        { es: "comentar", pt: "comentar", en: "to mention, to remark" },
+        { es: "avisar", pt: "avisar", en: "to let know, to warn", example: "Me avisó de que llegaría tarde." },
+        { es: "pedir que", pt: "pedir que", en: "to ask (someone) to", example: "Me pidió que la llamara." },
+        { es: "responder", pt: "responder", en: "to answer", example: "Respondió que no lo sabía." },
+        { es: "el mensaje", pt: "a mensagem", en: "the message" },
+        { es: "el rumor", pt: "o boato", en: "the rumor" },
+        { es: "según", pt: "segundo, de acordo com", en: "according to", example: "Según Ana, la reunión es mañana." },
+        { es: "ese día", pt: "naquele dia", en: "that day", example: "Dijo que ese día no podía salir.", tag: "expresión" },
       ],
       quiz: [
         { id: "b1-8-q1", type: "multiple-choice", question: "Verbo introdutor para pergunta sim/não:", options: ["dijo que", "preguntó si", "contó que"], answer: "preguntó si" },
@@ -5784,6 +5912,22 @@ const B1: CourseLevel = {
         { es: "por consiguiente", pt: "por conseguinte", en: "therefore", example: "Llovió mucho; por consiguiente, se inundó." },
         { es: "es que", pt: "é que", en: "the thing is", example: "No puedo, es que tengo que trabajar." },
       ],
+      briefReview:
+        "Neste capítulo você organizou argumentos com conectores. Para opinar: en mi opinión, desde mi punto de vista. Para somar ideias: además, también. Para contrastar: sin embargo, no obstante, en cambio. Para conceder: aunque, a pesar de. Para concluir e mostrar consequência: por lo tanto, por consiguiente, en conclusión. Variar os conectores deixa o texto mais coeso e natural.",
+      briefReviewEn:
+        "In this chapter you organized arguments with connectors. To give an opinion: en mi opinión, desde mi punto de vista. To add ideas: además, también. To contrast: sin embargo, no obstante, en cambio. To concede: aunque, a pesar de. To conclude and show consequence: por lo tanto, por consiguiente, en conclusión. Varying connectors makes your writing more cohesive and natural.",
+      flashcards: [
+        { es: "además", pt: "além disso", en: "besides, moreover", example: "Es barato y, además, es bonito." },
+        { es: "no obstante", pt: "no entanto", en: "nevertheless", tag: "formal" },
+        { es: "en cambio", pt: "por outro lado, já", en: "on the other hand", example: "Yo prefiero el mar; en cambio, ella prefiere la montaña." },
+        { es: "aunque", pt: "embora", en: "although", example: "Aunque llueve, vamos a salir." },
+        { es: "a pesar de", pt: "apesar de", en: "despite", example: "A pesar del frío, salimos a pasear." },
+        { es: "por lo tanto", pt: "portanto", en: "therefore", example: "No estudió; por lo tanto, suspendió." },
+        { es: "ya que", pt: "já que", en: "since, because", example: "No voy, ya que estoy enfermo." },
+        { es: "es decir", pt: "ou seja", en: "that is", example: "Llegó tarde, es decir, a las diez." },
+        { es: "por un lado... por otro", pt: "por um lado... por outro", en: "on the one hand... on the other", tag: "expresión" },
+        { es: "en conclusión", pt: "em conclusão", en: "in conclusion", tag: "formal" },
+      ],
       quiz: [
         { id: "b1-9-q1", type: "multiple-choice", question: "Marcador oral muito típico de Espanha:", options: ["por ende", "pues", "asimismo"], answer: "pues" },
       ],
@@ -5838,6 +5982,22 @@ const B1: CourseLevel = {
         { es: "el cambio climático", pt: "a mudança climática", en: "climate change", example: "El cambio climático es urgente." },
         { es: "ponerse las pilas", pt: "se empenhar", en: "to get going", example: "Tienes que ponerte las pilas." },
       ],
+      briefReview:
+        "Neste capítulo você ampliou o vocabulário B1 em blocos temáticos: mídia e notícias, mundo do trabalho, tecnologia, saúde, meio ambiente, arte e cultura, além de expressões idiomáticas como ponerse las pilas. Estude as palavras em grupos e dentro de frases completas, não isoladas: isso ajuda a lembrar e a usá-las com naturalidade em conversas e textos.",
+      briefReviewEn:
+        "In this chapter you expanded your B1 vocabulary in thematic blocks: media and news, the world of work, technology, health, the environment, arts and culture, plus idioms like ponerse las pilas. Study the words in groups and inside full sentences, not in isolation: this helps you remember them and use them naturally in conversations and writing.",
+      flashcards: [
+        { es: "la prensa", pt: "a imprensa", en: "the press" },
+        { es: "el sueldo", pt: "o salário", en: "the salary" },
+        { es: "la entrevista de trabajo", pt: "a entrevista de emprego", en: "the job interview" },
+        { es: "el portátil", pt: "o notebook", en: "the laptop" },
+        { es: "descargar", pt: "baixar (arquivo)", en: "to download", example: "Descarga la aplicación gratis." },
+        { es: "el estrés", pt: "o estresse", en: "stress" },
+        { es: "la exposición", pt: "a exposição", en: "the exhibition", example: "Vimos una exposición de Frida Kahlo." },
+        { es: "el medio ambiente", pt: "o meio ambiente", en: "the environment" },
+        { es: "reciclar", pt: "reciclar", en: "to recycle", example: "En casa reciclamos el plástico." },
+        { es: "estar en las nubes", pt: "estar no mundo da lua", en: "to have one's head in the clouds", example: "Hoy estás en las nubes, ¿qué te pasa?", tag: "coloquial" },
+      ],
       quiz: [
         { id: "b1-10-q1", type: "multiple-choice", question: "'La beca' é…", options: ["a bolsa de estudos", "o banco", "a boca"], answer: "a bolsa de estudos" },
       ],
@@ -5889,6 +6049,22 @@ const B1: CourseLevel = {
         { es: "lo que", pt: "o que (neutro)", en: "what (neuter)", example: "Lo que me dijo es importante." },
         { es: "cuyo/a", pt: "cujo/cuja", en: "whose", example: "El autor cuyo libro leí." },
         { es: "donde", pt: "onde", en: "where", example: "La casa donde vivo." },
+      ],
+      briefReview:
+        "Neste capítulo você estudou os pronomes relativos. QUE é o mais usado para pessoas e coisas; QUIEN aparece com pessoas depois de preposição ou entre vírgulas; LO QUE retoma uma ideia inteira; DONDE indica lugar; CUYO/A concorda com o que é possuído (la chica cuyo padre...). Use indicativo quando o antecedente é conhecido (Busco al chico que habla ruso) e subjuntivo quando é desconhecido ou hipotético (Busco a alguien que hable ruso).",
+      briefReviewEn:
+        "In this chapter you studied relative pronouns. QUE is the most common, for people and things; QUIEN is used for people after a preposition or between commas; LO QUE refers back to a whole idea; DONDE indicates place; CUYO/A agrees with the thing possessed (la chica cuyo padre...). Use the indicative when the antecedent is known (Busco al chico que habla ruso) and the subjunctive when it is unknown or hypothetical (Busco a alguien que hable ruso).",
+      flashcards: [
+        { es: "el/la que", pt: "o/a que, com quem", en: "the one that/who", example: "La chica con la que hablé es mi prima." },
+        { es: "quien", pt: "quem", en: "who (person)", example: "Mi hermano, quien vive en Lima, viene mañana." },
+        { es: "el cual / la cual", pt: "o qual / a qual", en: "which, who (formal)", example: "La ciudad en la cual nací es pequeña.", tag: "formal" },
+        { es: "lo cual", pt: "o que (isso)", en: "which (whole idea)", example: "Llegó tarde, lo cual me molestó." },
+        { es: "el motivo por el que", pt: "o motivo pelo qual", en: "the reason why", example: "Ese es el motivo por el que me fui." },
+        { es: "la manera en que", pt: "a maneira como", en: "the way in which", example: "Me gusta la manera en que explica." },
+        { es: "el vecino", pt: "o vizinho", en: "the neighbor", example: "El vecino que vive arriba es muy simpático." },
+        { es: "el barrio", pt: "o bairro", en: "the neighborhood", example: "Este es el barrio donde crecí." },
+        { es: "el compañero de trabajo", pt: "o colega de trabalho", en: "the coworker" },
+        { es: "alguien que", pt: "alguém que", en: "someone who", example: "Busco a alguien que hable ruso." },
       ],
       quiz: [
         { id: "b1-11-q1", type: "multiple-choice", question: "¿Conoces a alguien que ___ árabe?", options: ["habla", "hable", "hablará"], answer: "hable" },
@@ -6001,6 +6177,18 @@ const B1: CourseLevel = {
         "Capítulo de revisão: você consolidou todos os tópicos do B1 e produziu três projetos práticos (texto argumentativo, diálogo gravado e apresentação oral) que integram passado, futuro, condicional, subjuntivo, conectores e vocabulário temático.",
       briefReviewEn:
         "Review chapter: you consolidated every B1 topic and produced three practical projects (argumentative text, recorded dialogue and oral presentation) integrating past, future, conditional, subjunctive, connectors and thematic vocabulary.",
+      flashcards: [
+        { es: "el argumento", pt: "o argumento", en: "the argument, the point" },
+        { es: "la conclusión", pt: "a conclusão", en: "the conclusion" },
+        { es: "el borrador", pt: "o rascunho", en: "the draft" },
+        { es: "redactar", pt: "redigir", en: "to write, to draft", example: "Redacta un texto de 200 palabras." },
+        { es: "resumir", pt: "resumir", en: "to summarize" },
+        { es: "la postura", pt: "a posição, o ponto de vista", en: "the stance" },
+        { es: "convencer", pt: "convencer", en: "to convince", example: "Intenta convencer al público." },
+        { es: "el público", pt: "o público", en: "the audience" },
+        { es: "grabar", pt: "gravar", en: "to record", example: "Grabamos el diálogo con el móvil." },
+        { es: "la presentación oral", pt: "a apresentação oral", en: "the oral presentation" },
+      ],
       quiz: [
         { id: "b1-12-q1", type: "fill-blank", question: "Si yo ___ (tener) dinero, viajaría.", answer: "tuviera" },
         { id: "b1-12-q2", type: "multiple-choice", question: "Cuando ___ a casa, llámame.", options: ["llegas", "llegues", "llegarás"], answer: "llegues" },
@@ -6233,6 +6421,18 @@ const B1: CourseLevel = {
         "Material de consulta: tabelas com todas as conjugações dos tempos do B1, lista de expressões idiomáticas, guia de variantes regionais (Espanha, México, Argentina, Colômbia, Chile) e referências para continuar estudando.",
       briefReviewEn:
         "Reference material: tables with all B1 tense conjugations, idioms list, regional varieties guide and references to keep studying.",
+      flashcards: [
+        { es: "el ordenador / la computadora", pt: "o computador", en: "the computer", example: "Ordenador na Espanha; computadora na América Latina." },
+        { es: "el coche / el carro", pt: "o carro", en: "the car", example: "Coche na Espanha; carro em boa parte da América Latina." },
+        { es: "el móvil / el celular", pt: "o celular", en: "the cell phone", example: "Móvil na Espanha; celular na América Latina." },
+        { es: "el zumo / el jugo", pt: "o suco", en: "the juice", example: "Zumo na Espanha; jugo na América Latina." },
+        { es: "las gafas / los lentes", pt: "os óculos", en: "the glasses", example: "Gafas na Espanha; lentes ou anteojos na América Latina." },
+        { es: "el piso / el departamento", pt: "o apartamento", en: "the apartment", example: "Piso na Espanha; departamento ou apartamento na América Latina." },
+        { es: "conducir / manejar", pt: "dirigir", en: "to drive", example: "Conducir na Espanha; manejar na América Latina." },
+        { es: "la patata / la papa", pt: "a batata", en: "the potato", example: "Patata na Espanha; papa na América Latina e nas Canárias." },
+        { es: "el billete / el boleto", pt: "a passagem, o bilhete", en: "the ticket", example: "Billete na Espanha; boleto em boa parte da América Latina." },
+        { es: "vosotros / ustedes", pt: "vocês", en: "you (plural)", example: "Vosotros na Espanha (informal); ustedes na América Latina para tudo." },
+      ],
       quiz: [
         { id: "b1-13-q1", type: "multiple-choice", question: "Participio irregular de 'hacer':", options: ["hacido", "hecho", "hacho"], answer: "hecho" },
         { id: "b1-13-q2", type: "multiple-choice", question: "'Vos hablás' é típico de:", options: ["Espanha", "Argentina", "México"], answer: "Argentina" },

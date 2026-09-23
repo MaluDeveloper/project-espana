@@ -153,7 +153,7 @@ const DashboardProgresso = () => {
                   </Badge>
                 </div>
                 <p className="text-xs text-muted-foreground mb-3 line-clamp-1">
-                  {pickL(course.title, course.titleEn, locale)}
+                  {t.cursos.listing.levels?.[course.level]?.title ?? course.title}
                 </p>
                 <div className="flex items-center gap-2">
                   <Progress value={info.pct} className="h-2 flex-1" />
