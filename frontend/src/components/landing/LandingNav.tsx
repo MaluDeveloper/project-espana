@@ -8,7 +8,8 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useT } from "@/i18n/LanguageContext";
 import { cn } from "@/lib/utils";
 
-const SCROLL_THRESHOLD = 40;
+// The hero renders its own header, so this sticky nav only slides in after scrolling past it.
+const SCROLL_THRESHOLD = 120;
 
 export const LandingNav = () => {
   const t = useT();
@@ -36,14 +37,13 @@ export const LandingNav = () => {
 
   return (
     <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ y: "-100%", opacity: 0 }}
+      animate={showSolid ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+      aria-hidden={!showSolid}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300",
-        showSolid
-          ? "bg-background/80 backdrop-blur-md border-b border-border/60 shadow-sm"
-          : "bg-transparent border-b border-transparent",
+        "fixed top-0 left-0 right-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border/60 shadow-sm",
+        !showSolid && "pointer-events-none",
       )}
     >
       <div className="container grid grid-cols-[1fr_auto_1fr] h-16 md:h-18 items-center gap-4">
@@ -71,19 +71,8 @@ export const LandingNav = () => {
         <div className="flex items-center justify-self-end gap-1">
           <div className="hidden md:flex items-center gap-2">
             <LanguageSwitcher light={!showSolid} />
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className={cn(
-                "transition-colors",
-                !showSolid && "text-white/90 hover:text-white hover:bg-white/10",
-              )}
-            >
-              <Link to="/login">{t.nav.entrar}</Link>
-            </Button>
             <Button asChild variant="hero" size="sm" className="shadow-card">
-              <Link to="/cadastro">{t.nav.comecarGratis}</Link>
+              <Link to="/login">{t.nav.entrar}</Link>
             </Button>
           </div>
 
@@ -126,14 +115,9 @@ export const LandingNav = () => {
                 </a>
               ))}
               <div className="h-px bg-border my-2" />
-              <Button asChild variant="ghost" size="sm" className="justify-start">
+              <Button asChild variant="hero" size="sm">
                 <Link to="/login" onClick={() => setMobileOpen(false)}>
                   {t.nav.entrar}
-                </Link>
-              </Button>
-              <Button asChild variant="hero" size="sm">
-                <Link to="/cadastro" onClick={() => setMobileOpen(false)}>
-                  {t.nav.comecarGratis}
                 </Link>
               </Button>
             </div>
