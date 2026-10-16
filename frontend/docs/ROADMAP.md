@@ -19,14 +19,15 @@
   | A1 | 1.9 | 8.7 | 13/13 | 13/13 |
   | A2 | 6.3 | 8.2 | 12/13 | 13/13 |
   | B1 ✅ | 3.2 | 6.3 | 13/13 | 13/13 |
-  | B2 | 2.4 | 3.6 | **0/13** | 13/13 |
+  | B2 ✅ | 3.3 | 5.8 | 13/13 | 13/13 |
   | C1 | 2.5 | 2.8 | **0/13** | 13/13 |
   | C2 | 3.1 | 2.5 | **0/13** | 13/13 |
 
   **Pendências concretas que saem desta auditoria:**
   - [ ] B1–C2 estão abaixo da meta de 3–5 tópicos/capítulo e 5–10 exercícios/tópico — precisam de mais tópicos e exercícios por capítulo, na mesma proporção do A2.
     - B1: exercícios ✅ — +79 exercícios com explicação PT/EN, média subiu de 3.9 para 5.4 por tópico (todos os tópicos dos caps. 1–11 com 6–9). Tópicos ✅ — +15 tópicos (caps. 1–11 agora com 3 cada; média 3.2 tópicos/capítulo e 5.6 exercícios/tópico). Quiz ✅ — +104 perguntas com explicação PT/EN, todos os 13 capítulos com 10 (antes 1–4). Léxico ✅ — +48 entradas com exemplo, todos os 13 capítulos com 8 (antes 3–6), sem repetir os flashcards. Caps. 12–13 ✅ — +28 exercícios nos tópicos de projeto/referência (todos com ≥ 5). **B1 concluído:** 3.2 tópicos/capítulo, 6.3 exercícios/tópico (mín. 5), 10 perguntas de quiz, 8 entradas de léxico, 10 flashcards e `briefReview` PT/EN em todos os 13 capítulos.
-  - [ ] Nenhum capítulo de B2, C1 ou C2 tem `flashcards` — o componente `Flashcards.tsx` fica vazio nesses níveis inteiros. (B1 ✅ — 10 flashcards por capítulo.)
+    - **B2 concluído:** +12 tópicos (caps. 1–11 agora com 3 cada) e +186 exercícios com explicação PT/EN — 3.3 tópicos/capítulo, 5.8 exercícios/tópico (mín. 5; caps. 1–11 com 6 por tópico). Todos os 13 capítulos com 10 perguntas de quiz (antes 2–4), 8 entradas de léxico (antes 4–7) e 10 flashcards (antes 0), sem repetir o léxico. `briefReview` PT/EN dos caps. 1–8 e 10 reescrito para cobrir os tópicos novos. Exercícios novos de preenchimento indicam a forma pedida (ex.: "forma em -ra") porque a correção aceita uma única resposta.
+  - [ ] Nenhum capítulo de C1 ou C2 tem `flashcards` — o componente `Flashcards.tsx` fica vazio nesses níveis inteiros. (B1 ✅ e B2 ✅ — 10 flashcards por capítulo.)
   - [x] ~~B1 tem `briefReview` só nos capítulos 12 e 13~~ — capítulos 1 a 11 preenchidos (PT/EN).
 
 ## Integração com backend real
@@ -66,6 +67,7 @@
 
 ## Concluído recentemente
 
+- [x] B2 completo: tópicos, exercícios com explicação PT/EN, quiz (10), léxico (8) e flashcards (10) em todos os 13 capítulos — mesmo padrão do B1.
 - [x] B1: `flashcards` (10 por capítulo, sem repetir o léxico) nos 13 capítulos e `briefReview`/`briefReviewEn` nos capítulos 1–11.
 - [x] `LandingPricing.tsx`/`pt.ts`/`en.ts` reescritos para Free, Mensal (R$ 89,90) e Anual (R$ 699,90).
 - [x] Hero da landing trocado por hero 3D interativo (`components/ui/orbit-delivery-hero.tsx`).
