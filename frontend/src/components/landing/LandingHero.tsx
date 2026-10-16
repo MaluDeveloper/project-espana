@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import OrbitDeliveryHero from "@/components/ui/orbit-delivery-hero";
 import { SpanishLogo } from "@/components/SpanishLogo";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useT } from "@/i18n/LanguageContext";
 
 export const LandingHero = () => {
@@ -32,12 +31,9 @@ export const LandingHero = () => {
         navLabel: t.nav.menu,
         navItems,
         headerActions: (
-          <>
-            <LanguageSwitcher />
-            <Link to="/login" className="header-cta">
-              {t.nav.entrar}
-            </Link>
-          </>
+          <Link to="/login" className="header-cta">
+            {t.nav.entrar}
+          </Link>
         ),
         eyebrow: h.eyebrow,
         title: (

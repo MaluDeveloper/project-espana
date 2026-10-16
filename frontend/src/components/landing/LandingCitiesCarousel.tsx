@@ -21,8 +21,7 @@ const STEP_PX_MOBILE = 200; // 180px card + 20px gap
 const STEP_PX_DESKTOP = 286; // 280px card + ~24px gap
 
 export const LandingCitiesCarousel = () => {
-  const { t, locale } = useLanguage();
-  const pick = (pt: string, en: string) => locale === "en" ? en : pt;
+  const { t } = useLanguage();
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [selected, setSelected] = useState<City | null>(null);
   const [manualOffset, setManualOffset] = useState(0);
@@ -174,7 +173,7 @@ export const LandingCitiesCarousel = () => {
               <div className="p-6 md:p-8 space-y-5">
                 <DialogHeader className="sr-only">
                   <DialogTitle>{selected.name}</DialogTitle>
-                  <DialogDescription>{pick(selected.about, selected.aboutEn)}</DialogDescription>
+                  <DialogDescription>{selected.about}</DialogDescription>
                 </DialogHeader>
 
                 <div>
@@ -183,7 +182,7 @@ export const LandingCitiesCarousel = () => {
                     {t.landingCities.sobreCidade}
                   </h4>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    {pick(selected.about, selected.aboutEn)}
+                    {selected.about}
                   </p>
                 </div>
 
@@ -193,7 +192,7 @@ export const LandingCitiesCarousel = () => {
                     {t.landingCities.comoSeFala}
                   </h4>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    {pick(selected.language, selected.languageEn)}
+                    {selected.language}
                   </p>
                 </div>
 
@@ -201,11 +200,11 @@ export const LandingCitiesCarousel = () => {
                   <div className="flex items-start gap-3">
                     <Quote className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-display font-bold text-lg md:text-xl text-foreground">
+                      <p lang="es" translate="no" className="font-display font-bold text-lg md:text-xl text-foreground">
                         "{selected.expression.phrase}"
                       </p>
                       <p className="text-xs md:text-sm text-muted-foreground mt-1">
-                        {pick(selected.expression.meaning, selected.expression.meaningEn)}
+                        {selected.expression.meaning}
                       </p>
                     </div>
                   </div>

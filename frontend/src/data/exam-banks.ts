@@ -10,9 +10,7 @@ import type { LevelId } from "./games";
 export interface ExamMC {
   id: string;
   question: string;
-  questionEn?: string;
   options: string[];
-  optionsEn?: string[];
   answer: string;
 }
 
@@ -20,12 +18,10 @@ export interface ExamDiscursive {
   id: string;
   /** Enunciado em português. */
   question: string;
-  questionEn?: string;
   /** Exemplo de resposta correta em espanhol. */
   example: string;
   /** Dica curta para o aluno. */
   tip: string;
-  tipEn?: string;
 }
 
 export interface ExamBank {
@@ -238,48 +234,48 @@ const B2: ExamBank = {
 // ============================================================
 const C1: ExamBank = {
   multipleChoice: [
-    { id: "c1b-mc-1", question: "Reduplicação de concessão total:", options: ["Sea como es", "Sea como sea", "Es como sea"], answer: "Sea como sea", questionEn: "Total-concession reduplication:" },
-    { id: "c1b-mc-2", question: "'De haberlo sabido…' equivale a:", options: ["Si lo sé…", "Si lo hubiera sabido…", "Si lo supiera…"], answer: "Si lo hubiera sabido…", questionEn: "'De haberlo sabido…' is equivalent to:" },
-    { id: "c1b-mc-3", question: "Particípio absoluto correto:", options: ["Terminado la reunión", "Terminada la reunión", "Terminar la reunión"], answer: "Terminada la reunión", questionEn: "Correct absolute participle:" },
-    { id: "c1b-mc-4", question: "'Sine qua non' significa:", options: ["sem dúvida", "indispensável", "porventura"], answer: "indispensável", questionEn: "'Sine qua non' means:", optionsEn: ["without a doubt", "indispensable", "perhaps"] },
-    { id: "c1b-mc-5", question: "Régimen: Me alegro ___ que vengas.", options: ["por", "de", "Ø"], answer: "de", questionEn: "Verb + preposition: Me alegro ___ que vengas." },
-    { id: "c1b-mc-6", question: "'Embarazada' significa:", options: ["envergonhada", "grávida", "atrapalhada"], answer: "grávida", questionEn: "'Embarazada' means:", optionsEn: ["embarrassed", "pregnant", "flustered"] },
-    { id: "c1b-mc-7", question: "Castelhano peninsular distingue:", options: ["/s/ e /θ/", "/s/ e /ʃ/", "/θ/ e /ʃ/"], answer: "/s/ e /θ/", questionEn: "North-central peninsular Spanish distinguishes:" },
-    { id: "c1b-mc-8", question: "'Currar' (Espanha) significa:", options: ["correr", "trabalhar", "comer"], answer: "trabalhar", questionEn: "'Currar' (Spain) means:", optionsEn: ["to run", "to work", "to eat"] },
-    { id: "c1b-mc-9", question: "'Cabe señalar que…' é típico de:", options: ["coloquial", "acadêmico (hedging)", "ironia"], answer: "acadêmico (hedging)", questionEn: "'Cabe señalar que…' is typical of:", optionsEn: ["colloquial speech", "academic writing (hedging)", "irony"] },
-    { id: "c1b-mc-10", question: "Estilo indireto livre funde:", options: ["dois personagens", "voz do narrador + consciência do personagem", "verso e prosa"], answer: "voz do narrador + consciência do personagem", questionEn: "Free indirect style merges:", optionsEn: ["two characters", "the narrator's voice + the character's consciousness", "verse and prose"] },
-    { id: "c1b-mc-11", question: "Régimen culto: Constar ___ varios capítulos.", options: ["en", "de", "con"], answer: "de", questionEn: "Formal verb + preposition: Constar ___ varios capítulos." },
-    { id: "c1b-mc-12", question: "'A fin de que' rege:", options: ["indicativo", "subjuntivo", "infinitivo"], answer: "subjuntivo", questionEn: "'A fin de que' takes:", optionsEn: ["the indicative", "the subjunctive", "the infinitive"] },
-    { id: "c1b-mc-13", question: "Conector culto de consequência:", options: ["por ende", "porque", "pues"], answer: "por ende", questionEn: "Formal connector of consequence:" },
-    { id: "c1b-mc-14", question: "Latinismo 'grosso modo' significa:", options: ["de forma exata", "aproximadamente", "literalmente"], answer: "aproximadamente", questionEn: "The Latinism 'grosso modo' means:", optionsEn: ["exactly", "roughly", "literally"] },
-    { id: "c1b-mc-15", question: "Plural culto de 'régimen':", options: ["régimens", "regímenes", "régimenes"], answer: "regímenes", questionEn: "Correct plural of 'régimen':" },
-    { id: "c1b-mc-16", question: "Pronome neutro 'lo': Lo importante es ___.", options: ["la verdad", "estudiar", "ambos servem"], answer: "ambos servem", questionEn: "Neuter 'lo': Lo importante es ___.", optionsEn: ["la verdad", "estudiar", "both work"] },
-    { id: "c1b-mc-17", question: "Expressão: 'no se hizo de rogar' significa:", options: ["recusou", "aceitou de imediato", "demorou muito"], answer: "aceitou de imediato", questionEn: "Expression: 'no se hizo de rogar' means:", optionsEn: ["refused", "accepted straight away", "took a long time"] },
-    { id: "c1b-mc-18", question: "Marcador de hipótese culta:", options: ["acaso", "tal vez", "ambos"], answer: "ambos", questionEn: "Formal hypothesis marker:", optionsEn: ["acaso", "tal vez", "both"] },
-    { id: "c1b-mc-19", question: "Gerúndio com valor causal: ___ enfermo, no asistió.", options: ["Estando", "Estado", "Habiendo"], answer: "Estando", questionEn: "Gerund with causal value: ___ enfermo, no asistió." },
-    { id: "c1b-mc-20", question: "Conector adversativo formal:", options: ["empero", "pero", "y"], answer: "empero", questionEn: "Formal adversative connector:" },
-    { id: "c1b-mc-21", question: "'Tener a bien' significa:", options: ["dignar-se a", "ter sorte", "estar bem"], answer: "dignar-se a", questionEn: "'Tener a bien' means:", optionsEn: ["to kindly agree to", "to be lucky", "to be well"] },
-    { id: "c1b-mc-22", question: "Subjuntivo dubitativo: Dudo que ___ verdad.", options: ["es", "sea", "será"], answer: "sea", questionEn: "Subjunctive of doubt: Dudo que ___ verdad." },
-    { id: "c1b-mc-23", question: "'En aras de' significa:", options: ["em prol de", "ao lado de", "contra"], answer: "em prol de", questionEn: "'En aras de' means:", optionsEn: ["for the sake of", "next to", "against"] },
-    { id: "c1b-mc-24", question: "Castiço: 'estar en sus trece' significa:", options: ["ser teimoso", "ter 13 anos", "estar com sorte"], answer: "ser teimoso", questionEn: "Traditional idiom: 'estar en sus trece' means:", optionsEn: ["to be stubborn", "to be 13 years old", "to be lucky"] },
-    { id: "c1b-mc-25", question: "Voseo é típico de:", options: ["Espanha", "Rio da Prata", "México"], answer: "Rio da Prata", questionEn: "Voseo is typical of:", optionsEn: ["Spain", "the River Plate region", "Mexico"] },
-    { id: "c1b-mc-26", question: "'Habida cuenta de' significa:", options: ["considerando", "apesar de", "sem contar"], answer: "considerando", questionEn: "'Habida cuenta de' means:", optionsEn: ["considering", "despite", "not counting"] },
-    { id: "c1b-mc-27", question: "Régimen: Carecer ___ recursos.", options: ["en", "de", "con"], answer: "de", questionEn: "Verb + preposition: Carecer ___ recursos." },
-    { id: "c1b-mc-28", question: "Lexema culto: 'menester' equivale a:", options: ["necessidade", "ofício", "ambos"], answer: "ambos", questionEn: "Learned word: 'menester' is equivalent to:", optionsEn: ["need", "trade, occupation", "both"] },
-    { id: "c1b-mc-29", question: "Estrutura ecuacional: 'Es el dinero ___ me preocupa'.", options: ["que", "lo que", "el cual"], answer: "lo que", questionEn: "Cleft sentence: 'Es el dinero ___ me preocupa'." },
-    { id: "c1b-mc-30", question: "'A ciencia cierta' significa:", options: ["com certeza absoluta", "por suposição", "talvez"], answer: "com certeza absoluta", questionEn: "'A ciencia cierta' means:", optionsEn: ["with absolute certainty", "by guesswork", "maybe"] },
+    { id: "c1b-mc-1", question: "Reduplicação de concessão total:", options: ["Sea como es", "Sea como sea", "Es como sea"], answer: "Sea como sea" },
+    { id: "c1b-mc-2", question: "'De haberlo sabido…' equivale a:", options: ["Si lo sé…", "Si lo hubiera sabido…", "Si lo supiera…"], answer: "Si lo hubiera sabido…" },
+    { id: "c1b-mc-3", question: "Particípio absoluto correto:", options: ["Terminado la reunión", "Terminada la reunión", "Terminar la reunión"], answer: "Terminada la reunión" },
+    { id: "c1b-mc-4", question: "'Sine qua non' significa:", options: ["sem dúvida", "indispensável", "porventura"], answer: "indispensável" },
+    { id: "c1b-mc-5", question: "Régimen: Me alegro ___ que vengas.", options: ["por", "de", "Ø"], answer: "de" },
+    { id: "c1b-mc-6", question: "'Embarazada' significa:", options: ["envergonhada", "grávida", "atrapalhada"], answer: "grávida" },
+    { id: "c1b-mc-7", question: "Castelhano peninsular distingue:", options: ["/s/ e /θ/", "/s/ e /ʃ/", "/θ/ e /ʃ/"], answer: "/s/ e /θ/" },
+    { id: "c1b-mc-8", question: "'Currar' (Espanha) significa:", options: ["correr", "trabalhar", "comer"], answer: "trabalhar" },
+    { id: "c1b-mc-9", question: "'Cabe señalar que…' é típico de:", options: ["coloquial", "acadêmico (hedging)", "ironia"], answer: "acadêmico (hedging)" },
+    { id: "c1b-mc-10", question: "Estilo indireto livre funde:", options: ["dois personagens", "voz do narrador + consciência do personagem", "verso e prosa"], answer: "voz do narrador + consciência do personagem" },
+    { id: "c1b-mc-11", question: "Régimen culto: Constar ___ varios capítulos.", options: ["en", "de", "con"], answer: "de" },
+    { id: "c1b-mc-12", question: "'A fin de que' rege:", options: ["indicativo", "subjuntivo", "infinitivo"], answer: "subjuntivo" },
+    { id: "c1b-mc-13", question: "Conector culto de consequência:", options: ["por ende", "porque", "pues"], answer: "por ende" },
+    { id: "c1b-mc-14", question: "Latinismo 'grosso modo' significa:", options: ["de forma exata", "aproximadamente", "literalmente"], answer: "aproximadamente" },
+    { id: "c1b-mc-15", question: "Plural culto de 'régimen':", options: ["régimens", "regímenes", "régimenes"], answer: "regímenes" },
+    { id: "c1b-mc-16", question: "Pronome neutro 'lo': Lo importante es ___.", options: ["la verdad", "estudiar", "ambos servem"], answer: "ambos servem" },
+    { id: "c1b-mc-17", question: "Expressão: 'no se hizo de rogar' significa:", options: ["recusou", "aceitou de imediato", "demorou muito"], answer: "aceitou de imediato" },
+    { id: "c1b-mc-18", question: "Marcador de hipótese culta:", options: ["acaso", "tal vez", "ambos"], answer: "ambos" },
+    { id: "c1b-mc-19", question: "Gerúndio com valor causal: ___ enfermo, no asistió.", options: ["Estando", "Estado", "Habiendo"], answer: "Estando" },
+    { id: "c1b-mc-20", question: "Conector adversativo formal:", options: ["empero", "pero", "y"], answer: "empero" },
+    { id: "c1b-mc-21", question: "'Tener a bien' significa:", options: ["dignar-se a", "ter sorte", "estar bem"], answer: "dignar-se a" },
+    { id: "c1b-mc-22", question: "Subjuntivo dubitativo: Dudo que ___ verdad.", options: ["es", "sea", "será"], answer: "sea" },
+    { id: "c1b-mc-23", question: "'En aras de' significa:", options: ["em prol de", "ao lado de", "contra"], answer: "em prol de" },
+    { id: "c1b-mc-24", question: "Castiço: 'estar en sus trece' significa:", options: ["ser teimoso", "ter 13 anos", "estar com sorte"], answer: "ser teimoso" },
+    { id: "c1b-mc-25", question: "Voseo é típico de:", options: ["Espanha", "Rio da Prata", "México"], answer: "Rio da Prata" },
+    { id: "c1b-mc-26", question: "'Habida cuenta de' significa:", options: ["considerando", "apesar de", "sem contar"], answer: "considerando" },
+    { id: "c1b-mc-27", question: "Régimen: Carecer ___ recursos.", options: ["en", "de", "con"], answer: "de" },
+    { id: "c1b-mc-28", question: "Lexema culto: 'menester' equivale a:", options: ["necessidade", "ofício", "ambos"], answer: "ambos" },
+    { id: "c1b-mc-29", question: "Estrutura ecuacional: 'Es el dinero ___ me preocupa'.", options: ["que", "lo que", "el cual"], answer: "lo que" },
+    { id: "c1b-mc-30", question: "'A ciencia cierta' significa:", options: ["com certeza absoluta", "por suposição", "talvez"], answer: "com certeza absoluta" },
   ],
   discursive: [
-    { id: "c1b-d-1", question: "Frase com reduplicação de Subjuntivo (concessão total) sobre persistência.", example: "Pase lo que pase, no me rendiré.", tip: "Estrutura: V(subj.) + lo que + V(subj.).", questionEn: "Write a sentence with a Subjunctive reduplication (total concession) about perseverance.", tipEn: "Structure: V(subj.) + lo que + V(subj.)." },
-    { id: "c1b-d-2", question: "Reescreva como Tipo III com 'De + infinitivo composto': 'Si hubiera llegado antes, lo habría visto.'", example: "De haber llegado antes, lo habría visto.", tip: "'De + haber + part.' substitui 'Si hubiera + part.'.", questionEn: "Rewrite as Type III with 'De + perfect infinitive': 'Si hubiera llegado antes, lo habría visto.'", tipEn: "'De + haber + participle' replaces 'Si hubiera + participle'." },
-    { id: "c1b-d-3", question: "Parágrafo argumentativo (3 frases) sobre cultura espanhola, com 1 latinismo, 1 conector formal e Subjuntivo.", example: "A priori, conviene señalar que la sobremesa es un rasgo identitario de la cultura española. Sin embargo, es necesario que las nuevas generaciones la preserven. De ahí que urja recuperar el ritmo pausado del castellano cotidiano.", tip: "Encaixe um latinismo (a priori, in extremis…).", questionEn: "Write an argumentative paragraph (3 sentences) about Spanish culture with 1 Latinism, 1 formal connector and the Subjunctive.", tipEn: "Fit in a Latinism (a priori, in extremis…)." },
-    { id: "c1b-d-4", question: "Abertura formal de carta acadêmica solicitando informação sobre um doutorado em Madrid.", example: "Estimado/a profesor/a: Me dirijo a usted con el fin de solicitar información acerca del programa de doctorado ofrecido por su departamento, así como los requisitos de admisión para el próximo curso académico.", tip: "Use 'me dirijo a usted con el fin de…'.", questionEn: "Write the formal opening of an academic letter requesting information about a PhD programme in Madrid.", tipEn: "Use 'me dirijo a usted con el fin de…'." },
-    { id: "c1b-d-5", question: "Use 'no andarse con rodeos' e 'llevar a cabo' em uma frase do castelhano culto.", example: "Sin andarse con rodeos, el comité decidió llevar a cabo la reforma de inmediato.", tip: "Combine expressão idiomática + colocação formal.", questionEn: "Use 'no andarse con rodeos' and 'llevar a cabo' in one sentence of educated Spanish.", tipEn: "Combine an idiom + a formal collocation." },
-    { id: "c1b-d-6", question: "Escreva uma frase com particípio absoluto + uma com gerúndio causal.", example: "Concluida la sesión, los asistentes abandonaron la sala. Estando ya cansado, decidí retirarme temprano.", tip: "Particípio absoluto vai antes da oração principal.", questionEn: "Write one sentence with an absolute participle and one with a causal gerund.", tipEn: "The absolute participle goes before the main clause." },
-    { id: "c1b-d-7", question: "Escreva um trecho jornalístico (3 frases) sobre uma reforma política, em registro culto.", example: "El Ejecutivo ha presentado un nuevo proyecto de ley que pretende modernizar la administración pública. Habida cuenta de su impacto, los grupos parlamentarios ya han anunciado enmiendas. Por ende, se prevé un debate intenso en las próximas semanas.", tip: "Use 'habida cuenta de', 'por ende', 'se prevé'.", questionEn: "Write a short news piece (3 sentences) about a political reform, in an educated register.", tipEn: "Use 'habida cuenta de', 'por ende', 'se prevé'." },
-    { id: "c1b-d-8", question: "Refaça em estilo elevado: 'No vino porque estaba cansado.'", example: "No asistió, habida cuenta del cansancio que lo aquejaba.", tip: "Substitua subordinadas causais por construções nominais cultas.", questionEn: "Rewrite in an elevated style: 'No vino porque estaba cansado.'", tipEn: "Replace causal clauses with formal noun constructions." },
-    { id: "c1b-d-9", question: "Escreva um pequeno comentário literário (3 frases) sobre 'Cien años de soledad'.", example: "Cien años de soledad constituye una de las cumbres del realismo mágico. García Márquez logra que lo extraordinario irrumpa con naturalidad en lo cotidiano. De ahí que su prosa siga fascinando a generaciones de lectores.", tip: "Use 'constituye', 'logra que + subj.', 'de ahí que + subj.'.", questionEn: "Write a short literary commentary (3 sentences) on 'Cien años de soledad'.", tipEn: "Use 'constituye', 'logra que + subj.', 'de ahí que + subj.'." },
-    { id: "c1b-d-10", question: "Construa uma definição de 'libertad' em registro filosófico (2 frases).", example: "La libertad no consiste en hacer cuanto se desea, sino en obrar conforme a la razón. En ese sentido, ser libre implica asumir la responsabilidad plena de los propios actos.", tip: "Use 'no … sino', 'en ese sentido', 'implicar'.", questionEn: "Write a definition of 'libertad' in a philosophical register (2 sentences).", tipEn: "Use 'no … sino', 'en ese sentido', 'implicar'." },
+    { id: "c1b-d-1", question: "Frase com reduplicação de Subjuntivo (concessão total) sobre persistência.", example: "Pase lo que pase, no me rendiré.", tip: "Estrutura: V(subj.) + lo que + V(subj.)." },
+    { id: "c1b-d-2", question: "Reescreva como Tipo III com 'De + infinitivo composto': 'Si hubiera llegado antes, lo habría visto.'", example: "De haber llegado antes, lo habría visto.", tip: "'De + haber + part.' substitui 'Si hubiera + part.'." },
+    { id: "c1b-d-3", question: "Parágrafo argumentativo (3 frases) sobre cultura espanhola, com 1 latinismo, 1 conector formal e Subjuntivo.", example: "A priori, conviene señalar que la sobremesa es un rasgo identitario de la cultura española. Sin embargo, es necesario que las nuevas generaciones la preserven. De ahí que urja recuperar el ritmo pausado del castellano cotidiano.", tip: "Encaixe um latinismo (a priori, in extremis…)." },
+    { id: "c1b-d-4", question: "Abertura formal de carta acadêmica solicitando informação sobre um doutorado em Madrid.", example: "Estimado/a profesor/a: Me dirijo a usted con el fin de solicitar información acerca del programa de doctorado ofrecido por su departamento, así como los requisitos de admisión para el próximo curso académico.", tip: "Use 'me dirijo a usted con el fin de…'." },
+    { id: "c1b-d-5", question: "Use 'no andarse con rodeos' e 'llevar a cabo' em uma frase do castelhano culto.", example: "Sin andarse con rodeos, el comité decidió llevar a cabo la reforma de inmediato.", tip: "Combine expressão idiomática + colocação formal." },
+    { id: "c1b-d-6", question: "Escreva uma frase com particípio absoluto + uma com gerúndio causal.", example: "Concluida la sesión, los asistentes abandonaron la sala. Estando ya cansado, decidí retirarme temprano.", tip: "Particípio absoluto vai antes da oração principal." },
+    { id: "c1b-d-7", question: "Escreva um trecho jornalístico (3 frases) sobre uma reforma política, em registro culto.", example: "El Ejecutivo ha presentado un nuevo proyecto de ley que pretende modernizar la administración pública. Habida cuenta de su impacto, los grupos parlamentarios ya han anunciado enmiendas. Por ende, se prevé un debate intenso en las próximas semanas.", tip: "Use 'habida cuenta de', 'por ende', 'se prevé'." },
+    { id: "c1b-d-8", question: "Refaça em estilo elevado: 'No vino porque estaba cansado.'", example: "No asistió, habida cuenta del cansancio que lo aquejaba.", tip: "Substitua subordinadas causais por construções nominais cultas." },
+    { id: "c1b-d-9", question: "Escreva um pequeno comentário literário (3 frases) sobre 'Cien años de soledad'.", example: "Cien años de soledad constituye una de las cumbres del realismo mágico. García Márquez logra que lo extraordinario irrumpa con naturalidad en lo cotidiano. De ahí que su prosa siga fascinando a generaciones de lectores.", tip: "Use 'constituye', 'logra que + subj.', 'de ahí que + subj.'." },
+    { id: "c1b-d-10", question: "Construa uma definição de 'libertad' em registro filosófico (2 frases).", example: "La libertad no consiste en hacer cuanto se desea, sino en obrar conforme a la razón. En ese sentido, ser libre implica asumir la responsabilidad plena de los propios actos.", tip: "Use 'no … sino', 'en ese sentido', 'implicar'." },
   ],
 };
 

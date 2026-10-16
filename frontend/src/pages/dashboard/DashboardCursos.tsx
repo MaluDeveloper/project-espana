@@ -11,7 +11,6 @@ import { useT, useLanguage } from "@/i18n/LanguageContext";
 
 const DashboardCursos = () => {
   const t = useT();
-  const { locale } = useLanguage();
   const tc = t.cursos.listing;
   return (
     <div>
@@ -126,11 +125,7 @@ const DashboardCursos = () => {
           <Award className="w-3.5 h-3.5 text-primary" /> Instituto Cervantes
         </div>
         <h2 className="font-display text-2xl md:text-3xl mb-2">
-          {locale === "en" ? (
-            <><span className="text-gradient-spain">DELE</span> {tc.deleTitulo}</>
-          ) : (
-            <>{tc.deleTitulo} <span className="text-gradient-spain">DELE</span></>
-          )}
+          {tc.deleTitulo} <span className="text-gradient-spain">DELE</span>
         </h2>
         <p className="text-muted-foreground text-base max-w-2xl">
           {tc.deleDescricao}
@@ -156,10 +151,10 @@ const DashboardCursos = () => {
               </Badge>
             </div>
             <h3 className="font-display text-xl mb-1">
-              {locale === "en" && dele.titleEn ? dele.titleEn : dele.title}
+              {dele.title}
             </h3>
             <p className="text-muted-foreground text-sm mb-4">
-              {locale === "en" && dele.descriptionEn ? dele.descriptionEn : dele.description}
+              {dele.description}
             </p>
             <Button asChild variant="spain" className="font-bold w-full sm:w-auto">
               <Link to={`/dele/${dele.id}`}>

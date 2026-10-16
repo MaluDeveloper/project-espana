@@ -62,7 +62,6 @@ const Fase = () => {
 
   const renderGame = () => {
     const props = {
-      key: retryKey,
       level: lv,
       stage: stageNum,
       onComplete: handleComplete,
@@ -70,11 +69,11 @@ const Fase = () => {
     };
     switch (cat.id) {
       case "memoria":
-        return <MemoryGame {...props} />;
+        return <MemoryGame key={retryKey} {...props} />;
       case "caza-palabras":
-        return <WordSearchGame {...props} />;
+        return <WordSearchGame key={retryKey} {...props} />;
       case "lacunas":
-        return <GapsGame {...props} />;
+        return <GapsGame key={retryKey} {...props} />;
       default:
         return null;
     }

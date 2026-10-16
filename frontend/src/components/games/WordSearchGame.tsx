@@ -16,7 +16,7 @@ interface WordSearchGameProps {
 const cellKey = (r: number, c: number) => `${r}-${c}`;
 
 export const WordSearchGame = ({ level, stage, onComplete, onProgress }: WordSearchGameProps) => {
-  const { locale, t } = useLanguage();
+  const { t } = useLanguage();
   const data = useMemo(() => buildWordSearchStage(level, stage), [level, stage]);
   const [found, setFound] = useState<Set<string>>(new Set());
   const [selecting, setSelecting] = useState<[number, number][]>([]);
@@ -92,7 +92,7 @@ export const WordSearchGame = ({ level, stage, onComplete, onProgress }: WordSea
   });
 
   return (
-    <div className="grid lg:grid-cols-[1fr_220px] gap-6 items-start">
+    <div translate="no" className="grid lg:grid-cols-[1fr_220px] gap-6 items-start">
       <div
         ref={wrapRef}
         className={cn(
@@ -157,7 +157,7 @@ export const WordSearchGame = ({ level, stage, onComplete, onProgress }: WordSea
         <ul className="space-y-2">
           {data.words.map((w) => {
             const done = found.has(w.word);
-            const tr = locale === "en" ? w.en : w.pt;
+            const tr = w.pt;
             return (
               <motion.li
                 key={w.word}

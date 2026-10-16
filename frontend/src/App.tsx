@@ -28,7 +28,6 @@ import Prueba from "./pages/Prueba";
 import DeleDetail from "./pages/DeleDetail";
 import NotFound from "./pages/NotFound.tsx";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { LanguageProvider } from "@/i18n/LanguageContext";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 
@@ -58,7 +57,6 @@ const App = () => {
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <LanguageProvider>
 
         <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <ScrollToTop />
@@ -94,7 +92,6 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-      </LanguageProvider>
     </TooltipProvider>
   </QueryClientProvider>
   </ThemeProvider>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { BookOpen, ArrowLeft, ArrowRight, CheckCircle2, Lock, Trophy, FileText } from "lucide-react";
-import { getCourseLevel, pickL } from "@/data/courses";
+import { getCourseLevel } from "@/data/courses";
 import {
   getChapterProgress,
   getExam,
@@ -23,7 +23,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const NivelCurso = () => {
   const { level } = useParams<{ level: string }>();
   const course = level ? getCourseLevel(level as LevelId) : undefined;
-  const { locale, t } = useLanguage();
+  const { t } = useLanguage();
   const tn = t.cursos.nivel;
   const tc = t.cursos.listing;
 
@@ -79,7 +79,7 @@ const NivelCurso = () => {
               <div className="grid grid-cols-[1fr_auto_auto] gap-3 sm:gap-4 items-center">
                 <div className="min-w-0">
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <h3 className="font-display text-lg sm:text-xl truncate">{pickL(ch.title, ch.titleEn, locale)}</h3>
+                    <h3 className="font-display text-lg sm:text-xl truncate">{ch.title}</h3>
                     {fully && (
                       <Badge className="bg-success text-success-foreground gap-1">
                         <CheckCircle2 className="w-3 h-3" /> Concluído
@@ -88,7 +88,7 @@ const NivelCurso = () => {
                     {completed && !fully && <CheckCircle2 className="w-5 h-5 text-success shrink-0" />}
                     {!unlocked && <Lock className="w-4 h-4 text-muted-foreground shrink-0" />}
                   </div>
-                  <p className="text-sm text-muted-foreground mb-2 line-clamp-2">{pickL(ch.summary, ch.summaryEn, locale)}</p>
+                  <p className="text-sm text-muted-foreground mb-2 line-clamp-2">{ch.summary}</p>
                   {unlocked ? (
                     <div className="flex items-center gap-2">
                       <Progress value={pct} className="h-1.5 flex-1 max-w-xs" />

@@ -4,31 +4,26 @@ import { ArrowLeft, Award, Clock, GraduationCap, Lightbulb, ScrollText } from "l
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getDeleCourse, type DeleBlock } from "@/data/dele";
-import { useLanguage } from "@/i18n/LanguageContext";
 
-const pick = (pt: string, en: string | undefined, locale: "pt" | "en") =>
-  locale === "en" && en ? en : pt;
-const pickArr = (pt: string[], en: string[] | undefined, locale: "pt" | "en") =>
-  locale === "en" && en && en.length === pt.length ? en : pt;
 
-const renderBlock = (b: DeleBlock, i: number, locale: "pt" | "en") => {
+const renderBlock = (b: DeleBlock, i: number) => {
   switch (b.kind) {
     case "heading":
       return (
         <h3 key={i} className="font-display text-xl mt-6 mb-2">
-          {pick(b.text, b.textEn, locale)}
+          {b.text}
         </h3>
       );
     case "paragraph":
       return (
         <p key={i} className="text-foreground/90 leading-relaxed mb-3">
-          {pick(b.text, b.textEn, locale)}
+          {b.text}
         </p>
       );
     case "list":
       return (
         <ul key={i} className="space-y-1.5 mb-4 list-disc pl-5 text-foreground/90">
-          {pickArr(b.items, b.itemsEn, locale).map((it, idx) => (
+          {b.items.map((it, idx) => (
             <li key={idx}>{it}</li>
           ))}
         </ul>
@@ -40,7 +35,7 @@ const renderBlock = (b: DeleBlock, i: number, locale: "pt" | "en") => {
           className="my-4 p-4 rounded-2xl bg-secondary/20 border border-secondary/40 flex gap-3"
         >
           <Lightbulb className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-          <p className="text-sm text-foreground/90">{pick(b.text, b.textEn, locale)}</p>
+          <p className="text-sm text-foreground/90">{b.text}</p>
         </div>
       );
     case "table":
@@ -49,7 +44,7 @@ const renderBlock = (b: DeleBlock, i: number, locale: "pt" | "en") => {
           <table className="w-full text-sm">
             <thead className="bg-muted/50">
               <tr>
-                {pickArr(b.headers, b.headersEn, locale).map((h, idx) => (
+                {b.headers.map((h, idx) => (
                   <th key={idx} className="text-left p-3 font-bold">
                     {h}
                   </th>
@@ -76,7 +71,6 @@ const renderBlock = (b: DeleBlock, i: number, locale: "pt" | "en") => {
 const DeleDetail = () => {
   const { id } = useParams<{ id: string }>();
   const course = id ? getDeleCourse(id) : undefined;
-  const { locale } = useLanguage();
 
   if (!course) return <Navigate to="/dashboard/cursos" replace />;
 
@@ -109,10 +103,10 @@ const DeleDetail = () => {
           </Badge>
         </div>
         <h1 className="font-display text-3xl md:text-4xl mb-2">
-          {pick(course.title, course.titleEn, locale)}
+          {course.title}
         </h1>
         <p className="text-muted-foreground text-lg max-w-2xl">
-          {pick(course.description, course.descriptionEn, locale)}
+          {course.description}
         </p>
       </motion.div>
 
@@ -126,10 +120,10 @@ const DeleDetail = () => {
           >
             <h2 className="font-display text-2xl mb-4 flex items-center gap-2">
               <ScrollText className="w-5 h-5 text-primary" />
-              {pick(section.title, section.titleEn, locale)}
+              {section.title}
             </h2>
             <div className="prose-content">
-              {section.blocks.map((b, i) => renderBlock(b, i, locale))}
+              {section.blocks.map((b, i) => renderBlock(b, i))}
             </div>
           </motion.section>
         ))}

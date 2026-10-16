@@ -229,12 +229,12 @@ export const getStreak = (): number => {
   return streak;
 };
 
-export const getRecommendedChapter = (): { level: LevelId; chapterId: string; title: string; titleEn?: string } | undefined => {
+export const getRecommendedChapter = (): { level: LevelId; chapterId: string; title: string } | undefined => {
   for (const course of COURSE) {
     if (!isLevelUnlocked(course.level)) continue;
     for (const ch of course.chapters) {
       if (!isChapterCompleted(course.level, ch.id)) {
-        return { level: course.level, chapterId: ch.id, title: ch.title, titleEn: ch.titleEn };
+        return { level: course.level, chapterId: ch.id, title: ch.title };
       }
     }
   }

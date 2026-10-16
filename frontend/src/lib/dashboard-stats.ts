@@ -94,7 +94,6 @@ export interface QuizHistoryItem {
   level: LevelId;
   chapterId: string;
   chapterTitle: string;
-  chapterTitleEn?: string;
   score: number;
   total: number;
   takenAt: number;
@@ -113,7 +112,6 @@ export const getQuizHistory = (limit = 10): QuizHistoryItem[] => {
         level: course.level,
         chapterId,
         chapterTitle: chapter.title,
-        chapterTitleEn: chapter.titleEn,
         score: quiz.score,
         total: quiz.total,
         takenAt: quiz.takenAt,

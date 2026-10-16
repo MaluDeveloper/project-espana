@@ -46,7 +46,7 @@ frontend/src/
 │   └── landing/            # todas as seções da landing (hero, preços, depoimentos...)
 ├── data/                  # courses.ts, games.ts, cities.ts, dele.ts, exam-banks.ts
 ├── lib/                   # course-progress.ts, dashboard-stats.ts, progress.ts, stage-builders.ts, preferences.ts, utils.ts
-├── i18n/                  # LanguageContext, locales/pt.ts, locales/en.ts
+├── i18n/                  # LanguageContext (useT/useLanguage), locales/pt.ts
 └── hooks/
 ```
 
@@ -63,8 +63,7 @@ ErrorBoundary
  → ThemeProvider (forcedTheme="light")
    → QueryClientProvider (TanStack Query — sem fetch remoto ainda)
      → TooltipProvider
-       → LanguageProvider (i18n pt/en)
-         → BrowserRouter
+       → BrowserRouter
 ```
 
 **Rotas públicas:**
@@ -106,7 +105,7 @@ ErrorBoundary
 - **Progresso de jogos** — `src/lib/progress.ts`, chave `spanish-ai-progress-v1`. Formato: `{ [catId]: { [levelId]: { [stage]: { stars, xp, completedAt } } } }`.
 - **Agregação do dashboard** — `src/lib/dashboard-stats.ts` combina os dois anteriores e adiciona missões diárias, 8 conquistas, XP total (`Math.floor(XP/100)+1` = nível do usuário), atividade semanal e heartbeat real de tempo de estudo (`spanish-ai-study-time-v1`, via `registerStudyHeartbeat()` a cada 30s enquanto a aba está visível — ver `Capitulo.tsx`).
 - **Jogos** — `src/lib/stage-builders.ts` gera proceduralmente o conteúdo dos três jogos implementados (Memória, Lacunas/`GapsGame`, Caça-palavras/`WordSearchGame`); os demais aparecem como "em breve" em `src/data/games.ts`.
-- **i18n** — `src/i18n/` suporta só `pt` e `en`, detectado por `navigator.language` ou `localStorage["spanish-ai-locale"]`. `useT()`/`useLanguage()`; conteúdo bilíngue usa `pickL(pt, en, locale)`/`pickLArr(...)`.
+- **Textos da interface** — `src/i18n/locales/pt.ts` centraliza todas as strings da UI; componentes leem via `useT()`/`useLanguage().t` (sem provider, sem estado). O site é só em português — não há detecção de idioma nem seletor (ver §8).
 
 ## 6. Regras de negócio implementadas hoje no cliente
 
@@ -134,6 +133,7 @@ Hoje todas calculadas em `src/lib/`; o roadmap do backend move este cálculo par
 
 ## 8. Decisões intencionais
 
+- **Site só em português → espanhol** — o lançamento é focado no Brasil (preços em R$, conteúdo pensado para lusófonos: falsos amigos, erros típicos de brasileiros). Não há inglês: o seletor de idioma, a detecção por `navigator.language`, o `en.ts` e todos os campos `*En` dos dados foram removidos (o último estado bilíngue está no commit `38fce73`, caso um dia valha recuperar). `<html lang="pt-BR">`; o conteúdo em espanhol e as áreas de exercício/jogo levam `translate="no"` (e `lang="es"` quando são só espanhol) para o tradutor automático do navegador não estragá-los.
 - **Dark mode desativado** (`forcedTheme="light"` em `App.tsx`) — consistência visual da landing page, não esquecimento.
 - **Áudio via Web Speech API nativa** (`AudioButton.tsx`) — placeholder até existir áudio gravado real; comportamento inconsistente entre browsers é o trade-off conhecido (Firefox em particular).
 - **Variante do espanhol: base peninsular (Espanha), com notas das variantes latino-americanas** — vale para todo o conteúdo de `data/courses.ts` (A1 → C2) e deve ser seguido ao criar conteúdo novo:

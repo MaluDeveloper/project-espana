@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, ArrowRight, CheckCircle2, XCircle, Trophy, RefreshCw, Sparkles } from "lucide-react";
-import { getCourseLevel, pickL, pickLArr, PASS_THRESHOLD } from "@/data/courses";
+import { getCourseLevel, PASS_THRESHOLD } from "@/data/courses";
 import { EXAM_BANKS, type ExamMC, type ExamDiscursive } from "@/data/exam-banks";
 import { saveExam } from "@/lib/course-progress";
 import type { LevelId } from "@/data/games";
@@ -78,7 +78,7 @@ interface FinishedResult {
 const Prueba = () => {
   const { level } = useParams<{ level: string }>();
   const navigate = useNavigate();
-  const { locale, t } = useLanguage();
+  const { t } = useLanguage();
   const tp = t.cursos.prueba;
   const course = level ? getCourseLevel(level as LevelId) : undefined;
 
@@ -116,14 +116,6 @@ const Prueba = () => {
   if (!course) return <Navigate to="/cursos" replace />;
   if (!draw) return <Navigate to="/cursos" replace />;
 
-  // MC options are stored in the original language; show them localized by index.
-  const mcOptions = (q: ExamMC) => pickLArr(q.options, q.optionsEn, locale);
-  const showOption = (q: ExamMC, value: string) => {
-    const i = q.options.indexOf(value);
-    return i >= 0 ? mcOptions(q)[i] : value;
-  };
-  const discQuestion = (q: ExamDiscursive) => pickL(q.question, q.questionEn, locale);
-  const discTip = (q: ExamDiscursive) => pickL(q.tip, q.tipEn, locale);
 
   const total = allQuestions.length;
   const currentItem = allQuestions[idx];
@@ -198,22 +190,18 @@ const Prueba = () => {
           <Progress value={(idx / total) * 100} className="h-2 mb-8" />
 
           <div className="bg-card rounded-3xl p-6 md:p-8 border border-border shadow-card">
-            <p className="font-display text-xl md:text-2xl mb-6">
-              {currentItem.kind === "mc"
-                ? pickL(currentItem.q.question, currentItem.q.questionEn, locale)
-                : discQuestion(currentItem.q)}
-            </p>
+            <p translate="no" className="font-display text-xl md:text-2xl mb-6">{currentItem.q.question}</p>
 
             {currentItem.kind === "mc" ? (
-              <div className="grid gap-2">
-                {currentItem.q.options.map((opt, i) => (
+              <div translate="no" className="grid gap-2">
+                {currentItem.q.options.map((opt) => (
                   <Button
                     key={opt}
                     variant={current === opt ? "spain" : "outline"}
                     onClick={() => setCurrent(opt)}
                     className="justify-start text-left h-auto py-3 whitespace-normal"
                   >
-                    {mcOptions(currentItem.q)[i]}
+                    {opt}
                   </Button>
                 ))}
               </div>
@@ -226,7 +214,7 @@ const Prueba = () => {
                   className="min-h-32 text-base"
                   autoFocus
                 />
-                <p className="text-xs text-muted-foreground">💡 {discTip(currentItem.q)}</p>
+                <p className="text-xs text-muted-foreground">💡 {currentItem.q.tip}</p>
               </div>
             )}
 
@@ -290,14 +278,14 @@ const Prueba = () => {
                     )}
                     <div className="flex-1">
                       <p className="font-medium">
-                        {i + 1}. {pickL(q.question, q.questionEn, locale)}
+                        {i + 1}. {q.question}
                       </p>
                       <p className="mt-1 text-xs">
-                        {tp.suaResposta} <span className="font-semibold">{userAns ? showOption(q, userAns) : "—"}</span>
+                        {tp.suaResposta} <span className="font-semibold">{userAns || "—"}</span>
                       </p>
                       {!ok && (
                         <p className="text-xs text-muted-foreground">
-                          {tp.respostaCorreta} <span className="font-semibold text-foreground">{showOption(q, q.answer)}</span>
+                          {tp.respostaCorreta} <span className="font-semibold text-foreground">{q.answer}</span>
                         </p>
                       )}
                     </div>
@@ -314,7 +302,7 @@ const Prueba = () => {
               {draw.discursive.map((q, i) => (
                 <li key={q.id} className="rounded-2xl border border-border p-4">
                   <p className="font-medium mb-3">
-                    {i + 1}. {discQuestion(q)}
+                    {i + 1}. {q.question}
                   </p>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="rounded-xl bg-muted/40 p-3">
@@ -323,8 +311,8 @@ const Prueba = () => {
                     </div>
                     <div className="rounded-xl bg-primary/5 border border-primary/20 p-3">
                       <p className="text-xs uppercase tracking-wide text-primary mb-1">{tp.exemploCorreto}</p>
-                      <p className="text-sm whitespace-pre-wrap">{q.example}</p>
-                      <p className="text-xs text-muted-foreground mt-2">💡 {discTip(q)}</p>
+                      <p lang="es" translate="no" className="text-sm whitespace-pre-wrap">{q.example}</p>
+                      <p className="text-xs text-muted-foreground mt-2">💡 {q.tip}</p>
                     </div>
                   </div>
                 </li>

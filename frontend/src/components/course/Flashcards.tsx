@@ -10,7 +10,6 @@ import { getShowTranslation } from "@/lib/preferences";
 
 interface FlashcardsProps {
   entries: LexiconEntry[];
-  locale: "pt" | "en";
   labels: {
     front: string;
     back: string;
@@ -23,7 +22,7 @@ interface FlashcardsProps {
   };
 }
 
-export const Flashcards = ({ entries, locale, labels }: FlashcardsProps) => {
+export const Flashcards = ({ entries, labels }: FlashcardsProps) => {
   const initial = useMemo(() => entries.map((_, i) => i), [entries]);
   const [queue, setQueue] = useState<number[]>(initial);
   const [flipped, setFlipped] = useState(false);
@@ -94,7 +93,7 @@ export const Flashcards = ({ entries, locale, labels }: FlashcardsProps) => {
             {!flipped ? (
               <>
                 <div className="text-xs font-bold uppercase tracking-wider text-primary mb-3">{labels.front}</div>
-                <div className="font-display text-3xl md:text-4xl mb-2">{card.es}</div>
+                <div lang="es" translate="no" className="font-display text-3xl md:text-4xl mb-2">{card.es}</div>
                 <div className="flex items-center gap-1 mt-2" onClick={(e) => e.stopPropagation()}>
                   <AudioButton text={card.es} />
                   <AudioButton text={card.es} slow label="0.6×" />
@@ -106,7 +105,7 @@ export const Flashcards = ({ entries, locale, labels }: FlashcardsProps) => {
                 <div className="text-xs font-bold uppercase tracking-wider text-secondary-foreground mb-3">{labels.back}</div>
                 {showTranslation ? (
                   <div className="font-display text-2xl md:text-3xl mb-2">
-                    {locale === "en" && card.en ? card.en : card.pt}
+                    {card.pt}
                   </div>
                 ) : (
                   <div className="font-display text-2xl md:text-3xl mb-2 text-muted-foreground italic">

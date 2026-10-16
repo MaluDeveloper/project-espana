@@ -49,7 +49,6 @@ export const makeRandom = (seed: string) => mulberry32(seedFromString(seed));
 // ─────────────────────────────────────────────────────────────
 export interface MemoryStage {
   theme: string;
-  themeEn: string;
   level: LevelId;
   pairs: VocabPair[];
 }
@@ -65,7 +64,7 @@ export const buildMemoryStage = (level: LevelId, stage: number): MemoryStage => 
   const pool = pools[Math.floor(rand() * pools.length)];
   const size = level === "A1" ? 6 : level === "A2" ? 6 : level === "B1" ? 7 : 8;
   const pairs = shuffle(pool.words, rand).slice(0, size);
-  return { theme: pool.theme, themeEn: pool.themeEn ?? pool.theme, level, pairs };
+  return { theme: pool.theme, level, pairs };
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -73,11 +72,10 @@ export const buildMemoryStage = (level: LevelId, stage: number): MemoryStage => 
 // ─────────────────────────────────────────────────────────────
 export interface WordSearchStage {
   theme: string;
-  themeEn: string;
   level: LevelId;
   size: number;
   grid: string[][];
-  words: { word: string; pt: string; en: string; cells: [number, number][] }[];
+  words: { word: string; pt: string; cells: [number, number][] }[];
 }
 
 const DIRS: [number, number][] = [
@@ -147,14 +145,14 @@ export const buildWordSearchStage = (level: LevelId, stage: number): WordSearchS
   const placed: WordSearchStage["words"] = [];
   for (const w of candidates) {
     const cells = tryPlace(grid, w.normalized, rand);
-    if (cells) placed.push({ word: w.normalized, pt: w.pt, en: w.en, cells });
+    if (cells) placed.push({ word: w.normalized, pt: w.pt, cells });
   }
   for (let r = 0; r < size; r++) {
     for (let c = 0; c < size; c++) {
       if (!grid[r][c]) grid[r][c] = ALPHABET[Math.floor(rand() * ALPHABET.length)];
     }
   }
-  return { theme: pool.theme, themeEn: pool.themeEn ?? pool.theme, level, size, grid, words: placed };
+  return { theme: pool.theme, level, size, grid, words: placed };
 };
 
 // ─────────────────────────────────────────────────────────────

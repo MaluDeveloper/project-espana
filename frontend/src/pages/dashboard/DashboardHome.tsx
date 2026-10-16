@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { GAME_CATEGORIES } from "@/data/games";
 import { useT, useLanguage } from "@/i18n/LanguageContext";
-import { COURSE, pickL } from "@/data/courses";
+import { COURSE } from "@/data/courses";
 import {
   getLevelCompletionPercent,
   getLevelStats,
@@ -96,7 +96,6 @@ const MISSION_ICONS = {
 const DashboardHome = () => {
   const t = useT();
   const td = t.dashboard;
-  const { locale } = useLanguage();
   const co = td.cursoOverview;
 
   // Identifica nível atual (último com progresso > 0, ou A1 por padrão)
@@ -301,7 +300,7 @@ const DashboardHome = () => {
             <div className="min-w-0">
               <div className="text-xs font-bold uppercase tracking-wider opacity-90 mb-0.5">{co.proxRecomendado}</div>
               <div className="font-display text-lg truncate">
-                {recommended.level} · {pickL(recommended.title, recommended.titleEn, locale)}
+                {recommended.level} · {recommended.title}
               </div>
             </div>
             <Button asChild variant="secondary" size="sm" className="font-bold shrink-0">

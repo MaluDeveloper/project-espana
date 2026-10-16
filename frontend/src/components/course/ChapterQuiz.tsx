@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { CheckCircle2, XCircle, Trophy, RotateCcw, Sparkles } from "lucide-react";
 import type { Exercise } from "@/data/courses";
-import { pickL, pickLArr } from "@/data/courses";
 import type { LevelId } from "@/data/games";
 import { saveChapterQuiz, getChapterQuiz } from "@/lib/course-progress";
 import { cn, normalizeAnswer } from "@/lib/utils";
@@ -15,7 +14,6 @@ interface ChapterQuizProps {
   level: LevelId;
   chapterId: string;
   questions: Exercise[];
-  locale: "pt" | "en";
   labels: {
     title: string;
     subtitle: string;
@@ -39,7 +37,7 @@ interface ChapterQuizProps {
 
 const shuffle = <T,>(arr: T[]) => [...arr].sort(() => Math.random() - 0.5);
 
-export const ChapterQuiz = ({ level, chapterId, questions, locale, labels }: ChapterQuizProps) => {
+export const ChapterQuiz = ({ level, chapterId, questions, labels }: ChapterQuizProps) => {
   const pool = useMemo(() => shuffle(questions), [questions]);
   const [idx, setIdx] = useState(0);
   const [answer, setAnswer] = useState("");
@@ -94,12 +92,10 @@ export const ChapterQuiz = ({ level, chapterId, questions, locale, labels }: Cha
   }
 
   const current = pool[idx];
-  const questionText = pickL(current.question, current.questionEn, locale);
-  const opts = current.options ? pickLArr(current.options, current.optionsEn, locale) : undefined;
-  const explanation = current.explanation ? pickL(current.explanation, current.explanationEn, locale) : undefined;
-  // Show the correct option in the UI language (options are localized by index).
-  const answerIdx = current.options?.indexOf(current.answer) ?? -1;
-  const displayAnswer = opts && answerIdx >= 0 ? opts[answerIdx] : current.answer;
+  const questionText = current.question;
+  const opts = current.options;
+  const explanation = current.explanation;
+  const displayAnswer = current.answer;
   const progressPct = Math.round(((idx + (feedback !== "idle" ? 1 : 0)) / pool.length) * 100);
 
   const check = () => {
@@ -137,10 +133,10 @@ export const ChapterQuiz = ({ level, chapterId, questions, locale, labels }: Cha
       </div>
 
       <div className="p-5 rounded-2xl bg-card border border-border">
-        <p className="font-medium text-lg mb-4">{questionText}</p>
+        <p translate="no" className="font-medium text-lg mb-4">{questionText}</p>
 
         {current.type === "multiple-choice" && opts ? (
-          <div className="grid sm:grid-cols-3 gap-2">
+          <div translate="no" className="grid sm:grid-cols-3 gap-2">
             {opts.map((opt, i) => {
               const real = current.options![i];
               return (

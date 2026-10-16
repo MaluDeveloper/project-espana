@@ -13,7 +13,6 @@ export const pt = {
     entrar: "Entrar",
     comecarGratis: "Começar grátis",
     menu: "Menu",
-    idioma: "Idioma",
   },
 
   // ============= HEADER (app autenticado) =============
@@ -573,7 +572,6 @@ export const pt = {
     config: {
       titulo: "Configurações",
       subtitulo: "Personalize sua experiência.",
-      idioma: "Idioma da interface",
       notificacoes: "Notificações",
       notificacoesSub: "Receba lembretes diários para manter sua sequência",
       som: "Sons e efeitos",

@@ -69,7 +69,7 @@ export const GapsGame = ({ level, stage, onComplete, onProgress }: GapsGameProps
   const isCorrect = picked === current.answer;
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div translate="no" className="max-w-2xl mx-auto">
       <div className="bg-card rounded-3xl border border-border shadow-card p-6 md:p-10">
         <div className="text-xs uppercase tracking-wider font-bold text-primary mb-2">
           {t.jogos.gaps.fraseFmt(index + 1, data.sentences.length)}

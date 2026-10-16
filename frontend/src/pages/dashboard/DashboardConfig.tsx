@@ -12,13 +12,11 @@ import {
 import {
   Bell,
   Volume2,
-  Languages,
   Clock,
   Target,
   Sparkles,
   Eye,
 } from "lucide-react";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useT } from "@/i18n/LanguageContext";
 import {
   getNotifications,
@@ -90,7 +88,7 @@ const DashboardConfig = () => {
         <p className="text-muted-foreground text-base md:text-lg">{v.subtitulo}</p>
       </motion.div>
 
-      {/* Idioma + Notificações + Sons */}
+      {/* Notificações + Sons */}
       <motion.section
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -98,9 +96,6 @@ const DashboardConfig = () => {
         className="bg-card rounded-3xl p-6 md:p-7 border border-border shadow-card space-y-3"
       >
         <h2 className="font-display text-xl mb-2">{v.prefGerais}</h2>
-        <Row icon={Languages} title={v.idioma}>
-          <LanguageSwitcher />
-        </Row>
         <Row icon={Bell} title={v.notificacoes} sub={v.notificacoesSub}>
           <Switch
             checked={notif}

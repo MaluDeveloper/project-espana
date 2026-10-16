@@ -5,7 +5,7 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, Clock, TrendingUp, CheckCircle2, Lock, ArrowRight, History } from "lucide-react";
 import { useT, useLanguage } from "@/i18n/LanguageContext";
-import { COURSE, pickL } from "@/data/courses";
+import { COURSE } from "@/data/courses";
 import { getLevelCompletionPercent, isLevelUnlocked } from "@/lib/course-progress";
 import {
   getOverallCompletionPercent,
@@ -20,7 +20,6 @@ import {
 const DashboardProgresso = () => {
   const t = useT();
   const v = t.dashboardViews.progresso;
-  const { locale } = useLanguage();
 
   const overall = useMemo(() => getOverallCompletionPercent(), []);
   const studyMin = useMemo(() => getTotalStudyMinutes(), []);
@@ -48,7 +47,7 @@ const DashboardProgresso = () => {
   };
 
   const formatDate = (ts: number) =>
-    new Date(ts).toLocaleDateString(locale === "en" ? "en-US" : "pt-BR", {
+    new Date(ts).toLocaleDateString("pt-BR", {
       day: "2-digit",
       month: "short",
       year: "numeric",
@@ -203,7 +202,7 @@ const DashboardProgresso = () => {
                     to={`/cursos/${q.level}/capitulo/${q.chapterId}`}
                     className="flex-1 min-w-0 hover:text-primary"
                   >
-                    <p className="font-semibold text-sm truncate">{pickL(q.chapterTitle, q.chapterTitleEn, locale)}</p>
+                    <p className="font-semibold text-sm truncate">{q.chapterTitle}</p>
                     <p className="text-xs text-muted-foreground">{formatDate(q.takenAt)}</p>
                   </Link>
                   <div className="text-right shrink-0">

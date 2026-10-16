@@ -4,7 +4,6 @@ import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-
 import { Menu, X } from "lucide-react";
 import { SpanishLogo } from "@/components/SpanishLogo";
 import { Button } from "@/components/ui/button";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useT } from "@/i18n/LanguageContext";
 import { cn } from "@/lib/utils";
 
@@ -70,14 +69,12 @@ export const LandingNav = () => {
 
         <div className="flex items-center justify-self-end gap-1">
           <div className="hidden md:flex items-center gap-2">
-            <LanguageSwitcher light={!showSolid} />
             <Button asChild variant="hero" size="sm" className="shadow-card">
               <Link to="/login">{t.nav.entrar}</Link>
             </Button>
           </div>
 
           <div className="md:hidden flex items-center gap-1">
-            <LanguageSwitcher light={!showSolid} />
             <button
               className={cn(
                 "p-2 rounded-lg transition-colors",

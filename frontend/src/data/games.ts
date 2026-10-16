@@ -137,12 +137,10 @@ export const getCategory = (id: string): GameCategory | undefined =>
 export interface VocabPair {
   es: string;
   pt: string;
-  en: string;
 }
 
 export interface ThemePool {
   theme: string;
-  themeEn?: string;
   level: LevelId;
   words: VocabPair[];
 }
@@ -150,134 +148,120 @@ export interface ThemePool {
 export const VOCAB_POOLS: ThemePool[] = [
   {
     theme: "El mercado",
-    themeEn: "The market",
     level: "A1",
     words: [
-      { es: "manzana", pt: "maçã", en: "apple" },
-      { es: "pan", pt: "pão", en: "bread" },
-      { es: "queso", pt: "queijo", en: "cheese" },
-      { es: "leche", pt: "leite", en: "milk" },
-      { es: "tomate", pt: "tomate", en: "tomato" },
-      { es: "huevo", pt: "ovo", en: "egg" },
-      { es: "agua", pt: "água", en: "water" },
-      { es: "carne", pt: "carne", en: "meat" },
+      { es: "manzana", pt: "maçã" },
+      { es: "pan", pt: "pão" },
+      { es: "queso", pt: "queijo" },
+      { es: "leche", pt: "leite" },
+      { es: "tomate", pt: "tomate" },
+      { es: "huevo", pt: "ovo" },
+      { es: "agua", pt: "água" },
+      { es: "carne", pt: "carne" },
     ],
   },
   {
     theme: "La casa",
-    themeEn: "The house",
     level: "A1",
     words: [
-      { es: "puerta", pt: "porta", en: "door" },
-      { es: "ventana", pt: "janela", en: "window" },
-      { es: "cama", pt: "cama", en: "bed" },
-      { es: "mesa", pt: "mesa", en: "table" },
-      { es: "silla", pt: "cadeira", en: "chair" },
-      { es: "cocina", pt: "cozinha", en: "kitchen" },
-      { es: "baño", pt: "banheiro", en: "bathroom" },
-      { es: "llave", pt: "chave", en: "key" },
+      { es: "puerta", pt: "porta" },
+      { es: "ventana", pt: "janela" },
+      { es: "cama", pt: "cama" },
+      { es: "mesa", pt: "mesa" },
+      { es: "silla", pt: "cadeira" },
+      { es: "cocina", pt: "cozinha" },
+      { es: "baño", pt: "banheiro" },
+      { es: "llave", pt: "chave" },
     ],
   },
   {
     theme: "La playa",
-    themeEn: "The beach",
     level: "A2",
     words: [
-      { es: "arena", pt: "areia", en: "sand" },
-      { es: "ola", pt: "onda", en: "wave" },
-      { es: "sombrilla", pt: "guarda-sol", en: "beach umbrella" },
-      { es: "toalla", pt: "toalha", en: "towel" },
-      { es: "concha", pt: "concha", en: "shell" },
-      { es: "barco", pt: "barco", en: "boat" },
-      { es: "sol", pt: "sol", en: "sun" },
-      { es: "mar", pt: "mar", en: "sea" },
+      { es: "arena", pt: "areia" },
+      { es: "ola", pt: "onda" },
+      { es: "sombrilla", pt: "guarda-sol" },
+      { es: "toalla", pt: "toalha" },
+      { es: "concha", pt: "concha" },
+      { es: "barco", pt: "barco" },
+      { es: "sol", pt: "sol" },
+      { es: "mar", pt: "mar" },
     ],
   },
   {
     theme: "La ciudad",
-    themeEn: "The city",
     level: "A2",
     words: [
-      { es: "calle", pt: "rua", en: "street" },
-      { es: "plaza", pt: "praça", en: "square" },
-      { es: "tienda", pt: "loja", en: "shop" },
-      { es: "metro", pt: "metrô", en: "subway" },
-      { es: "semáforo", pt: "semáforo", en: "traffic light" },
-      { es: "edificio", pt: "edifício", en: "building" },
-      { es: "parque", pt: "parque", en: "park" },
-      { es: "puente", pt: "ponte", en: "bridge" },
+      { es: "calle", pt: "rua" },
+      { es: "plaza", pt: "praça" },
+      { es: "tienda", pt: "loja" },
+      { es: "metro", pt: "metrô" },
+      { es: "semáforo", pt: "semáforo" },
+      { es: "edificio", pt: "edifício" },
+      { es: "parque", pt: "parque" },
+      { es: "puente", pt: "ponte" },
     ],
   },
   {
     theme: "La cocina",
-    themeEn: "The kitchen",
     level: "B1",
     words: [
-      { es: "cuchillo", pt: "faca", en: "knife" },
-      { es: "sartén", pt: "frigideira", en: "frying pan" },
-      { es: "olla", pt: "panela", en: "pot" },
-      { es: "horno", pt: "forno", en: "oven" },
-      { es: "nevera", pt: "geladeira", en: "fridge" },
-      { es: "cuchara", pt: "colher", en: "spoon" },
-      { es: "plato", pt: "prato", en: "plate" },
-      { es: "tenedor", pt: "garfo", en: "fork" },
+      { es: "cuchillo", pt: "faca" },
+      { es: "sartén", pt: "frigideira" },
+      { es: "olla", pt: "panela" },
+      { es: "horno", pt: "forno" },
+      { es: "nevera", pt: "geladeira" },
+      { es: "cuchara", pt: "colher" },
+      { es: "plato", pt: "prato" },
+      { es: "tenedor", pt: "garfo" },
     ],
   },
   {
     theme: "Trabajo y oficina",
-    themeEn: "Work and office",
     level: "B1",
     words: [
-      { es: "reunión", pt: "reunião", en: "meeting" },
-      { es: "jefe", pt: "chefe", en: "boss" },
-      { es: "sueldo", pt: "salário", en: "salary" },
-      { es: "informe", pt: "relatório", en: "report" },
-      { es: "horario", pt: "horário", en: "schedule" },
-      { es: "correo", pt: "e-mail", en: "email" },
-      { es: "empresa", pt: "empresa", en: "company" },
-      { es: "plazo", pt: "prazo", en: "deadline" },
+      { es: "reunión", pt: "reunião" },
+      { es: "jefe", pt: "chefe" },
+      { es: "sueldo", pt: "salário" },
+      { es: "informe", pt: "relatório" },
+      { es: "horario", pt: "horário" },
+      { es: "correo", pt: "e-mail" },
+      { es: "empresa", pt: "empresa" },
+      { es: "plazo", pt: "prazo" },
     ],
   },
   {
     theme: "Naturaleza",
-    themeEn: "Nature",
     level: "B2",
     words: [
-      { es: "bosque", pt: "floresta", en: "forest" },
-      { es: "río", pt: "rio", en: "river" },
-      { es: "montaña", pt: "montanha", en: "mountain" },
-      { es: "sendero", pt: "trilha", en: "trail" },
-      { es: "cascada", pt: "cachoeira", en: "waterfall" },
-      { es: "amanecer", pt: "amanhecer", en: "sunrise" },
-      { es: "niebla", pt: "neblina", en: "fog" },
-      { es: "ardilla", pt: "esquilo", en: "squirrel" },
+      { es: "bosque", pt: "floresta" },
+      { es: "río", pt: "rio" },
+      { es: "montaña", pt: "montanha" },
+      { es: "sendero", pt: "trilha" },
+      { es: "cascada", pt: "cachoeira" },
+      { es: "amanecer", pt: "amanhecer" },
+      { es: "niebla", pt: "neblina" },
+      { es: "ardilla", pt: "esquilo" },
     ],
   },
   {
     theme: "Sentimientos",
-    themeEn: "Feelings",
     level: "C1",
     words: [
-      { es: "anhelo", pt: "anseio", en: "longing" },
-      { es: "rencor", pt: "rancor", en: "resentment" },
-      { es: "asombro", pt: "espanto", en: "astonishment" },
-      { es: "nostalgia", pt: "nostalgia", en: "nostalgia" },
-      { es: "orgullo", pt: "orgulho", en: "pride" },
-      { es: "ternura", pt: "ternura", en: "tenderness" },
-      { es: "desazón", pt: "inquietação", en: "unease" },
-      { es: "júbilo", pt: "júbilo", en: "jubilation" },
+      { es: "anhelo", pt: "anseio" },
+      { es: "rencor", pt: "rancor" },
+      { es: "asombro", pt: "espanto" },
+      { es: "nostalgia", pt: "nostalgia" },
+      { es: "orgullo", pt: "orgulho" },
+      { es: "ternura", pt: "ternura" },
+      { es: "desazón", pt: "inquietação" },
+      { es: "júbilo", pt: "júbilo" },
     ],
   },
 ];
 
 export const poolsByLevel = (level: LevelId): ThemePool[] =>
   VOCAB_POOLS.filter((p) => p.level === level);
-
-export const translatePair = (pair: VocabPair, locale: "pt" | "en"): string =>
-  locale === "en" ? pair.en : pair.pt;
-
-export const translateTheme = (pool: ThemePool, locale: "pt" | "en"): string =>
-  locale === "en" && pool.themeEn ? pool.themeEn : pool.theme;
 
 // ─────────────────────────────────────────────────────────────
 // FRASES PARA HUECOS

@@ -15,12 +15,11 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { SpanishLogo } from "@/components/SpanishLogo";
-import { useT, useLanguage } from "@/i18n/LanguageContext";
+import { useT } from "@/i18n/LanguageContext";
 import { cn } from "@/lib/utils";
 
 export const DashboardSidebar = () => {
   const t = useT();
-  const { locale, setLocale } = useLanguage();
   const sb = t.dashboardSidebar;
   const { state, toggleSidebar } = useSidebar();
   const collapsed = state === "collapsed";

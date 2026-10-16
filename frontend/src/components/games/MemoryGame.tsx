@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { buildMemoryStage, computeStars, computeXp } from "@/lib/stage-builders";
 import type { LevelId } from "@/data/games";
-import { getEmoji, translatePair } from "@/data/games";
+import { getEmoji } from "@/data/games";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -22,7 +22,7 @@ interface Card {
 }
 
 export const MemoryGame = ({ level, stage, onComplete, onProgress }: MemoryGameProps) => {
-  const { locale, t } = useLanguage();
+  const { t } = useLanguage();
   const data = useMemo(() => buildMemoryStage(level, stage), [level, stage]);
 
   const initialCards = useMemo<Card[]>(() => {
@@ -33,7 +33,7 @@ export const MemoryGame = ({ level, stage, onComplete, onProgress }: MemoryGameP
       cards.push({
         id: `tr-${i}`,
         pairId: `${i}`,
-        text: translatePair(p, locale),
+        text: p.pt,
         lang: "tr",
         emoji,
       });
@@ -42,7 +42,7 @@ export const MemoryGame = ({ level, stage, onComplete, onProgress }: MemoryGameP
       .map((c) => ({ c, r: Math.random() }))
       .sort((a, b) => a.r - b.r)
       .map(({ c }) => c);
-  }, [data, locale]);
+  }, [data]);
 
   const [cards, setCards] = useState<Card[]>(initialCards);
   const [flipped, setFlipped] = useState<string[]>([]);
@@ -91,8 +91,8 @@ export const MemoryGame = ({ level, stage, onComplete, onProgress }: MemoryGameP
   };
 
   const cols = data.pairs.length <= 6 ? "grid-cols-3 sm:grid-cols-4" : "grid-cols-4";
-  const themeLabel = locale === "en" ? data.themeEn : data.theme;
-  const trLabel = locale === "en" ? "EN" : "PT";
+  const themeLabel = data.theme;
+  const trLabel = "PT";
 
   return (
     <div>
@@ -102,7 +102,7 @@ export const MemoryGame = ({ level, stage, onComplete, onProgress }: MemoryGameP
           <span className="font-semibold text-foreground">{themeLabel} · {level}</span>
         </p>
       </div>
-      <div className={cn("grid gap-2.5 md:gap-3 max-w-3xl mx-auto", cols)}>
+      <div translate="no" className={cn("grid gap-2.5 md:gap-3 max-w-3xl mx-auto", cols)}>
         {cards.map((card) => {
           const isMatched = matched.has(card.pairId);
           const isFlipped = flipped.includes(card.id) || isMatched;
