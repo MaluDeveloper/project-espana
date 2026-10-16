@@ -74,7 +74,7 @@ const renderBlock = (block: TopicBlock, idx: number, locale: "pt" | "en", tc: an
               <tr>{pickLArr(block.headers, block.headersEn, locale).map((h, i) => <th key={i} className="text-left p-3 font-bold">{h}</th>)}</tr>
             </thead>
             <tbody>
-              {block.rows.map((row, r) => (
+              {(locale === "en" && block.rowsEn ? block.rowsEn : block.rows).map((row, r) => (
                 <tr key={r} className="border-t border-border">
                   {row.map((c, i) => <td key={i} className="p-3">{c}</td>)}
                 </tr>

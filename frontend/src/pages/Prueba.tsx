@@ -7,11 +7,12 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, ArrowRight, CheckCircle2, XCircle, Trophy, RefreshCw, Sparkles } from "lucide-react";
-import { getCourseLevel, PASS_THRESHOLD } from "@/data/courses";
+import { getCourseLevel, pickL, pickLArr, PASS_THRESHOLD } from "@/data/courses";
 import { EXAM_BANKS, type ExamMC, type ExamDiscursive } from "@/data/exam-banks";
 import { saveExam } from "@/lib/course-progress";
 import type { LevelId } from "@/data/games";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const MC_PER_ATTEMPT = 10;
 const DISCURSIVE_PER_ATTEMPT = 5;
@@ -77,6 +78,8 @@ interface FinishedResult {
 const Prueba = () => {
   const { level } = useParams<{ level: string }>();
   const navigate = useNavigate();
+  const { locale, t } = useLanguage();
+  const tp = t.cursos.prueba;
   const course = level ? getCourseLevel(level as LevelId) : undefined;
 
   const [draw, setDraw] = useState<DrawResult | null>(() => (course ? drawQuestions(course.level) : null));
@@ -99,16 +102,28 @@ const Prueba = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [course?.level]);
 
+  const allQuestions = useMemo(
+    () =>
+      draw
+        ? [
+            ...draw.mc.map((q) => ({ kind: "mc" as const, q })),
+            ...draw.discursive.map((q) => ({ kind: "disc" as const, q })),
+          ]
+        : [],
+    [draw],
+  );
+
   if (!course) return <Navigate to="/cursos" replace />;
   if (!draw) return <Navigate to="/cursos" replace />;
 
-  const allQuestions = useMemo(
-    () => [
-      ...draw.mc.map((q) => ({ kind: "mc" as const, q })),
-      ...draw.discursive.map((q) => ({ kind: "disc" as const, q })),
-    ],
-    [draw],
-  );
+  // MC options are stored in the original language; show them localized by index.
+  const mcOptions = (q: ExamMC) => pickLArr(q.options, q.optionsEn, locale);
+  const showOption = (q: ExamMC, value: string) => {
+    const i = q.options.indexOf(value);
+    return i >= 0 ? mcOptions(q)[i] : value;
+  };
+  const discQuestion = (q: ExamDiscursive) => pickL(q.question, q.questionEn, locale);
+  const discTip = (q: ExamDiscursive) => pickL(q.tip, q.tipEn, locale);
 
   const total = allQuestions.length;
   const currentItem = allQuestions[idx];
@@ -160,13 +175,13 @@ const Prueba = () => {
         to={`/cursos/${course.level}`}
         className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
       >
-        <ArrowLeft className="w-4 h-4" /> Voltar para o nível
+        <ArrowLeft className="w-4 h-4" /> {tp.voltar}
       </Link>
 
       {draw.resetNotice && !finished && (
         <div className="mb-4 rounded-2xl border border-primary/30 bg-primary/5 px-4 py-3 text-sm flex items-start gap-2">
           <Sparkles className="w-4 h-4 mt-0.5 text-primary shrink-0" />
-          <span>Você completou todas as questões disponíveis! Recomeçando com novas combinações.</span>
+          <span>{tp.resetNotice}</span>
         </div>
       )}
 
@@ -174,27 +189,31 @@ const Prueba = () => {
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
           <div className="flex items-center gap-2 mb-3 flex-wrap">
             <Badge variant="outline">{course.level}</Badge>
-            <Badge variant="secondary">Prova final · {Math.round(PASS_THRESHOLD * 100)}% para aprovar</Badge>
-            <Badge variant="outline">{currentItem.kind === "mc" ? "Múltipla escolha" : "Discursiva"}</Badge>
+            <Badge variant="secondary">{tp.provaFinal(Math.round(PASS_THRESHOLD * 100))}</Badge>
+            <Badge variant="outline">{currentItem.kind === "mc" ? tp.multiplaEscolha : tp.discursiva}</Badge>
           </div>
           <h1 className="font-display text-3xl md:text-4xl mb-6">
-            Pergunta {idx + 1} de {total}
+            {tp.perguntaFmt(idx + 1, total)}
           </h1>
           <Progress value={(idx / total) * 100} className="h-2 mb-8" />
 
           <div className="bg-card rounded-3xl p-6 md:p-8 border border-border shadow-card">
-            <p className="font-display text-xl md:text-2xl mb-6">{currentItem.q.question}</p>
+            <p className="font-display text-xl md:text-2xl mb-6">
+              {currentItem.kind === "mc"
+                ? pickL(currentItem.q.question, currentItem.q.questionEn, locale)
+                : discQuestion(currentItem.q)}
+            </p>
 
             {currentItem.kind === "mc" ? (
               <div className="grid gap-2">
-                {currentItem.q.options.map((opt) => (
+                {currentItem.q.options.map((opt, i) => (
                   <Button
                     key={opt}
                     variant={current === opt ? "spain" : "outline"}
                     onClick={() => setCurrent(opt)}
                     className="justify-start text-left h-auto py-3 whitespace-normal"
                   >
-                    {opt}
+                    {mcOptions(currentItem.q)[i]}
                   </Button>
                 ))}
               </div>
@@ -203,17 +222,17 @@ const Prueba = () => {
                 <Textarea
                   value={current}
                   onChange={(e) => setCurrent(e.target.value)}
-                  placeholder="Escreva sua resposta em espanhol…"
+                  placeholder={tp.respostaPlaceholder}
                   className="min-h-32 text-base"
                   autoFocus
                 />
-                <p className="text-xs text-muted-foreground">💡 {currentItem.q.tip}</p>
+                <p className="text-xs text-muted-foreground">💡 {discTip(currentItem.q)}</p>
               </div>
             )}
 
             <div className="mt-6 flex justify-end">
               <Button onClick={handleNext} disabled={!current.trim()} variant="spain" size="lg">
-                {idx + 1 === total ? "Finalizar prova" : "Próxima"} <ArrowRight className="w-4 h-4" />
+                {idx + 1 === total ? tp.finalizar : tp.proxima} <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
           </div>
@@ -229,21 +248,21 @@ const Prueba = () => {
             {finished.passed ? (
               <>
                 <Trophy className="w-12 h-12 mx-auto mb-3" />
-                <h2 className="font-display text-3xl md:text-4xl mb-2">Aprovado!</h2>
+                <h2 className="font-display text-3xl md:text-4xl mb-2">{tp.aprovado}</h2>
                 <p className="text-lg opacity-90 mb-2">
-                  Você acertou {finished.score}/{finished.total} ({Math.round(finished.percent * 100)}%).
+                  {tp.resultadoFmt(finished.score, finished.total, Math.round(finished.percent * 100))}
                 </p>
-                <p className="text-sm opacity-80 mb-6">Parabéns! As discursivas servem para sua autoavaliação.</p>
+                <p className="text-sm opacity-80 mb-6">{tp.aprovadoNota}</p>
               </>
             ) : (
               <>
                 <XCircle className="w-12 h-12 mx-auto mb-3 text-destructive" />
-                <h2 className="font-display text-3xl md:text-4xl mb-2">Reprovado</h2>
+                <h2 className="font-display text-3xl md:text-4xl mb-2">{tp.reprovado}</h2>
                 <p className="text-lg text-muted-foreground mb-2">
-                  Você acertou {finished.score}/{finished.total} ({Math.round(finished.percent * 100)}%).
+                  {tp.resultadoFmt(finished.score, finished.total, Math.round(finished.percent * 100))}
                 </p>
                 <p className="text-sm text-muted-foreground mb-6">
-                  Você precisa de pelo menos {Math.ceil(finished.total * PASS_THRESHOLD)} acertos. Revise e tente novamente.
+                  {tp.reprovadoNota(Math.ceil(finished.total * PASS_THRESHOLD))}
                 </p>
               </>
             )}
@@ -251,7 +270,7 @@ const Prueba = () => {
 
           {/* Múltipla escolha */}
           <div className="mt-6 bg-card rounded-3xl border border-border p-5 md:p-6">
-            <h3 className="font-display text-xl mb-4">Múltipla escolha</h3>
+            <h3 className="font-display text-xl mb-4">{tp.multiplaEscolha}</h3>
             <ul className="space-y-3">
               {draw.mc.map((q, i) => {
                 const userAns = (mcAnswers[q.id] ?? "").trim();
@@ -271,14 +290,14 @@ const Prueba = () => {
                     )}
                     <div className="flex-1">
                       <p className="font-medium">
-                        {i + 1}. {q.question}
+                        {i + 1}. {pickL(q.question, q.questionEn, locale)}
                       </p>
                       <p className="mt-1 text-xs">
-                        Sua resposta: <span className="font-semibold">{userAns || "—"}</span>
+                        {tp.suaResposta} <span className="font-semibold">{userAns ? showOption(q, userAns) : "—"}</span>
                       </p>
                       {!ok && (
                         <p className="text-xs text-muted-foreground">
-                          Correta: <span className="font-semibold text-foreground">{q.answer}</span>
+                          {tp.respostaCorreta} <span className="font-semibold text-foreground">{showOption(q, q.answer)}</span>
                         </p>
                       )}
                     </div>
@@ -290,22 +309,22 @@ const Prueba = () => {
 
           {/* Discursivas */}
           <div className="mt-6 bg-card rounded-3xl border border-border p-5 md:p-6">
-            <h3 className="font-display text-xl mb-4">Discursivas — autoavaliação</h3>
+            <h3 className="font-display text-xl mb-4">{tp.discursivasTitulo}</h3>
             <ul className="space-y-4">
               {draw.discursive.map((q, i) => (
                 <li key={q.id} className="rounded-2xl border border-border p-4">
                   <p className="font-medium mb-3">
-                    {i + 1}. {q.question}
+                    {i + 1}. {discQuestion(q)}
                   </p>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="rounded-xl bg-muted/40 p-3">
-                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Sua resposta</p>
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">{tp.suaRespostaTitulo}</p>
                       <p className="text-sm whitespace-pre-wrap">{(discAnswers[q.id] ?? "").trim() || "—"}</p>
                     </div>
                     <div className="rounded-xl bg-primary/5 border border-primary/20 p-3">
-                      <p className="text-xs uppercase tracking-wide text-primary mb-1">Exemplo correto</p>
+                      <p className="text-xs uppercase tracking-wide text-primary mb-1">{tp.exemploCorreto}</p>
                       <p className="text-sm whitespace-pre-wrap">{q.example}</p>
-                      <p className="text-xs text-muted-foreground mt-2">💡 {q.tip}</p>
+                      <p className="text-xs text-muted-foreground mt-2">💡 {discTip(q)}</p>
                     </div>
                   </div>
                 </li>
@@ -315,10 +334,10 @@ const Prueba = () => {
 
           <div className="mt-6 flex gap-3 justify-center flex-wrap">
             <Button onClick={restart} variant="spain">
-              <RefreshCw className="w-4 h-4" /> Refazer prova
+              <RefreshCw className="w-4 h-4" /> {tp.repetir}
             </Button>
             <Button onClick={() => navigate(`/cursos/${course.level}`)} variant="outline">
-              Voltar ao curso <ArrowRight className="w-4 h-4" />
+              {tp.voltarCurso} <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
         </motion.div>

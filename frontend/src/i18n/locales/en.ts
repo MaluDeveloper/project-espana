@@ -702,22 +702,29 @@ export const en = {
     },
     prueba: {
       voltar: "Back to level",
+      resetNotice: "You've completed every available question! Starting over with new combinations.",
       provaFinal: (pct: number) => `Final test · ${pct}% to pass`,
+      multiplaEscolha: "Multiple choice",
+      discursiva: "Written answer",
       perguntaFmt: (current: number, total: number) =>
         `Question ${current} of ${total}`,
-      respostaPlaceholder: "Your answer…",
+      respostaPlaceholder: "Write your answer in Spanish…",
       finalizar: "Finish test",
       proxima: "Next",
       aprovado: "Passed!",
-      aprovadoMsg: (score: number, total: number) =>
-        `You scored ${score}/${total}. The next level is unlocked.`,
-      quase: "Almost there",
-      quaseMsg: (score: number, total: number, min: number) =>
-        `You scored ${score}/${total}. You need at least ${min}.`,
-      revise: "Review the chapters and try again.",
-      respostaCorreta: "Answer:",
+      reprovado: "Not passed",
+      resultadoFmt: (score: number, total: number, pct: number) =>
+        `You got ${score}/${total} right (${pct}%).`,
+      aprovadoNota: "Congratulations! The written answers are for self-assessment.",
+      reprovadoNota: (min: number) =>
+        `You need at least ${min} correct answers. Review and try again.`,
+      suaResposta: "Your answer:",
+      respostaCorreta: "Correct:",
+      discursivasTitulo: "Written answers — self-assessment",
+      suaRespostaTitulo: "Your answer",
+      exemploCorreto: "Model answer",
       repetir: "Retake test",
-      voltarCursos: "Back to courses",
+      voltarCurso: "Back to the course",
     },
   },
 

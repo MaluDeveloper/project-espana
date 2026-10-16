@@ -757,22 +757,29 @@ export const pt = {
     },
     prueba: {
       voltar: "Voltar para o nível",
+      resetNotice: "Você completou todas as questões disponíveis! Recomeçando com novas combinações.",
       provaFinal: (pct: number) => `Prova final · ${pct}% para aprovar`,
+      multiplaEscolha: "Múltipla escolha",
+      discursiva: "Discursiva",
       perguntaFmt: (current: number, total: number) =>
         `Pergunta ${current} de ${total}`,
-      respostaPlaceholder: "Sua resposta…",
+      respostaPlaceholder: "Escreva sua resposta em espanhol…",
       finalizar: "Finalizar prova",
       proxima: "Próxima",
       aprovado: "Aprovado!",
-      aprovadoMsg: (score: number, total: number) =>
-        `Você fez ${score}/${total}. Desbloqueou o próximo nível.`,
-      quase: "Quase lá",
-      quaseMsg: (score: number, total: number, min: number) =>
-        `Você fez ${score}/${total}. Você precisa de ao menos ${min}.`,
-      revise: "Revise os capítulos e tente de novo.",
-      respostaCorreta: "Resposta:",
-      repetir: "Repetir prova",
-      voltarCursos: "Voltar para cursos",
+      reprovado: "Reprovado",
+      resultadoFmt: (score: number, total: number, pct: number) =>
+        `Você acertou ${score}/${total} (${pct}%).`,
+      aprovadoNota: "Parabéns! As discursivas servem para sua autoavaliação.",
+      reprovadoNota: (min: number) =>
+        `Você precisa de pelo menos ${min} acertos. Revise e tente novamente.`,
+      suaResposta: "Sua resposta:",
+      respostaCorreta: "Correta:",
+      discursivasTitulo: "Discursivas — autoavaliação",
+      suaRespostaTitulo: "Sua resposta",
+      exemploCorreto: "Exemplo correto",
+      repetir: "Refazer prova",
+      voltarCurso: "Voltar ao curso",
     },
   },
 

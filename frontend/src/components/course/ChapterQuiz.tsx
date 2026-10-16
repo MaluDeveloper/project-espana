@@ -97,6 +97,9 @@ export const ChapterQuiz = ({ level, chapterId, questions, locale, labels }: Cha
   const questionText = pickL(current.question, current.questionEn, locale);
   const opts = current.options ? pickLArr(current.options, current.optionsEn, locale) : undefined;
   const explanation = current.explanation ? pickL(current.explanation, current.explanationEn, locale) : undefined;
+  // Show the correct option in the UI language (options are localized by index).
+  const answerIdx = current.options?.indexOf(current.answer) ?? -1;
+  const displayAnswer = opts && answerIdx >= 0 ? opts[answerIdx] : current.answer;
   const progressPct = Math.round(((idx + (feedback !== "idle" ? 1 : 0)) / pool.length) * 100);
 
   const check = () => {
@@ -173,7 +176,7 @@ export const ChapterQuiz = ({ level, chapterId, questions, locale, labels }: Cha
               {feedback === "right" ? labels.correct : labels.incorrect}
             </div>
             {feedback === "wrong" && (
-              <div className="mt-1 text-foreground/80">{labels.answer} <strong>{current.answer}</strong></div>
+              <div className="mt-1 text-foreground/80">{labels.answer} <strong>{displayAnswer}</strong></div>
             )}
             {explanation && <div className="mt-1 text-foreground/80">{explanation}</div>}
           </div>
