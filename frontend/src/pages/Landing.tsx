@@ -6,7 +6,6 @@ import { LandingDestinations } from "@/components/landing/LandingDestinations";
 import { LandingFeatures } from "@/components/landing/LandingFeatures";
 import { LandingGames } from "@/components/landing/LandingGames";
 import { LandingCourses } from "@/components/landing/LandingCourses";
-import { LandingTestimonials } from "@/components/landing/LandingTestimonials";
 import { LandingPricing } from "@/components/landing/LandingPricing";
 
 import { InlineCta } from "@/components/landing/InlineCta";
@@ -74,8 +73,6 @@ const Landing = () => {
           <section id="precos" className="scroll-mt-24">
             <LandingPricing />
           </section>
-
-          <LandingTestimonials />
 
           <section id="destinos">
             <LandingDestinations />

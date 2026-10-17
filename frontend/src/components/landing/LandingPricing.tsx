@@ -15,23 +15,33 @@ export const LandingPricing = () => {
   ];
 
   return (
-    <section id="pricing" className="container py-16 sm:py-20 md:py-24 lg:py-32">
-      <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
+    <section
+      id="pricing"
+      className="container py-16 sm:py-20 md:py-24 lg:py-32"
+      style={{ fontFamily: "'Orbit DM Sans', sans-serif" }}
+    >
+      <div className="mx-auto text-center mb-10 sm:mb-14">
         <Reveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent border border-border/60 mb-4 sm:mb-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-accent-foreground">
+            <span className="text-xs font-medium uppercase tracking-[0.36em] text-accent-foreground">
               {t.pricing.eyebrow}
             </span>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4 sm:mb-5">
+          {/* One line from sm up: the size scales with the viewport so the full title always fits. */}
+          <h2 className="font-[550] text-3xl sm:text-[clamp(1.5rem,3.6vw,3.25rem)] sm:whitespace-nowrap tracking-[-0.064em] leading-[1.15] mb-4 sm:mb-5">
             {t.pricing.titlePart1}{" "}
-            <span className="text-gradient-spain">{t.pricing.titleHighlight}</span>
+            <span
+              className="text-gradient-spain italic font-normal text-[1.12em] tracking-[-0.035em] pr-[0.08em]"
+              style={{ fontFamily: "'Orbit Libre Caslon', Georgia, serif" }}
+            >
+              {t.pricing.titleHighlight}
+            </span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="text-base sm:text-lg text-muted-foreground">{t.pricing.subtitle}</p>
+          <p className="max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">{t.pricing.subtitle}</p>
         </Reveal>
       </div>
 
@@ -47,11 +57,11 @@ export const LandingPricing = () => {
               )}
             >
               {p.highlight && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-wider shadow-card">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium uppercase tracking-[0.2em] whitespace-nowrap shadow-card">
                   {t.pricing.highlightBadge}
                 </div>
               )}
-              <div className="font-display font-extrabold text-lg mb-1">{p.name}</div>
+              <div className="font-[550] text-lg tracking-[-0.02em] mb-1">{p.name}</div>
               <p
                 className={cn(
                   "text-sm mb-5",
@@ -61,7 +71,7 @@ export const LandingPricing = () => {
                 {p.desc}
               </p>
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="font-display font-extrabold text-4xl tracking-tight">
+                <span className="font-[550] text-4xl tracking-[-0.04em]">
                   {p.price}
                 </span>
                 <span
@@ -77,7 +87,7 @@ export const LandingPricing = () => {
                 asChild
                 size="lg"
                 variant={p.highlight ? "secondary" : "outline"}
-                className="w-full mb-6 font-bold"
+                className="w-full mb-6 font-normal"
               >
                 <Link to={p.href}>{p.cta}</Link>
               </Button>

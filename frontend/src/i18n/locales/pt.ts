@@ -6,7 +6,6 @@ export const pt = {
   // ============= NAVBAR (landing) =============
   nav: {
     comoFunciona: "Como funciona",
-    destinos: "Destinos",
     jogos: "Jogos",
     cursos: "Cursos",
     precos: "Preços",
@@ -242,17 +241,11 @@ export const pt = {
     ],
   },
 
-  landingTestimonials: {
-    eyebrow: "Depoimentos",
-    titlePart1: "Alunos que já estão",
-    titleHighlight: "falando espanhol.",
-  },
-
   pricing: {
-    eyebrow: "PREÇOS",
-    titlePart1: "Simples.",
-    titleHighlight: "Como deve ser.",
-    subtitle: "Cancele quando quiser. Sem letras miúdas.",
+    eyebrow: "PLANOS PARA A SUA EVOLUÇÃO",
+    titlePart1: "Seu próximo nível de espanhol",
+    titleHighlight: "começa aqui",
+    subtitle: "Sem complicações. Você escolhe como aprender.",
     highlightBadge: "Melhor custo-benefício",
     plans: {
       free: {

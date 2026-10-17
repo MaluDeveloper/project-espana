@@ -12,7 +12,6 @@ export const LandingHero = () => {
     { label: t.nav.jogos, href: "#jogos" },
     { label: t.nav.cursos, href: "#cursos" },
     { label: t.nav.precos, href: "#precos" },
-    { label: t.nav.destinos, href: "#destinos" },
   ];
 
   return (
