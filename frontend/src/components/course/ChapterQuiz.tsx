@@ -9,6 +9,7 @@ import type { Exercise } from "@/data/courses";
 import type { LevelId } from "@/data/games";
 import { saveChapterQuiz, getChapterQuiz } from "@/lib/course-progress";
 import { cn, normalizeAnswer } from "@/lib/utils";
+import { AudioButton } from "./AudioButton";
 
 interface ChapterQuizProps {
   level: LevelId;
@@ -31,6 +32,8 @@ interface ChapterQuizProps {
     badge: string;
     bestScore: (s: number, t: number) => string;
     placeholder: string;
+    listen: string;
+    listenSlow: string;
     noQuestions: string;
   };
 }
@@ -134,6 +137,12 @@ export const ChapterQuiz = ({ level, chapterId, questions, labels }: ChapterQuiz
 
       <div className="p-5 rounded-2xl bg-card border border-border">
         <p translate="no" className="font-medium text-lg mb-4">{questionText}</p>
+        {current.audio && (
+          <div className="flex items-center gap-1 -mt-2 mb-4">
+            <AudioButton text={current.audio} label={labels.listen} />
+            <AudioButton text={current.audio} slow label={labels.listenSlow} />
+          </div>
+        )}
 
         {current.type === "multiple-choice" && opts ? (
           <div translate="no" className="grid sm:grid-cols-3 gap-2">

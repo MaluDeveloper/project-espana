@@ -16,7 +16,7 @@
 
   | Nível | Tópicos/capítulo | Exercícios/tópico | Flashcards | `briefReview` |
   |---|---|---|---|---|
-  | A1 | 1.9 | 8.7 | 13/13 | 13/13 |
+  | A1 ✅ | 3.2 | 5.8 | 13/13 | 13/13 |
   | A2 | 6.3 | 8.2 | 12/13 | 13/13 |
   | B1 ✅ | 3.2 | 6.3 | 13/13 | 13/13 |
   | B2 ✅ | 3.3 | 5.8 | 13/13 | 13/13 |
@@ -28,6 +28,8 @@
     - B1: exercícios ✅ — +79 exercícios com explicação, média subiu de 3.9 para 5.4 por tópico (todos os tópicos dos caps. 1–11 com 6–9). Tópicos ✅ — +15 tópicos (caps. 1–11 agora com 3 cada; média 3.2 tópicos/capítulo e 5.6 exercícios/tópico). Quiz ✅ — +104 perguntas com explicação, todos os 13 capítulos com 10 (antes 1–4). Léxico ✅ — +48 entradas com exemplo, todos os 13 capítulos com 8 (antes 3–6), sem repetir os flashcards. Caps. 12–13 ✅ — +28 exercícios nos tópicos de projeto/referência (todos com ≥ 5). **B1 concluído:** 3.2 tópicos/capítulo, 6.3 exercícios/tópico (mín. 5), 10 perguntas de quiz, 8 entradas de léxico, 10 flashcards e `briefReview` em todos os 13 capítulos.
     - **B2 concluído:** +12 tópicos (caps. 1–11 agora com 3 cada) e +186 exercícios com explicação — 3.3 tópicos/capítulo, 5.8 exercícios/tópico (mín. 5; caps. 1–11 com 6 por tópico). Todos os 13 capítulos com 10 perguntas de quiz (antes 2–4), 8 entradas de léxico (antes 4–7) e 10 flashcards (antes 0), sem repetir o léxico. `briefReview` dos caps. 1–8 e 10 reescrito para cobrir os tópicos novos. Exercícios novos de preenchimento indicam a forma pedida (ex.: "forma em -ra") porque a correção aceita uma única resposta.
     - **C1 concluído:** +10 tópicos (caps. 1–11 agora com 3 cada: jornalismo e verbos de citação, POR × PARA, falácias, precisão léxica, leitura de poesia com Machado e Lorca, marcadores conversacionais, expressões com corpo e animais, citação e paráfrase, acentuação gráfica, coesão textual) e +187 exercícios com explicação — 3.2 tópicos/capítulo, 5.8 exercícios/tópico (mín. 5). Todos os 13 capítulos com 10 perguntas de quiz (antes 1–3), 8 entradas de léxico (antes 5–6) e 10 flashcards (antes 0); os 76 exercícios antigos ganharam explicação. A dica de fonética do cap. 10 foi reescrita para tratar o seseo como variante culta, conforme a política de variantes do OVERVIEW §8.
+    - **A1 concluído:** caps. 1–11 com 3 tópicos cada (antes 1–2) e 6 exercícios por tópico; 238 exercícios + quizzes, todos com explicação (antes nenhum). Cap. 1 reescrito: as 27 letras com nome e som (cartões de pronúncia), dígrafos CH/LL/RR tratados como dígrafos (RAE), sons que confundem brasileiros e acentuação. Tópicos novos: tú × usted, centenas e datas, gênero dos substantivos (el color, la leche…), HAY × ESTAR, verbos -ER/-IR, negação e frequência, comida e refeições, pronomes sujeito e de objeto, descrição de pessoas, preposições de lugar, A × EN e POR × PARA, também/tampoco. Cap. 13: quiz sem perguntas duplicadas e regra do DELE A1 corrigida (30/50 em cada grupo). Inglês que tinha sobrado dentro do texto da tabela de saudações foi removido.
+  - [ ] **Áudio em todo o curso:** o A1 já usa a infraestrutura nova (bloco `sounds` com cartões de pronúncia, `audioCols` em tabelas, `speak` em listas e `audio` em exercícios/quiz para ouvir a frase ou fazer exercícios de escuta). Falta aplicar o mesmo em A2–C2 conforme cada nível for revisado. O áudio usa a voz do navegador (Web Speech API), agora escolhendo explicitamente uma voz es-ES quando instalada.
   - [ ] Nenhum capítulo de C2 tem `flashcards` — o componente `Flashcards.tsx` fica vazio nesse nível inteiro. (B1 ✅, B2 ✅ e C1 ✅ — 10 flashcards por capítulo.)
   - [ ] O campo `exam` de cada nível em `data/courses.ts` não é usado em lugar nenhum — a prova final sorteia só de `exam-banks.ts`. Remover ou reaproveitar.
   - [x] ~~B1 tem `briefReview` só nos capítulos 12 e 13~~ — capítulos 1 a 11 preenchidos.
@@ -69,6 +71,7 @@
 
 ## Concluído recentemente
 
+- [x] A1 completo e com áudio: alfabeto inteiro com pronúncia, 3 tópicos por capítulo, explicações em todos os exercícios e quizzes, exercícios de escuta.
 - [x] Site passou a ser só português → espanhol: removidos seletor de idioma, detecção do navegador, `en.ts` e os campos `*En` dos dados; conteúdo em espanhol marcado com `translate="no"`. Prova final (`Prueba.tsx`) agora lê os textos de `t.cursos.prueba` (antes fixos no componente) e teve o `useMemo` movido para antes dos `return` condicionais (violava a regra de hooks).
 - [x] C1 completo: tópicos, exercícios com explicação, quiz (10), léxico (8) e flashcards (10) em todos os 13 capítulos.
 - [x] B2 completo: tópicos, exercícios com explicação, quiz (10), léxico (8) e flashcards (10) em todos os 13 capítulos — mesmo padrão do B1.

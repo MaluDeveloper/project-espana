@@ -40,10 +40,50 @@ const renderBlock = (block: TopicBlock, idx: number, tc: any) => {
     case "paragraph":
       return <p key={idx} className="text-foreground/90 leading-relaxed mb-3">{block.text}</p>;
     case "list":
+      if (block.speak) {
+        return (
+          <ul key={idx} className="space-y-1 mb-4 text-foreground/90">
+            {block.items.map((it, i) => (
+              <li key={i} className="flex items-center gap-1">
+                <AudioButton text={it} className="h-7 px-1.5 shrink-0" />
+                <span lang="es" translate="no">{it}</span>
+              </li>
+            ))}
+          </ul>
+        );
+      }
       return (
         <ul key={idx} className="space-y-1.5 mb-4 list-disc pl-5 text-foreground/90">
           {block.items.map((it, i) => <li key={i}>{it}</li>)}
         </ul>
+      );
+    case "sounds":
+      return (
+        <div key={idx} className="my-4 grid gap-3 sm:grid-cols-2">
+          {block.items.map((s, i) => (
+            <div key={i} className="p-4 rounded-2xl bg-card border border-border">
+              <div className="flex items-center justify-between gap-2 mb-1">
+                <div className="flex items-baseline gap-2" lang="es" translate="no">
+                  <span className="font-display text-2xl font-bold">{s.label}</span>
+                  {s.name && <span className="text-sm text-muted-foreground">({s.name})</span>}
+                </div>
+                <div className="flex items-center">
+                  <AudioButton text={s.say ?? s.name ?? s.examples[0] ?? s.label} label={tc.audioOuvir} />
+                  <AudioButton text={s.say ?? s.name ?? s.examples[0] ?? s.label} slow label={tc.audioLento} />
+                </div>
+              </div>
+              <p className="text-sm text-foreground/80 mb-2">{s.description}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {s.examples.map((ex) => (
+                  <span key={ex} className="inline-flex items-center rounded-full bg-accent/40 border border-accent pl-2.5 pr-0.5 text-sm">
+                    <span lang="es" translate="no">{ex}</span>
+                    <AudioButton text={ex} className="h-7 px-1.5" />
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       );
     case "example":
       return (
@@ -76,7 +116,18 @@ const renderBlock = (block: TopicBlock, idx: number, tc: any) => {
             <tbody>
               {block.rows.map((row, r) => (
                 <tr key={r} className="border-t border-border">
-                  {row.map((c, i) => <td key={i} className="p-3">{c}</td>)}
+                  {row.map((c, i) =>
+                    block.audioCols?.includes(i) ? (
+                      <td key={i} className="p-3">
+                        <span className="inline-flex items-center gap-0.5">
+                          <span lang="es" translate="no">{c}</span>
+                          <AudioButton text={c} className="h-7 px-1.5" />
+                        </span>
+                      </td>
+                    ) : (
+                      <td key={i} className="p-3">{c}</td>
+                    ),
+                  )}
                 </tr>
               ))}
             </tbody>
@@ -123,6 +174,12 @@ const ExerciseCard = ({
         <Sparkles className="w-4 h-4 text-primary mt-1 shrink-0" />
         <p translate="no" className="font-medium">{displayQuestion}</p>
       </div>
+      {exercise.audio && (
+        <div className="flex items-center gap-1 mb-3">
+          <AudioButton text={exercise.audio} label={tc.audioOuvir} />
+          <AudioButton text={exercise.audio} slow label={tc.audioLento} />
+        </div>
+      )}
       {exercise.type === "multiple-choice" && displayOptions && exercise.options ? (
         <div translate="no" className="grid sm:grid-cols-3 gap-2">
           {displayOptions.map((opt, i) => {

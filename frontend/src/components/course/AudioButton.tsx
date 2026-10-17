@@ -11,8 +11,26 @@ interface AudioButtonProps {
 }
 
 /**
+ * Escolhe uma voz espanhola instalada: prefere es-ES (modelo do curso), depois
+ * qualquer variante "es". Sem isso, alguns navegadores usam a voz padrão do
+ * sistema (ex.: português) mesmo com utt.lang = "es-ES".
+ */
+const pickSpanishVoice = (): SpeechSynthesisVoice | null => {
+  const voices = window.speechSynthesis.getVoices();
+  const norm = (v: SpeechSynthesisVoice) => v.lang.replace("_", "-").toLowerCase();
+  return (
+    voices.find((v) => norm(v) === "es-es") ??
+    voices.find((v) => norm(v).startsWith("es")) ??
+    null
+  );
+};
+
+/** Remove anotações em português entre parênteses antes de falar (ex.: "hola (sempre muda)"). */
+const speakableText = (text: string) =>
+  text.replace(/\s*\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
+
+/**
  * Player de pronúncia em espanhol usando a Web Speech API nativa do navegador.
- * Funciona como placeholder até que tenhamos áudios gravados.
  */
 export const AudioButton = ({ text, slow = false, label, className }: AudioButtonProps) => {
   const [speaking, setSpeaking] = useState(false);
@@ -20,16 +38,21 @@ export const AudioButton = ({ text, slow = false, label, className }: AudioButto
   const ref = useRef<SpeechSynthesisUtterance | null>(null);
 
   useEffect(() => {
+    if (!supported) return;
+    // Alguns navegadores (Chrome) carregam a lista de vozes de forma assíncrona.
+    window.speechSynthesis.getVoices();
     return () => {
-      if (supported) window.speechSynthesis.cancel();
+      window.speechSynthesis.cancel();
     };
   }, [supported]);
 
   const speak = () => {
     if (!supported) return;
     window.speechSynthesis.cancel();
-    const utt = new SpeechSynthesisUtterance(text);
+    const utt = new SpeechSynthesisUtterance(speakableText(text));
     utt.lang = "es-ES";
+    const voice = pickSpanishVoice();
+    if (voice) utt.voice = voice;
     utt.rate = slow ? 0.6 : 1;
     utt.onend = () => setSpeaking(false);
     utt.onerror = () => setSpeaking(false);
@@ -53,9 +76,13 @@ export const AudioButton = ({ text, slow = false, label, className }: AudioButto
       type="button"
       variant="ghost"
       size="sm"
-      onClick={speak}
+      onClick={(e) => {
+        e.stopPropagation();
+        speak();
+      }}
       disabled={!supported}
-      title={!supported ? "Áudio indisponível neste navegador" : label ?? (slow ? "Lento" : "Ouvir")}
+      title={!supported ? "Áudio indisponível neste navegador" : label ?? (slow ? "Ouvir devagar" : "Ouvir")}
+      aria-label={label ?? (slow ? "Ouvir devagar" : "Ouvir")}
       className={cn("h-8 px-2 gap-1.5", speaking && "text-primary animate-pulse", className)}
     >
       <Icon className="w-4 h-4" />

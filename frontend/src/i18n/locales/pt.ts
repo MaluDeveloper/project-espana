@@ -742,6 +742,8 @@ export const pt = {
         badge: "Badge desbloqueado",
         bestScore: (s: number, t: number) => `Melhor: ${s}/${t}`,
         placeholder: "Sua resposta…",
+        listen: "Ouvir",
+        listenSlow: "Lento",
         noQuestions: "Este capítulo ainda não tem quiz.",
       },
       revisaoTitulo: "Revisão do capítulo",
