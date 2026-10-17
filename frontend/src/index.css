@@ -197,6 +197,25 @@ html {
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  /* Gradient border that fades in on hover. A masked ::before ring sits over the element's own
+     1px border, since a background-image border can't be transitioned. */
+  .hover-gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 2px;
+    background: var(--gradient-spain);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .hover-gradient-border:hover::before {
+    opacity: 1;
+  }
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }

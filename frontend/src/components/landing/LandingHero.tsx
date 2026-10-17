@@ -9,8 +9,8 @@ export const LandingHero = () => {
 
   const navItems = [
     { label: t.nav.comoFunciona, href: "#como-funciona" },
-    { label: t.nav.jogos, href: "#jogos" },
     { label: t.nav.cursos, href: "#cursos" },
+    { label: t.nav.jogos, href: "#jogos" },
     { label: t.nav.precos, href: "#precos" },
   ];
 
@@ -18,10 +18,11 @@ export const LandingHero = () => {
     <OrbitDeliveryHero
       theme="light"
       content={{
+        // Plain <a>: a full page load replays the preloader and every animation from the top.
         brand: (
-          <Link to="/" aria-label="Spanish AI" className="wordmark">
+          <a href="/" aria-label="Spanish AI" className="wordmark">
             Spanish <span className="text-gradient-spain">AI</span>
-          </Link>
+          </a>
         ),
         navLabel: t.nav.menu,
         navItems,

@@ -249,22 +249,24 @@ export const pt = {
     highlightBadge: "Melhor custo-benefício",
     plans: {
       free: {
-        name: "Free",
+        name: "GRATUITO",
+        headline: "Comece sua jornada no espanhol.",
         price: "R$ 0",
-        period: "/sempre",
-        desc: "Comece a aprender hoje, sem compromisso.",
+        period: "Para sempre",
+        desc: "Aprenda, pratique e evolua no seu ritmo, sem pagar nada.",
         features: [
-          "Curso A1 completo",
-          "3 jogos por dia",
-          "IA corretora básica",
-          "Comunidade",
+          "Curso A1 — primeiros 3 capítulos",
+          "3 partidas por dia, em qualquer jogo",
+          "5 correções com IA por dia",
+          "Acompanhamento básico do progresso",
         ],
         cta: "Começar grátis",
       },
       monthly: {
-        name: "Mensal",
+        name: "MENSAL",
+        headline: "Todo o espanhol, sem limites.",
         price: "R$ 89,90",
-        period: "/mês",
+        period: "Por mês",
         desc: "Acesso completo, cancele quando quiser.",
         features: [
           "Todos os cursos A1 → C2",
@@ -277,9 +279,10 @@ export const pt = {
         cta: "Assinar Mensal",
       },
       annual: {
-        name: "Anual",
+        name: "ANUAL",
+        headline: "Um ano inteiro de evolução.",
         price: "R$ 699,90",
-        period: "/ano",
+        period: "Por ano",
         desc: "Tudo do Mensal, pagando uma vez por ano.",
         features: [
           "Tudo do plano Mensal",

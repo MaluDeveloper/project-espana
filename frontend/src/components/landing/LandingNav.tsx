@@ -21,8 +21,8 @@ export const LandingNav = () => {
 
   const navLinks = [
     { label: t.nav.comoFunciona, href: "#como-funciona" },
-    { label: t.nav.jogos, href: "#jogos" },
     { label: t.nav.cursos, href: "#cursos" },
+    { label: t.nav.jogos, href: "#jogos" },
     { label: t.nav.precos, href: "#precos" },
   ];
 
@@ -49,13 +49,14 @@ export const LandingNav = () => {
       style={HERO_FONT}
     >
       <div className="grid grid-cols-[1fr_auto_1fr] h-[76px] items-center gap-4 px-5 md:px-[5%] min-[1151px]:px-[6.5%]">
-        <Link
-          to="/"
+        {/* Plain <a>: a full page load replays the preloader and every animation from the top. */}
+        <a
+          href="/"
           aria-label="Spanish AI"
           className="justify-self-start text-[26px] min-[1151px]:text-[29px] font-semibold tracking-[-1.5px] text-[#2a160b]"
         >
           Spanish <span className="text-gradient-spain">AI</span>
-        </Link>
+        </a>
 
         <nav className="hidden lg:flex items-center gap-[22px] min-[1151px]:gap-10 justify-self-center">
           {navLinks.map((l) => (

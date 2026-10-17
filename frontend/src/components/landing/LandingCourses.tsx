@@ -61,12 +61,12 @@ const CourseStackItem = ({ level, index, ctaStartFree, ctaStartNow, ctaLocked }:
         className="h-full w-full flex items-center justify-center px-3 sm:px-4 md:px-8 lg:px-12 py-6 sm:py-8"
       >
         <article
-          className={`group relative w-full max-w-7xl h-full max-h-[92vh] lg:max-h-[88vh] ${level.bg} border border-border/60 rounded-[28px] sm:rounded-[40px] md:rounded-[60px] shadow-elevated overflow-hidden`}
+          className={`group relative w-full max-w-5xl h-full max-h-[78vh] lg:max-h-[68vh] ${level.bg} border border-border/60 rounded-[28px] sm:rounded-[36px] md:rounded-[48px] shadow-elevated overflow-hidden`}
         >
-          <div className="h-full w-full grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-14 items-center p-5 sm:p-8 md:p-10 lg:p-14 overflow-y-auto">
+          <div className="h-full w-full grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-center p-5 sm:p-7 md:p-8 lg:p-10 overflow-y-auto">
             {/* Image column */}
             <div
-              className={`relative w-full h-[180px] sm:h-[240px] md:h-[300px] lg:h-full lg:min-h-[260px] rounded-[22px] sm:rounded-[28px] md:rounded-[48px] overflow-hidden bg-muted shadow-2xl shrink-0 ${reversed ? "lg:order-2" : "lg:order-1"
+              className={`relative w-full h-[160px] sm:h-[200px] md:h-[240px] lg:h-full lg:min-h-[220px] rounded-[20px] sm:rounded-[24px] md:rounded-[36px] overflow-hidden bg-muted shadow-2xl shrink-0 ${reversed ? "lg:order-2" : "lg:order-1"
                 }`}
             >
               <motion.img
@@ -92,22 +92,22 @@ const CourseStackItem = ({ level, index, ctaStartFree, ctaStartNow, ctaLocked }:
                   : "lg:order-2 lg:group-hover:translate-x-2.5"
                 }`}
             >
-              <div className="hidden lg:inline-flex items-center gap-3 mb-6">
+              <div className="hidden lg:inline-flex items-center gap-3 mb-5">
                 <span className="h-px w-10 bg-primary" />
                 <span className="text-xs font-bold tracking-[0.3em] text-primary">
                   {level.module}
                 </span>
               </div>
 
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground mb-3 sm:mb-4">
+              <p className="text-xs sm:text-sm font-medium uppercase tracking-[0.25em] text-muted-foreground mb-3">
                 {level.level}
               </p>
 
-              <h3 className="font-display font-extrabold text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-tight leading-[1.05] mb-4 sm:mb-6">
+              <h3 className="font-[550] text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] tracking-[-0.064em] leading-[1.05] mb-4">
                 {level.title}
               </h3>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed mb-6 sm:mb-8 lg:mb-10 max-w-xl">
+              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed mb-6 lg:mb-8 max-w-xl">
                 {level.description}
               </p>
 
@@ -122,7 +122,7 @@ const CourseStackItem = ({ level, index, ctaStartFree, ctaStartNow, ctaLocked }:
                       asChild
                       size="lg"
                       variant="outline"
-                      className="group/btn relative overflow-hidden border-2 border-foreground text-foreground hover:text-primary-foreground hover:border-primary px-8 h-14 rounded-full font-bold tracking-wide"
+                      className="group/btn relative overflow-hidden border-2 border-foreground text-foreground hover:text-primary-foreground hover:border-primary px-7 h-12 rounded-full font-normal"
                     >
                       <Link to={target}>
                         <span className="absolute inset-0 bg-primary translate-x-[-101%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
@@ -143,7 +143,7 @@ const CourseStackItem = ({ level, index, ctaStartFree, ctaStartNow, ctaLocked }:
                       variant="outline"
                       disabled
                       aria-disabled="true"
-                      className="border-2 border-foreground/30 text-foreground/60 px-8 h-14 rounded-full font-bold tracking-wide opacity-60 cursor-not-allowed"
+                      className="border-2 border-foreground/30 text-foreground/60 px-7 h-12 rounded-full font-normal opacity-60 cursor-not-allowed"
                     >
                       <span className="inline-flex items-center gap-2">
                         <Lock className="w-4 h-4" />
@@ -158,7 +158,7 @@ const CourseStackItem = ({ level, index, ctaStartFree, ctaStartNow, ctaLocked }:
                     asChild
                     size="lg"
                     variant="outline"
-                    className="group/btn relative overflow-hidden border-2 border-foreground text-foreground hover:text-primary-foreground hover:border-primary px-8 h-14 rounded-full font-bold tracking-wide"
+                    className="group/btn relative overflow-hidden border-2 border-foreground text-foreground hover:text-primary-foreground hover:border-primary px-7 h-12 rounded-full font-normal"
                   >
                     <Link to={level.to}>
                       <span className="absolute inset-0 bg-primary translate-x-[-101%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
@@ -176,7 +176,7 @@ const CourseStackItem = ({ level, index, ctaStartFree, ctaStartNow, ctaLocked }:
           {/* Ghost number */}
           <span
             aria-hidden
-            className={`pointer-events-none select-none absolute bottom-2 sm:bottom-4 text-[80px] sm:text-[120px] md:text-[160px] lg:text-[220px] font-display font-extrabold leading-none text-foreground/[0.05] ${reversed
+            className={`pointer-events-none select-none absolute bottom-2 sm:bottom-4 text-[72px] sm:text-[100px] md:text-[130px] lg:text-[160px] font-bold leading-none text-foreground/[0.05] ${reversed
                 ? "left-5 sm:left-8 lg:left-14"
                 : "right-5 sm:right-8 lg:right-14"
               }`}
@@ -220,9 +220,13 @@ export const LandingCourses = () => {
   ];
 
   return (
-    <section id="cursos" className="relative bg-background scroll-mt-24">
+    <section
+      id="cursos"
+      className="relative bg-background scroll-mt-24"
+      style={{ fontFamily: "'Orbit DM Sans', sans-serif" }}
+    >
       {/* Header */}
-      <div className="container pt-8 sm:pt-10 md:pt-12 pb-16 sm:pb-20 md:pb-24 lg:pb-32">
+      <div className="container pt-8 sm:pt-10 md:pt-12 pb-4 md:pb-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -231,13 +235,18 @@ export const LandingCourses = () => {
           className="max-w-3xl mx-auto text-center"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent border border-border/60 mb-4 sm:mb-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-accent-foreground">
+            <span className="text-xs font-medium uppercase tracking-[0.36em] text-accent-foreground">
               {t.landingCourses.eyebrow}
             </span>
           </div>
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-tight leading-[1.05] mb-4 sm:mb-6">
+          <h2 className="font-[550] text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[-0.064em] leading-[1.05] mb-4 sm:mb-6">
             {t.landingCourses.titlePart1}{" "}
-            <span className="text-gradient-spain">{t.landingCourses.titleHighlight}</span>
+            <span
+              className="text-gradient-spain italic font-normal text-[1.12em] tracking-[-0.035em] pr-[0.08em] box-decoration-clone"
+              style={{ fontFamily: "'Orbit Libre Caslon', Georgia, serif" }}
+            >
+              {t.landingCourses.titleHighlight}
+            </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
             {t.landingCourses.subtitle}
@@ -246,7 +255,8 @@ export const LandingCourses = () => {
       </div>
 
       {/* Stacking container — sticky on all breakpoints */}
-      <div className="block">
+      {/* Pulled up: each card is centred in a full-screen slot, which leaves a gap above the first one. */}
+      <div className="block -mt-[12vh]">
         {levels.map((lvl, i) => (
           <CourseStackItem
             key={lvl.module}
@@ -257,6 +267,9 @@ export const LandingCourses = () => {
             ctaLocked={t.landingCourses.ctaLocked}
           />
         ))}
+        {/* Hold: sticky cards only stay pinned while their container has room left, so without
+            this the last card starts leaving the moment it arrives. */}
+        <div aria-hidden className="h-[70vh]" />
       </div>
 
       {/* Spacer */}
