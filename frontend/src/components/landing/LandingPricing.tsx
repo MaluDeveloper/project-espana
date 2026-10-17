@@ -1,3 +1,4 @@
+import { heroEyebrowClass, heroFontStyle, heroHighlightClass, heroHighlightStyle } from "./heroTypography";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { Reveal } from "./Reveal";
@@ -16,12 +17,12 @@ export const LandingPricing = () => {
     <section
       id="pricing"
       className="container py-16 sm:py-20 md:py-24 lg:py-32"
-      style={{ fontFamily: "'Orbit DM Sans', sans-serif" }}
+      style={heroFontStyle}
     >
       <div className="mx-auto text-center mb-10 sm:mb-14">
         <Reveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent border border-border/60 mb-4 sm:mb-5">
-            <span className="text-xs font-medium uppercase tracking-[0.36em] text-accent-foreground">
+            <span className={heroEyebrowClass}>
               {t.pricing.eyebrow}
             </span>
           </div>
@@ -31,8 +32,8 @@ export const LandingPricing = () => {
           <h2 className="font-[550] text-3xl sm:text-[clamp(1.5rem,3.6vw,3.25rem)] sm:whitespace-nowrap tracking-[-0.064em] leading-[1.15] mb-4 sm:mb-5">
             {t.pricing.titlePart1}{" "}
             <span
-              className="text-gradient-spain italic font-normal text-[1.12em] tracking-[-0.035em] pr-[0.08em] box-decoration-clone"
-              style={{ fontFamily: "'Orbit Libre Caslon', Georgia, serif" }}
+              className={heroHighlightClass}
+              style={heroHighlightStyle}
             >
               {t.pricing.titleHighlight}
             </span>

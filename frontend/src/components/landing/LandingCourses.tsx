@@ -1,3 +1,4 @@
+import { heroEyebrowClass, heroFontStyle, heroHighlightClass, heroHighlightStyle } from "./heroTypography";
 import { Link } from "react-router-dom";
 import { ArrowRight, Lock } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -79,7 +80,7 @@ const CourseStackItem = ({ level, index, ctaStartFree, ctaStartNow, ctaLocked }:
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/35 via-transparent to-transparent pointer-events-none" />
               <div className="absolute top-5 left-5 lg:hidden">
-                <span className="px-3 py-1.5 rounded-full bg-background/90 backdrop-blur text-[10px] font-bold tracking-[0.2em] text-foreground border border-border/60">
+                <span className="px-3 py-1.5 rounded-full bg-background/90 backdrop-blur text-[10px] font-medium tracking-[0.2em] text-foreground border border-border/60">
                   {level.module}
                 </span>
               </div>
@@ -223,7 +224,7 @@ export const LandingCourses = () => {
     <section
       id="cursos"
       className="relative bg-background scroll-mt-24"
-      style={{ fontFamily: "'Orbit DM Sans', sans-serif" }}
+      style={heroFontStyle}
     >
       {/* Header */}
       <div className="container pt-8 sm:pt-10 md:pt-12 pb-4 md:pb-6">
@@ -235,15 +236,15 @@ export const LandingCourses = () => {
           className="max-w-3xl mx-auto text-center"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent border border-border/60 mb-4 sm:mb-6">
-            <span className="text-xs font-medium uppercase tracking-[0.36em] text-accent-foreground">
+            <span className={heroEyebrowClass}>
               {t.landingCourses.eyebrow}
             </span>
           </div>
           <h2 className="font-[550] text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[-0.064em] leading-[1.05] mb-4 sm:mb-6">
             {t.landingCourses.titlePart1}{" "}
             <span
-              className="text-gradient-spain italic font-normal text-[1.12em] tracking-[-0.035em] pr-[0.08em] box-decoration-clone"
-              style={{ fontFamily: "'Orbit Libre Caslon', Georgia, serif" }}
+              className={heroHighlightClass}
+              style={heroHighlightStyle}
             >
               {t.landingCourses.titleHighlight}
             </span>

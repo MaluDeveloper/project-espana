@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { cn } from "@/lib/utils";
+import { heroFontStyle } from "./heroTypography";
 
 interface InlineCtaProps {
   label: string;
@@ -20,10 +21,10 @@ export const InlineCta = ({
   className,
 }: InlineCtaProps) => {
   return (
-    <section className={cn("container py-12 sm:py-16 md:py-20", className)}>
+    <section className={cn("container py-12 sm:py-16 md:py-20", className)} style={heroFontStyle}>
       <Reveal>
         <div className="flex flex-col items-center text-center gap-4">
-          <Button asChild size="xl" variant={variant} className="group w-full sm:w-auto max-w-sm">
+          <Button asChild size="xl" variant={variant} className="group w-full sm:w-auto max-w-sm rounded-full font-normal">
             <Link to={to}>
               {label}
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

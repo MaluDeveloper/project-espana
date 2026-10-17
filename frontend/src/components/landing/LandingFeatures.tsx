@@ -1,3 +1,11 @@
+import {
+  heroCardTitleClass,
+  heroEyebrowClass,
+  heroFontStyle,
+  heroHighlightClass,
+  heroHighlightStyle,
+  heroTitleClass,
+} from "./heroTypography";
 import { BookOpen, Gamepad2, Sparkles, Trophy, MessageSquare, BarChart3 } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { useT } from "@/i18n/LanguageContext";
@@ -15,19 +23,21 @@ export const LandingFeatures = () => {
   ];
 
   return (
-    <section id="features" className="container py-16 sm:py-20 md:py-24 lg:py-32">
+    <section id="features" className="container py-16 sm:py-20 md:py-24 lg:py-32" style={heroFontStyle}>
       <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14 md:mb-16">
         <Reveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent border border-border/60 mb-4 sm:mb-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-accent-foreground">
+            <span className={heroEyebrowClass}>
               {t.features.eyebrow}
             </span>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4 sm:mb-5">
+          <h2 className={`${heroTitleClass} text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-5`}>
             {t.features.titlePart1}{" "}
-            <span className="text-gradient-spain">{t.features.titleHighlight}</span>
+            <span className={heroHighlightClass} style={heroHighlightStyle}>
+              {t.features.titleHighlight}
+            </span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
@@ -44,7 +54,7 @@ export const LandingFeatures = () => {
                 <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-spain flex items-center justify-center mb-4 sm:mb-5 shadow-card group-hover:scale-110 transition-transform duration-300">
                   <f.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                 </div>
-                <h3 className="font-display font-extrabold text-lg sm:text-xl mb-2 tracking-tight">
+                <h3 className={`${heroCardTitleClass} text-lg sm:text-xl mb-2`}>
                   {f.title}
                 </h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{f.desc}</p>

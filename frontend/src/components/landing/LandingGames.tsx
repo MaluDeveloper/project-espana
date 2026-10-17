@@ -1,3 +1,11 @@
+import {
+  heroCardTitleClass,
+  heroEyebrowClass,
+  heroFontStyle,
+  heroHighlightClass,
+  heroHighlightStyle,
+  heroTitleClass,
+} from "./heroTypography";
 import { Link } from "react-router-dom";
 import { ArrowRight, Lock } from "lucide-react";
 import { Reveal } from "./Reveal";
@@ -29,19 +37,21 @@ export const LandingGames = () => {
   const availableCount = GAME_CATEGORIES.filter((c) => c.available).length;
 
   return (
-    <section id="games" className="container pt-8 sm:pt-10 md:pt-12 pb-16 sm:pb-20 md:pb-24 lg:pb-32">
+    <section id="games" className="container pt-8 sm:pt-10 md:pt-12 pb-16 sm:pb-20 md:pb-24 lg:pb-32" style={heroFontStyle}>
       <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14 md:mb-16">
         <Reveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent border border-border/60 mb-4 sm:mb-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-accent-foreground">
+            <span className={heroEyebrowClass}>
               {t.landingGames.eyebrow}
             </span>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4 sm:mb-5">
+          <h2 className={`${heroTitleClass} text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-5`}>
             {t.landingGames.titlePart1}{" "}
-            <span className="text-gradient-spain">{t.landingGames.titleHighlight}</span>
+            <span className={heroHighlightClass} style={heroHighlightStyle}>
+              {t.landingGames.titleHighlight}
+            </span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
@@ -65,7 +75,7 @@ export const LandingGames = () => {
                 className={`group relative h-full rounded-3xl border border-border/60 bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-elevated overflow-hidden ${accent.ring}`}
               >
                 {!game.available && (
-                  <div className="absolute top-4 right-4 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-[10px] font-bold uppercase tracking-wider border border-border/60">
+                  <div className="absolute top-4 right-4 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-[10px] font-medium uppercase tracking-[0.2em] border border-border/60">
                     <Lock className="w-3 h-3" />
                     {t.landingGames.emBreve}
                   </div>
@@ -77,10 +87,10 @@ export const LandingGames = () => {
                   <Icon className="w-6 h-6 text-primary-foreground" />
                 </div>
 
-                <h3 className="font-display font-extrabold text-lg mb-1 tracking-tight">
+                <h3 className={`${heroCardTitleClass} text-lg mb-1`}>
                   {title}
                 </h3>
-                <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${accent.text}`}>
+                <p className={`text-xs font-medium uppercase tracking-[0.2em] mb-3 ${accent.text}`}>
                   {tagline}
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -88,19 +98,19 @@ export const LandingGames = () => {
                 </p>
 
                 <div className="flex items-center justify-between pt-3 border-t border-border/60">
-                  <span className="text-xs font-bold text-muted-foreground">
+                  <span className="text-xs font-medium text-muted-foreground">
                     {game.totalStages} {t.landingGames.fases}
                   </span>
                   {game.available ? (
                     <Link
                       to={`/jogos/${game.id}`}
-                      className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:gap-2 transition-all"
+                      className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:gap-2 transition-all"
                     >
                       {t.landingGames.jogar}
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   ) : (
-                    <span className="text-xs font-bold text-muted-foreground/60">—</span>
+                    <span className="text-xs text-muted-foreground/60">—</span>
                   )}
                 </div>
               </div>
