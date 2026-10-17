@@ -62,6 +62,26 @@ const HomeHeroLandingScrollAnimation = ({ images, segments }: HomeHeroLandingScr
       duplicateIconsRef.current = null;
     };
 
+    const ensureDuplicates = () => {
+      if (duplicateIconsRef.current) return;
+      duplicateIconsRef.current = [];
+      iconElementsRef.current.forEach((icon) => {
+        if (icon) {
+          const duplicate = icon.cloneNode(true) as HTMLElement;
+          duplicate.className = "duplicate-icon rounded-sm overflow-hidden";
+          Object.assign(duplicate.style, {
+            position: "absolute",
+            width: headerIconSize + "px",
+            height: headerIconSize + "px",
+            zIndex: "40",
+            pointerEvents: "none",
+          });
+          heroSectionRef.current!.appendChild(duplicate);
+          duplicateIconsRef.current!.push(duplicate);
+        }
+      });
+    };
+
     const trigger = ScrollTrigger.create({
       trigger: heroSectionRef.current,
       start: "top top",
@@ -145,24 +165,7 @@ const HomeHeroLandingScrollAnimation = ({ images, segments }: HomeHeroLandingScr
 
           iconElementsRef.current.forEach((icon) => { if (icon) gsap.set(icon, { x: 0, y: 0 }); });
 
-          if (!duplicateIconsRef.current) {
-            duplicateIconsRef.current = [];
-            iconElementsRef.current.forEach((icon) => {
-              if (icon) {
-                const duplicate = icon.cloneNode(true) as HTMLElement;
-                duplicate.className = "duplicate-icon rounded-sm overflow-hidden";
-                Object.assign(duplicate.style, {
-                  position: "absolute",
-                  width: headerIconSize + "px",
-                  height: headerIconSize + "px",
-                  zIndex: "40",
-                  pointerEvents: "none",
-                });
-                heroSectionRef.current!.appendChild(duplicate);
-                duplicateIconsRef.current!.push(duplicate);
-              }
-            });
-          }
+          ensureDuplicates();
 
           // Clones live inside the pinned section, so section-relative coordinates stay put while the
           // page scrolls; page coordinates lagged behind the scrubbed update and made them shake.
@@ -195,6 +198,10 @@ const HomeHeroLandingScrollAnimation = ({ images, segments }: HomeHeroLandingScr
           gsap.set(heroHeaderRef.current, { transform: "translateY(-100px)", opacity: 0 });
           if (heroSectionRef.current) heroSectionRef.current.style.backgroundColor = BG;
           gsap.set(animatedIconsRef.current, { opacity: 0 });
+
+          // The page can land here without passing through the previous phase (reload mid-page,
+          // anchor jump to #destinos), so the clones may not exist yet.
+          ensureDuplicates();
 
           const sectionRect = heroSectionRef.current!.getBoundingClientRect();
 
@@ -300,7 +307,7 @@ const HomeHeroLandingScrollAnimation = ({ images, segments }: HomeHeroLandingScr
             <span key={index}>
               <span ref={(el) => { textSegmentsRef.current[index] = el; }} className="opacity-0">
                 {segment}
-              </span>
+              </span>{" "}
               {index < images.length && (
                 <span
                   ref={(el) => { placeholdersRef.current[index] = el; }}
