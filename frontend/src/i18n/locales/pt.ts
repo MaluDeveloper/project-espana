@@ -81,15 +81,12 @@ export const pt = {
     badgeNoCard: "Sem cartão",
     badgeMinutes: "5 min/dia",
     badgeStudents: "+12.000 alunos",
-    brandTagline: "espanhol com IA",
-    eyebrow: "Seu espanhol, no seu ritmo",
-    titleLines: ["Aprenda", "espanhol"],
-    titleEm: "com IA.",
-    description: "Cursos A1–C2, jogos, correção por IA e preparação para o DELE. Um pouquinho por dia, do seu jeito.",
+    titleLines: ["Destrave seu espanhol"],
+    titleEm: "Vá além do básico",
+    description: "Aprenda do A1 ao C2 com trilhas personalizadas por IA, jogos interativos, correção inteligente e preparação para o DELE.",
     captionIdle: ["Arraste para girar", "o mundo"],
     captionDragging: ["¡Vamos!", "Rumo à fluência."],
     captionPaused: ["Aperte Play", "para continuar"],
-    footerLeft: ["5 minutos por dia", "Fluência de verdade"],
     footerRight: ["O espanhol", "mais perto", "de você"],
     loading: "Seu mundinho está tomando forma…",
     fallback: "Não conseguimos carregar este mundinho.",
@@ -233,15 +230,16 @@ export const pt = {
     },
   },
 
-  landingCities: {
-    eyebrow: "DESTINOS 🇪🇸",
-    titlePart1: "Cidades que",
-    titleHighlight: "falam espanhol",
-    subtitle:
-      "Cada região tem seu sotaque, seu ritmo, sua alma. Clique em uma cidade para descobrir como se fala lá.",
-    sobreCidade: "Sobre a cidade",
-    comoSeFala: "Como se fala aqui",
-    saibaMais: (name: string) => `Saiba mais sobre ${name}`,
+  landingDestinations: {
+    // One image lands between each pair of consecutive segments (5 images → 6 segments).
+    segments: [
+      "Descubra a Espanha,",
+      "onde cada esquina",
+      "guarda uma história,",
+      "cada rua revela uma cultura",
+      "e cada cidade",
+      "tem algo único a oferecer.",
+    ],
   },
 
   landingTestimonials: {
@@ -325,28 +323,18 @@ export const pt = {
   },
 
   footer: {
-    tagline:
-      "Aprenda espanhol da Espanha de forma inteligente com IA, jogos e cursos estruturados do A1 ao C2.",
-    product: "Produto",
-    company: "Empresa",
-    legal: "Legal",
-    support: "Suporte",
+    scrollHint: "Role para baixo para revelar",
+    heading: "Pronto para começar?",
+    giantText: "Español",
+    marquee: ["¡Hola!", "Gracias", "Buenos días", "Por favor", "¡Vamos!", "Amigo", "Bienvenido", "Hasta luego"],
+    signUp: "Cadastre-se",
     links: {
-      cursos: "Cursos",
-      comoFunciona: "Como funciona",
-      jogos: "Jogos",
-      precos: "Preços",
-      sobre: "Sobre",
-      blog: "Blog",
-      contato: "Contato",
-      termos: "Termos",
-      privacidade: "Privacidade",
-      cookies: "Cookies",
-      ajuda: "Central de Ajuda",
-      faq: "FAQ",
-      emailSuporte: "suporte@spanishai.app",
+      termos: "Termos de uso",
+      privacidade: "Política de privacidade",
+      suporte: "Suporte",
     },
-    socialLabel: "Redes sociais",
+    supportEmail: "suporte@spanishai.app",
+    backToTop: "Voltar ao topo",
     rights: (year: number) =>
       `© ${year} Spanish AI. Todos os direitos reservados.`,
   },

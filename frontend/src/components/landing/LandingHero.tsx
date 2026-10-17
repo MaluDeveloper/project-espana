@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import OrbitDeliveryHero from "@/components/ui/orbit-delivery-hero";
-import { SpanishLogo } from "@/components/SpanishLogo";
 import { useT } from "@/i18n/LanguageContext";
 
 export const LandingHero = () => {
@@ -10,10 +9,10 @@ export const LandingHero = () => {
 
   const navItems = [
     { label: t.nav.comoFunciona, href: "#como-funciona" },
-    { label: t.nav.destinos, href: "#destinos" },
     { label: t.nav.jogos, href: "#jogos" },
     { label: t.nav.cursos, href: "#cursos" },
     { label: t.nav.precos, href: "#precos" },
+    { label: t.nav.destinos, href: "#destinos" },
   ];
 
   return (
@@ -22,10 +21,7 @@ export const LandingHero = () => {
       content={{
         brand: (
           <Link to="/" aria-label="Spanish AI" className="wordmark">
-            <SpanishLogo size={38} withText={false} />
-            <span className="brand-type">
-              Spanish AI<small>{h.brandTagline}</small>
-            </span>
+            Spanish <span className="text-gradient-spain">AI</span>
           </Link>
         ),
         navLabel: t.nav.menu,
@@ -35,7 +31,6 @@ export const LandingHero = () => {
             {t.nav.entrar}
           </Link>
         ),
-        eyebrow: h.eyebrow,
         title: (
           <>
             {h.titleLines.map((line) => (
@@ -56,7 +51,6 @@ export const LandingHero = () => {
         captionIdle: h.captionIdle,
         captionDragging: h.captionDragging,
         captionPaused: h.captionPaused,
-        footerLeft: h.footerLeft,
         footerRight: h.footerRight,
         loading: h.loading,
         fallback: h.fallback,

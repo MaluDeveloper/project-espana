@@ -191,18 +191,6 @@ html {
     animation: scarf-wave 3.5s ease-in-out infinite;
     transform-origin: top center;
   }
-  /* Cities marquee — infinite horizontal scroll, immune to React re-renders */
-  @keyframes cities-marquee {
-    from { transform: translate3d(0, 0, 0); }
-    to { transform: translate3d(-50%, 0, 0); }
-  }
-  .animate-cities-marquee {
-    animation: cities-marquee 100s linear infinite;
-    will-change: transform;
-  }
-  .animate-cities-marquee.is-paused {
-    animation-play-state: paused;
-  }
   .text-gradient-spain {
     background: var(--gradient-spain);
     -webkit-background-clip: text;

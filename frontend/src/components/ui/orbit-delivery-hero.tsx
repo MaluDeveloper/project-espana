@@ -1056,7 +1056,7 @@ function App({ content: c }) {
     </header>
     <div className="hero-main"><section className="hero" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="eyebrow">{c.eyebrow}</p>
+        {c.eyebrow && <p className="eyebrow">{c.eyebrow}</p>}
         <h1 id="hero-title">{c.title}</h1>
         <p className="hero-description">{c.description}</p>
         {c.cta}
@@ -1120,7 +1120,7 @@ function App({ content: c }) {
       <p id="planet-instructions" className="sr-only">{c.instructions}</p>
       <div className="cloud-bank" aria-hidden="true"><i /><i /><i /><i /><i /></div>
     </section></div>
-    <div className="site-footer"><p className="footer-left">{lines(c.footerLeft)}</p><button className="motion-button" onClick={toggleMotion} aria-pressed={!auto} aria-label={auto ? c.pauseLabel : c.startLabel}>{auto ? <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10m6-10v10" stroke="currentColor" strokeWidth="1.5" /></svg> : <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 8 6-8 6Z" fill="currentColor" /></svg>}<span>{auto ? c.pause : c.start}</span></button><p className="footer-right">{lines(c.footerRight)}</p></div>
+    <div className="site-footer">{c.footerLeft?.length ? <p className="footer-left">{lines(c.footerLeft)}</p> : <span aria-hidden="true" />}<button className="motion-button" onClick={toggleMotion} aria-pressed={!auto} aria-label={auto ? c.pauseLabel : c.startLabel}>{auto ? <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10m6-10v10" stroke="currentColor" strokeWidth="1.5" /></svg> : <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 8 6-8 6Z" fill="currentColor" /></svg>}<span>{auto ? c.pause : c.start}</span></button><p className="footer-right">{lines(c.footerRight)}</p></div>
     {prototype && <aside className="prototype-label">Movement prototype <a href="./">View finished scene ↗</a></aside>}
   </div>;
 }
@@ -1149,6 +1149,13 @@ var css = `@font-face{font-family:'Orbit DM Sans';font-style:normal;font-weight:
 .orbit-delivery h1 em{color:var(--orbit-em)}
 .orbit-delivery .cloud-bank{opacity:var(--orbit-cloud)}
 .orbit-delivery .wordmark{color:var(--orbit-ink)}
+.orbit-delivery .hero-copy{padding-top:clamp(40px,6vh,90px)}
+.orbit-delivery .hero-description{max-width:22em}
+.orbit-delivery h1 em{background:var(--gradient-spain);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-right:.08em}
+.orbit-delivery .header-cta,.orbit-delivery .explore-button{background:var(--gradient-spain);transition:filter .2s,transform .2s}
+.orbit-delivery .header-cta:hover,.orbit-delivery .explore-button:hover{background:var(--gradient-spain);filter:brightness(1.08)}
+@media(max-width:1150px){.orbit-delivery .hero-copy{padding-top:56px}}
+@media(max-width:759px){.orbit-delivery .hero-copy{padding-top:20px}}
 `;
 
 export interface OrbitHeroContent {
@@ -1158,7 +1165,7 @@ export interface OrbitHeroContent {
   navItems: { label: string; href: string }[];
   /** Right side of the header (e.g. language switcher + CTA with className="header-cta"). */
   headerActions?: ReactNode;
-  eyebrow: string;
+  eyebrow?: string;
   title: ReactNode;
   description: ReactNode;
   /** Hero call to action; give it className="explore-button". */
@@ -1166,7 +1173,7 @@ export interface OrbitHeroContent {
   captionIdle: readonly string[];
   captionDragging: readonly string[];
   captionPaused: readonly string[];
-  footerLeft: readonly string[];
+  footerLeft?: readonly string[];
   footerRight: readonly string[];
   loading: string;
   fallback: string;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { LandingNav } from "@/components/landing/LandingNav";
 import { LandingHero } from "@/components/landing/LandingHero";
-import { LandingCitiesCarousel } from "@/components/landing/LandingCitiesCarousel";
+import { LandingDestinations } from "@/components/landing/LandingDestinations";
 import { LandingFeatures } from "@/components/landing/LandingFeatures";
 import { LandingGames } from "@/components/landing/LandingGames";
 import { LandingCourses } from "@/components/landing/LandingCourses";
@@ -10,7 +10,6 @@ import { LandingTestimonials } from "@/components/landing/LandingTestimonials";
 import { LandingPricing } from "@/components/landing/LandingPricing";
 
 import { InlineCta } from "@/components/landing/InlineCta";
-import { ScrollMaskHero } from "@/components/landing/ScrollMaskHero";
 
 import { LandingFooter } from "@/components/landing/LandingFooter";
 import { Preloader } from "@/components/Preloader";
@@ -64,10 +63,6 @@ const Landing = () => {
             className="!pt-0 !pb-16 md:!pb-20 -mt-12 md:-mt-20"
           />
 
-          <section id="destinos" className="scroll-mt-24 -mt-2 sm:-mt-4 md:-mt-6">
-            <LandingCitiesCarousel />
-          </section>
-
           <section id="jogos" className="scroll-mt-24 -mt-2 sm:-mt-4 md:-mt-6">
             <LandingGames />
           </section>
@@ -76,14 +71,15 @@ const Landing = () => {
             <LandingCourses />
           </section>
 
-          {/* Immersive scroll-mask reveal before the pricing table */}
-          <ScrollMaskHero />
-
           <section id="precos" className="scroll-mt-24">
             <LandingPricing />
           </section>
 
           <LandingTestimonials />
+
+          <section id="destinos">
+            <LandingDestinations />
+          </section>
         </main>
         <LandingFooter />
       </motion.div>

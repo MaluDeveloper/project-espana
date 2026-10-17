@@ -2,13 +2,16 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { SpanishLogo } from "@/components/SpanishLogo";
 import { Button } from "@/components/ui/button";
 import { useT } from "@/i18n/LanguageContext";
 import { cn } from "@/lib/utils";
 
 // The hero renders its own header, so this sticky nav only slides in after scrolling past it.
 const SCROLL_THRESHOLD = 120;
+
+// Mirrors the hero header (orbit-delivery-hero): same font, sizes and colors. The font is
+// registered by the hero's @font-face, which is always mounted on the landing page.
+const HERO_FONT = { fontFamily: "'Orbit DM Sans', sans-serif" };
 
 export const LandingNav = () => {
   const t = useT();
@@ -18,10 +21,10 @@ export const LandingNav = () => {
 
   const navLinks = [
     { label: t.nav.comoFunciona, href: "#como-funciona" },
-    { label: t.nav.destinos, href: "#destinos" },
     { label: t.nav.jogos, href: "#jogos" },
     { label: t.nav.cursos, href: "#cursos" },
     { label: t.nav.precos, href: "#precos" },
+    { label: t.nav.destinos, href: "#destinos" },
   ];
 
   useEffect(() => {
@@ -44,23 +47,23 @@ export const LandingNav = () => {
         "fixed top-0 left-0 right-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border/60 shadow-sm",
         !showSolid && "pointer-events-none",
       )}
+      style={HERO_FONT}
     >
-      <div className="container grid grid-cols-[1fr_auto_1fr] h-16 md:h-18 items-center gap-4">
-        <Link to="/" aria-label="Spanish AI" className="justify-self-start">
-          <SpanishLogo light={!showSolid} />
+      <div className="grid grid-cols-[1fr_auto_1fr] h-[76px] items-center gap-4 px-5 md:px-[5%] min-[1151px]:px-[6.5%]">
+        <Link
+          to="/"
+          aria-label="Spanish AI"
+          className="justify-self-start text-[26px] min-[1151px]:text-[29px] font-semibold tracking-[-1.5px] text-[#2a160b]"
+        >
+          Spanish <span className="text-gradient-spain">AI</span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1 justify-self-center">
+        <nav className="hidden lg:flex items-center gap-[22px] min-[1151px]:gap-10 justify-self-center">
           {navLinks.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              className={cn(
-                "px-3 py-2 text-sm font-semibold rounded-lg transition-colors story-link",
-                showSolid
-                  ? "text-foreground/80 hover:text-foreground"
-                  : "text-white/90 hover:text-white",
-              )}
+              className="py-3 text-[13px] min-[1151px]:text-[15px] whitespace-nowrap text-[#6e4c38] hover:text-[#ec6b1c] transition-colors"
             >
               {l.label}
             </a>
@@ -69,9 +72,12 @@ export const LandingNav = () => {
 
         <div className="flex items-center justify-self-end gap-1">
           <div className="hidden md:flex items-center gap-2">
-            <Button asChild variant="hero" size="sm" className="shadow-card">
-              <Link to="/login">{t.nav.entrar}</Link>
-            </Button>
+            <Link
+              to="/login"
+              className="inline-flex items-center rounded-[23px] px-[22px] py-[13px] text-[13px] text-white bg-gradient-spain shadow-[inset_0_1px_0_#ffffff26] transition-[filter] hover:brightness-110"
+            >
+              {t.nav.entrar}
+            </Link>
           </div>
 
           <div className="md:hidden flex items-center gap-1">
