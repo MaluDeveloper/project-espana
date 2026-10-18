@@ -118,10 +118,14 @@ export const getChapterCompletionPercent = (level: LevelId, chapterId: string): 
   const chapter = course?.chapters.find((c) => c.id === chapterId);
   if (!chapter) return 0;
   const prog = getChapterProgress(level, chapterId);
+  const topicIds = new Set(chapter.topics.map((t) => t.id));
+  const exerciseIds = new Set(chapter.topics.flatMap((t) => t.exercises.map((e) => e.id)));
+  const readCount = prog.topicsRead.filter((id) => topicIds.has(id)).length;
+  const exCount = prog.exercisesCorrect.filter((id) => exerciseIds.has(id)).length;
   const totalTopics = Math.max(chapter.topics.length, 1);
-  const totalEx = Math.max(chapter.topics.reduce((s, t) => s + t.exercises.length, 0), 1);
-  const readPct = (prog.topicsRead.length / totalTopics) * 50;
-  const exPct = (prog.exercisesCorrect.length / totalEx) * 30;
+  const totalEx = Math.max(exerciseIds.size, 1);
+  const readPct = (readCount / totalTopics) * 50;
+  const exPct = (exCount / totalEx) * 30;
   const quiz = getChapterQuiz(level, chapterId);
   const quizPct = quiz && quiz.score / quiz.total >= 0.7 ? 20 : 0;
   return Math.min(100, Math.round(readPct + exPct + quizPct));
