@@ -4093,8 +4093,8 @@ const A2: CourseLevel = {
               explanation: "'Siempre' e 'los domingos' indicam hábito: cocin- + -aba." },
             { id: "a2-2-f2", type: "fill-blank", question: "Mi padre ___ (leer) el periódico cada mañana.", answer: "leía",
               explanation: "'Cada mañana' indica hábito; leer na 3ª pessoa do singular: le- + -ía." },
-            { id: "a2-2-27", type: "fill-blank", question: "Ahora vivo en Madrid, pero antes ___ (vivir-yo) en Lima.", answer: "vivía",
-              explanation: "'Antes' contrasta com o presente e descreve uma situação passada que já mudou: Imperfecto, viv- + -ía." },
+            { id: "a2-2-27", type: "fill-blank", question: "De niño, cuando ___ (vivir-yo) en Lima, iba a la playa todos los domingos.", answer: "vivía",
+              explanation: "'De niño' e 'todos los domingos' mostram que é uma situação de fundo e um hábito, não um fato fechado: Imperfecto, viv- + -ía." },
             { id: "a2-2-l5", type: "multiple-choice", question: "Por que se diz 'Mi abuela siempre nos contaba historias'?", options: [
               "Porque descreve uma ação pontual.",
               "Porque descreve um hábito no passado.",
