@@ -59,6 +59,12 @@ describe.each(A2_STANDARDIZED)("A2 chapter %i follows the reference standard", (
     expect(ch.briefReview?.trim()).toBeTruthy();
   });
 
+  it("tells the learner when a blank needs two words", () => {
+    for (const e of all) {
+      if ((e.question.match(/___/g) ?? []).length >= 2) expect(e.question, e.id).toContain("duas palavras");
+    }
+  });
+
   it("has no line breaks in theory text", () => {
     for (const t of ch.topics) {
       for (const b of t.blocks) {
