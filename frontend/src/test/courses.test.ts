@@ -15,7 +15,7 @@ describe("COURSE data", () => {
 
 const A2_STANDARDIZED: number[] = [1];
 const A2 = COURSE.find((c) => c.level === "A2")!;
-const ENGLISH = /(the|and|you|your|with|this|which)/i;
+const ENGLISH = /\b(the|and|you|your|with|this|which)\b/i;
 
 describe.each(A2_STANDARDIZED)("A2 chapter %i follows the reference standard", (n) => {
   const ch = A2.chapters.find((c) => c.number === n)!;
@@ -62,6 +62,7 @@ describe.each(A2_STANDARDIZED)("A2 chapter %i follows the reference standard", (
   it("has no English in learner-facing Portuguese text", () => {
     const texts = [
       ...all.map((e) => e.explanation ?? ""),
+      ...all.flatMap((e) => [e.question, ...(e.options ?? [])]),
       ...ch.topics.flatMap((t) => t.blocks.flatMap((b) => ("text" in b ? [b.text] : "pt" in b ? [b.pt] : []))),
       ...[...ch.lexicon, ...(ch.flashcards ?? [])].map((l) => l.pt),
       ch.briefReview ?? "",
