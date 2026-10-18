@@ -13,7 +13,7 @@ describe("COURSE data", () => {
   });
 });
 
-const A2_STANDARDIZED: number[] = [1, 2, 3];
+const A2_STANDARDIZED: number[] = [1, 2, 3, 4];
 const A2 = COURSE.find((c) => c.level === "A2")!;
 const ENGLISH = /\b(the|and|you|your|with|this|which)\b/i;
 
@@ -57,6 +57,17 @@ describe.each(A2_STANDARDIZED)("A2 chapter %i follows the reference standard", (
     const lex = new Set(ch.lexicon.map((l) => l.es.toLowerCase()));
     for (const f of ch.flashcards!) expect(lex.has(f.es.toLowerCase()), f.es).toBe(false);
     expect(ch.briefReview?.trim()).toBeTruthy();
+  });
+
+  it("has no line breaks in theory text", () => {
+    for (const t of ch.topics) {
+      for (const b of t.blocks) {
+        for (const k of ["text", "es", "pt"] as const) {
+          const v = (b as Record<string, unknown>)[k];
+          if (typeof v === "string") expect(v.includes("\n"),`${t.id}: ${v}`).toBe(false);
+        }
+      }
+    }
   });
 
   it("has no English in learner-facing Portuguese text", () => {
