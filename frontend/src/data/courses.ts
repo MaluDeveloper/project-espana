@@ -79,7 +79,6 @@ export interface CourseLevel {
   title: string;
   description: string;
   chapters: Chapter[];
-  exam: Exercise[];
   /** Banco rotativo da prova final — preenchido em runtime via exam-banks.ts. */
   examBank?: import("./exam-banks").ExamBank;
 }
@@ -3696,25 +3695,6 @@ const A1: CourseLevel = {
       ],
     },
   ],
-  exam: [
-    // 10 perguntas de múltipla escolha
-    { id: "a1-ex-1", type: "multiple-choice", question: "Como se cumprimenta às 10h?", options: ["Buenos días", "Buenas tardes", "Buenas noches"], answer: "Buenos días" },
-    { id: "a1-ex-2", type: "multiple-choice", question: "Letra exclusiva do espanhol:", options: ["Ç", "Ñ", "K"], answer: "Ñ" },
-    { id: "a1-ex-3", type: "multiple-choice", question: "Tú ___ de Brasil.", options: ["soy", "eres", "es"], answer: "eres" },
-    { id: "a1-ex-4", type: "multiple-choice", question: "Yo ___ cansado hoy.", options: ["soy", "estoy", "es"], answer: "estoy" },
-    { id: "a1-ex-5", type: "multiple-choice", question: "Vosotros ___ pizza.", options: ["coméis", "comen", "comemos"], answer: "coméis" },
-    { id: "a1-ex-6", type: "multiple-choice", question: "Voy ___ mercado.", options: ["a el", "al", "del"], answer: "al" },
-    { id: "a1-ex-7", type: "multiple-choice", question: "Es un ___ amigo. (bom)", options: ["bueno", "buen", "bien"], answer: "buen" },
-    { id: "a1-ex-8", type: "multiple-choice", question: "Yo ___ dos hermanos.", options: ["tiengo", "tengo", "teno"], answer: "tengo" },
-    { id: "a1-ex-9", type: "multiple-choice", question: "Negação correta:", options: ["Tengo nada", "No tengo nada", "No tengo algo"], answer: "No tengo nada" },
-    { id: "a1-ex-10", type: "multiple-choice", question: "'Amarillo' significa:", options: ["azul", "amarelo", "vermelho"], answer: "amarelo" },
-    // 5 perguntas discursivas (resposta aberta)
-    { id: "a1-ex-11", type: "translate", question: "Apresente-se em espanhol dizendo seu nome, sua idade e de onde você é (2 ou 3 frases).", answer: "Me llamo [nome], tengo [idade] años y soy de [país]." },
-    { id: "a1-ex-12", type: "translate", question: "Descreva a sua família em 2 ou 3 frases (use SER, TENER e profissões).", answer: "Tengo [número] hermanos. Mi padre es [profesión] y mi madre es [profesión]." },
-    { id: "a1-ex-13", type: "translate", question: "Escreva 3 frases sobre sua rotina diária no Presente do Indicativo.", answer: "Me levanto a las siete. Desayuno y voy al trabajo. Por la tarde estudio español." },
-    { id: "a1-ex-14", type: "translate", question: "Traduza para o espanhol: 'A minha casa é grande e tem três quartos. Eu moro com a minha família.'", answer: "Mi casa es grande y tiene tres habitaciones. Vivo con mi familia." },
-    { id: "a1-ex-15", type: "translate", question: "Escreva um diálogo curto (4 falas) pedindo um café em um bar.", answer: "—Hola, ¿qué desea? —Un café con leche, por favor. —¿Algo más? —No, gracias. ¿Cuánto es?" },
-  ],
 };
 
 // ------------------------------------------------------------
@@ -6652,25 +6632,6 @@ const A2: CourseLevel = {
       ],
     },
   ],
-  exam: [
-    // 10 perguntas de múltipla escolha
-    { id: "a2-ex-1", type: "multiple-choice", question: "Ella ___ a las 8 ayer.", options: ["llegó", "llega", "llegará"], answer: "llegó" },
-    { id: "a2-ex-2", type: "multiple-choice", question: "Mañana ___ a estudiar mucho.", options: ["voy", "fui", "iba"], answer: "voy" },
-    { id: "a2-ex-3", type: "multiple-choice", question: "Comparativo irregular de 'bueno':", options: ["más bueno", "mejor", "buenísimo"], answer: "mejor" },
-    { id: "a2-ex-4", type: "multiple-choice", question: "___ a María desde hace años.", options: ["Sé", "Conozco", "Pido"], answer: "Conozco" },
-    { id: "a2-ex-5", type: "multiple-choice", question: "Conector de causa:", options: ["porque", "pero", "además"], answer: "porque" },
-    { id: "a2-ex-6", type: "multiple-choice", question: "Para experimentar uma roupa, vou ao:", options: ["andén", "probador", "mostrador"], answer: "probador" },
-    { id: "a2-ex-7", type: "multiple-choice", question: "Le + lo doy →", options: ["le lo doy", "se lo doy", "lo le doy"], answer: "se lo doy" },
-    { id: "a2-ex-8", type: "multiple-choice", question: "Gracias ___ todo.", options: ["por", "para", "de"], answer: "por" },
-    { id: "a2-ex-9", type: "multiple-choice", question: "Este regalo es ___ ti.", options: ["por", "para", "a"], answer: "para" },
-    { id: "a2-ex-10", type: "multiple-choice", question: "Forma de 'ir' (yo, Indefinido):", options: ["iba", "fui", "voy"], answer: "fui" },
-    // 5 perguntas discursivas (resposta aberta)
-    { id: "a2-ex-11", type: "translate", question: "Conte em 3 ou 4 frases o que você fez no último fim de semana usando o Pretérito Indefinido.", answer: "El sábado fui al cine con amigos. Vimos una película y luego cenamos en un restaurante. El domingo descansé en casa." },
-    { id: "a2-ex-12", type: "translate", question: "Descreva como era a sua infância em 3 frases (use o Imperfecto).", answer: "Cuando era niño, vivía en una ciudad pequeña. Jugaba en el parque todos los días y tenía muchos amigos. Mis padres trabajaban mucho." },
-    { id: "a2-ex-13", type: "translate", question: "Escreva 3 frases sobre seus planos para o próximo ano usando IR A + INFINITIVO.", answer: "El año que viene voy a estudiar más español. Voy a viajar a España y voy a buscar un trabajo mejor." },
-    { id: "a2-ex-14", type: "translate", question: "Traduza: 'Quando eu era criança, brincava no parque todos os dias. Agora vou estudar para conseguir o B1.'", answer: "Cuando era niño, jugaba en el parque todos los días. Ahora voy a estudiar para conseguir el B1." },
-    { id: "a2-ex-15", type: "translate", question: "Escreva um diálogo curto (4 falas) entre um cliente e um vendedor em uma loja de roupas.", answer: "—Hola, ¿en qué puedo ayudarle? —Busco una camisa azul, talla M. —Aquí tiene. El probador está al fondo. —Gracias, me la llevo." },
-  ],
 };
 
 // ------------------------------------------------------------
@@ -8419,25 +8380,6 @@ const B1: CourseLevel = {
         { id: "b1-13-q10", type: "multiple-choice", question: "Condicional de 'saber' (yo):", options: ["sabería", "sabría", "supiera"], answer: "sabría", explanation: "SABER tem radical irregular: sabr-." },
       ],
     },
-  ],
-  exam: [
-    // 10 perguntas de múltipla escolha
-    { id: "b1-ex-1", type: "multiple-choice", question: "Hoy ___ mucho trabajo.", options: ["tuve", "he tenido", "tenía"], answer: "he tenido" },
-    { id: "b1-ex-2", type: "multiple-choice", question: "Cuando era niño, ___ en Sevilla.", options: ["viví", "vivía", "he vivido"], answer: "vivía" },
-    { id: "b1-ex-3", type: "multiple-choice", question: "Participio irregular de 'hacer':", options: ["hacido", "hecho", "hacho"], answer: "hecho" },
-    { id: "b1-ex-4", type: "multiple-choice", question: "Si yo ___ tú, hablaría con él.", options: ["soy", "fuera", "sería"], answer: "fuera" },
-    { id: "b1-ex-5", type: "multiple-choice", question: "Quiero que (tú) ___ pronto.", options: ["vienes", "vengas", "vendrás"], answer: "vengas" },
-    { id: "b1-ex-6", type: "multiple-choice", question: "Cuando ___, te llamo.", options: ["llego", "llegue", "llegaré"], answer: "llegue" },
-    { id: "b1-ex-7", type: "multiple-choice", question: "Imperativo TÚ de 'venir':", options: ["viene", "ven", "vení"], answer: "ven" },
-    { id: "b1-ex-8", type: "multiple-choice", question: "Se ___ pisos en este edificio.", options: ["vende", "venden", "vendía"], answer: "venden" },
-    { id: "b1-ex-9", type: "multiple-choice", question: "'Estoy cansado' → Dijo que ___ cansado.", options: ["estoy", "estaba", "está"], answer: "estaba" },
-    { id: "b1-ex-10", type: "multiple-choice", question: "Conector formal de contraste:", options: ["pero", "sin embargo", "porque"], answer: "sin embargo" },
-    // 5 perguntas discursivas (resposta aberta)
-    { id: "b1-ex-11", type: "translate", question: "Escreva 2 ou 3 frases sobre uma experiência marcante usando o Pretérito Perfecto.", answer: "He viajado a muchos países, pero nunca he estado en Japón. Este año he empezado a estudiar japonés y he conocido a personas increíbles." },
-    { id: "b1-ex-12", type: "translate", question: "Construa uma frase com 'Si' do tipo II (Condicional Simple + Subjuntivo Imperfecto) sobre o que faria se ganhasse na loteria.", answer: "Si ganara la lotería, viajaría por el mundo y ayudaría a mi familia." },
-    { id: "b1-ex-13", type: "translate", question: "Escreva um pequeno parágrafo (3 ou 4 frases) defendendo uma opinião sobre tecnologia, usando Subjuntivo e conectores avançados.", answer: "Creo que es importante que usemos la tecnología con responsabilidad. Sin embargo, no podemos depender solo de ella. Por consiguiente, debemos buscar un equilibrio entre la vida digital y la real." },
-    { id: "b1-ex-14", type: "translate", question: "Transforme em discurso indireto: María disse: 'Mañana iré al médico porque estoy enferma.'", answer: "María dijo que al día siguiente iría al médico porque estaba enferma." },
-    { id: "b1-ex-15", type: "translate", question: "Escreva um diálogo curto (4 falas) em que duas pessoas discordam educadamente sobre o trabalho remoto.", answer: "—En mi opinión, el trabajo remoto es más productivo. —No estoy del todo de acuerdo, depende de la persona. —Es verdad, pero permite más libertad. —Sí, aunque echo de menos el contacto con los compañeros." },
   ],
 };
 
@@ -10228,25 +10170,6 @@ const B2: CourseLevel = {
       ],
     },
   ],
-  exam: [
-    // 10 perguntas de múltipla escolha
-    { id: "b2-ex-1", type: "multiple-choice", question: "Si yo ___ tú, hablaría con él.", options: ["soy", "fuera", "sería"], answer: "fuera" },
-    { id: "b2-ex-2", type: "multiple-choice", question: "Si hubiera estudiado, ___ aprobado.", options: ["habría", "hubiera", "habrá"], answer: "habría" },
-    { id: "b2-ex-3", type: "multiple-choice", question: "Quería que tú ___ pronto.", options: ["vienes", "vinieras", "vendrás"], answer: "vinieras" },
-    { id: "b2-ex-4", type: "multiple-choice", question: "Aunque ___ caro, lo compraré (não sei se é).", options: ["es", "sea", "será"], answer: "sea" },
-    { id: "b2-ex-5", type: "multiple-choice", question: "Cuando llegué, ya ___.", options: ["se fue", "se había ido", "se iba"], answer: "se había ido" },
-    { id: "b2-ex-6", type: "multiple-choice", question: "La puerta ___ por el guardia ayer.", options: ["está cerrada", "fue cerrada", "es cerrada"], answer: "fue cerrada" },
-    { id: "b2-ex-7", type: "multiple-choice", question: "Conector formal de causa:", options: ["porque", "dado que", "así"], answer: "dado que" },
-    { id: "b2-ex-8", type: "multiple-choice", question: "'Vendré' → Dijo que ___.", options: ["vendrá", "vendría", "vino"], answer: "vendría" },
-    { id: "b2-ex-9", type: "multiple-choice", question: "Te llamo para que ___ informado.", options: ["estás", "estés", "estarás"], answer: "estés" },
-    { id: "b2-ex-10", type: "multiple-choice", question: "'Tomar una decisión' — combinação:", options: ["correta", "errada (deve ser 'hacer')", "informal"], answer: "correta" },
-    // 5 perguntas discursivas
-    { id: "b2-ex-11", type: "translate", question: "Escreva uma frase Tipo III (Si + Pluscuamperfecto Subj. + Cond. Compuesto) sobre uma decisão passada.", answer: "Si hubiera aceptado el trabajo en Madrid, habría conocido a gente increíble." },
-    { id: "b2-ex-12", type: "translate", question: "Reescreva no Estilo Indireto: María dijo: 'Mañana iré al médico porque he estado enferma'.", answer: "María dijo que al día siguiente iría al médico porque había estado enferma." },
-    { id: "b2-ex-13", type: "translate", question: "Escreva uma abertura e um encerramento de carta formal solicitando informação sobre um curso.", answer: "Estimado/a señor/a: Me dirijo a usted con el fin de solicitar información sobre el curso anunciado en su página web. (…) En espera de su respuesta, le saluda atentamente, [Nombre]." },
-    { id: "b2-ex-14", type: "translate", question: "Escreva um pequeno parágrafo argumentativo (3–4 frases) defendendo o teletrabalho, usando 3 conectores avançados e Subjuntivo.", answer: "En mi opinión, es fundamental que las empresas apuesten por el teletrabajo. Dado que la tecnología lo permite, no hay razón para obligar a desplazamientos diarios. Sin embargo, conviene que se mantenga el contacto presencial periódico. Por consiguiente, el modelo híbrido parece ser la mejor opción." },
-    { id: "b2-ex-15", type: "translate", question: "Use a expressão 'ponerse las pilas' e a colocação 'llevar a cabo' em uma frase coerente.", answer: "Tenemos que ponernos las pilas si queremos llevar a cabo el proyecto antes de fin de año." },
-  ],
 };
 
 // ------------------------------------------------------------
@@ -11941,25 +11864,6 @@ const C1: CourseLevel = {
       ],
     },
   ],
-  exam: [
-    // 10 perguntas de múltipla escolha
-    { id: "c1-ex-1", type: "multiple-choice", question: "Reduplicação correta de concessão total:", options: ["Sea como es", "Sea como sea", "Es como sea"], answer: "Sea como sea" },
-    { id: "c1-ex-2", type: "multiple-choice", question: "'De haberlo sabido, te habría llamado' equivale a:", options: ["Si lo sé, te llamo", "Si lo hubiera sabido, te habría llamado", "Si lo supiera, te llamaría"], answer: "Si lo hubiera sabido, te habría llamado" },
-    { id: "c1-ex-3", type: "multiple-choice", question: "Participio absoluto correto:", options: ["Terminado la reunión", "Terminada la reunión", "Terminar la reunión"], answer: "Terminada la reunión" },
-    { id: "c1-ex-4", type: "multiple-choice", question: "'Sine qua non' significa:", options: ["sem dúvida", "indispensável", "porventura"], answer: "indispensável" },
-    { id: "c1-ex-5", type: "multiple-choice", question: "Preposição correta: 'Me alegro ___ que vengas.'", options: ["por", "de", "Ø"], answer: "de" },
-    { id: "c1-ex-6", type: "multiple-choice", question: "'Embarazada' em castelhano significa:", options: ["envergonhada", "grávida", "atrapalhada"], answer: "grávida" },
-    { id: "c1-ex-7", type: "multiple-choice", question: "Castelhano peninsular distingue:", options: ["/s/ e /θ/", "/s/ e /ʃ/", "/θ/ e /ʃ/"], answer: "/s/ e /θ/" },
-    { id: "c1-ex-8", type: "multiple-choice", question: "'Currar' (Espanha) significa:", options: ["correr", "trabalhar", "comer"], answer: "trabalhar" },
-    { id: "c1-ex-9", type: "multiple-choice", question: "'Cabe señalar que…' é típico de:", options: ["registro coloquial", "castelhano acadêmico (hedging)", "ironia"], answer: "castelhano acadêmico (hedging)" },
-    { id: "c1-ex-10", type: "multiple-choice", question: "Estilo indireto livre funde:", options: ["dois personagens", "voz do narrador e consciência do personagem", "verso e prosa"], answer: "voz do narrador e consciência do personagem" },
-    // 5 perguntas discursivas
-    { id: "c1-ex-11", type: "translate", question: "Escreva uma frase com reduplicação de Subjuntivo (concessão total) sobre persistência.", answer: "Pase lo que pase, no me rendiré." },
-    { id: "c1-ex-12", type: "translate", question: "Reescreva como Tipo III usando 'De + infinitivo composto': 'Si hubiera llegado antes, lo habría visto.'", answer: "De haber llegado antes, lo habría visto." },
-    { id: "c1-ex-13", type: "translate", question: "Construa um parágrafo argumentativo curto (3 frases) sobre cultura espanhola, usando 1 latinismo, 1 conector formal e Subjuntivo.", answer: "A priori, conviene señalar que la sobremesa es un rasgo identitario de la cultura española. Sin embargo, es necesario que las nuevas generaciones la preserven. De ahí que urja recuperar el ritmo pausado del castelhano cotidiano." },
-    { id: "c1-ex-14", type: "translate", question: "Escreva uma abertura formal de carta acadêmica solicitando informação sobre um doutorado em Madrid.", answer: "Estimado/a profesor/a: Me dirijo a usted con el fin de solicitar información acerca del programa de doctorado ofrecido por su departamento, así como los requisitos de admisión para el próximo curso académico." },
-    { id: "c1-ex-15", type: "translate", question: "Use a expressão 'no andarse con rodeos' e a colocação 'llevar a cabo' em uma frase coerente do castelhano culto.", answer: "Sin andarse con rodeos, el comité decidió llevar a cabo la reforma de inmediato." },
-  ],
 };
 
 
@@ -12976,25 +12880,6 @@ const C2: CourseLevel = {
         { id: "c2-13-q2", type: "multiple-choice", question: "Recurso da RAE para dúvidas:", options: ["DLE", "DPD", "ambos"], answer: "ambos" },
       ],
     },
-  ],
-  exam: [
-    // 10 múltipla escolha
-    { id: "c2-ex-1", type: "multiple-choice", question: "Futuro de Subjuntivo (-RE) ainda aparece em:", options: ["fala juvenil", "textos jurídicos espanhóis", "publicidade"], answer: "textos jurídicos espanhóis" },
-    { id: "c2-ex-2", type: "multiple-choice", question: "Leísmo aceito pela RAE refere-se a:", options: ["objeto fem. sing.", "pessoa masc. sing.", "objeto plural"], answer: "pessoa masc. sing." },
-    { id: "c2-ex-3", type: "multiple-choice", question: "'Se venden pisos' é SE:", options: ["reflexivo", "pasivo", "de cambio"], answer: "pasivo" },
-    { id: "c2-ex-4", type: "multiple-choice", question: "Mudança característica do castelhano:", options: ["F→H", "P→B", "T→D"], answer: "F→H" },
-    { id: "c2-ex-5", type: "multiple-choice", question: "'Almohada' tem origem:", options: ["latina", "árabe", "germânica"], answer: "árabe" },
-    { id: "c2-ex-6", type: "multiple-choice", question: "Conceptismo associa-se a:", options: ["Lorca", "Quevedo", "Cervantes"], answer: "Quevedo" },
-    { id: "c2-ex-7", type: "multiple-choice", question: "'Hielo abrasador' é:", options: ["metáfora", "oxímoron", "ironía"], answer: "oxímoron" },
-    { id: "c2-ex-8", type: "multiple-choice", question: "Em diálogo literário espanhol usa-se:", options: ["aspas «»", "travessão —", "parênteses"], answer: "travessão —" },
-    { id: "c2-ex-9", type: "multiple-choice", question: "'En virtud de' pertence ao registro:", options: ["coloquial", "jurídico-administrativo", "literário"], answer: "jurídico-administrativo" },
-    { id: "c2-ex-10", type: "multiple-choice", question: "Estrutura clássica retórica termina em:", options: ["exordio", "peroratio", "narratio"], answer: "peroratio" },
-    // 5 discursivas
-    { id: "c2-ex-11", type: "translate", question: "Aconteça o que acontecer, manteremos a palavra dada.", answer: "Pase lo que pase, mantendremos la palabra dada." },
-    { id: "c2-ex-12", type: "translate", question: "Reescreva como Tipo III com 'De + infinitivo composto': 'Si lo hubiera sabido, te habría llamado.'", answer: "De haberlo sabido, te habría llamado." },
-    { id: "c2-ex-13", type: "translate", question: "Escreva uma frase usando construcción ecuacional para enfatizar 'el trabajo'.", answer: "Es el trabajo lo que me preocupa." },
-    { id: "c2-ex-14", type: "translate", question: "Escreva a abertura de uma instância administrativa em castelhano.", answer: "Don Juan Pérez, mayor de edad, con DNI 12345678A, con domicilio en Madrid, comparece y EXPONE:" },
-    { id: "c2-ex-15", type: "translate", question: "Escreva um microrrelato de uma frase ao estilo de Monterroso.", answer: "Cuando despertó, el dinosaurio todavía estaba allí." },
   ],
 };
 

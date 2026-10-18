@@ -31,7 +31,7 @@
     - **A1 concluído:** caps. 1–11 com 3 tópicos cada (antes 1–2) e 6 exercícios por tópico; 238 exercícios + quizzes, todos com explicação (antes nenhum). Cap. 1 reescrito: as 27 letras com nome e som (cartões de pronúncia), dígrafos CH/LL/RR tratados como dígrafos (RAE), sons que confundem brasileiros e acentuação. Tópicos novos: tú × usted, centenas e datas, gênero dos substantivos (el color, la leche…), HAY × ESTAR, verbos -ER/-IR, negação e frequência, comida e refeições, pronomes sujeito e de objeto, descrição de pessoas, preposições de lugar, A × EN e POR × PARA, também/tampoco. Cap. 13: quiz sem perguntas duplicadas e regra do DELE A1 corrigida (30/50 em cada grupo). Inglês que tinha sobrado dentro do texto da tabela de saudações foi removido.
   - [ ] **Áudio em todo o curso:** o A1 já usa a infraestrutura nova (bloco `sounds` com cartões de pronúncia, `audioCols` em tabelas, `speak` em listas e `audio` em exercícios/quiz para ouvir a frase ou fazer exercícios de escuta). Falta aplicar o mesmo em A2–C2 conforme cada nível for revisado. O áudio usa a voz do navegador (Web Speech API), agora escolhendo explicitamente uma voz es-ES quando instalada.
   - [ ] Nenhum capítulo de C2 tem `flashcards` — o componente `Flashcards.tsx` fica vazio nesse nível inteiro. (B1 ✅, B2 ✅ e C1 ✅ — 10 flashcards por capítulo.)
-  - [ ] O campo `exam` de cada nível em `data/courses.ts` não é usado em lugar nenhum — a prova final sorteia só de `exam-banks.ts`. Remover ou reaproveitar.
+  - [x] ~~O campo `exam` de cada nível em `data/courses.ts` não é usado em lugar nenhum~~ — removido; a prova final usa só `exam-banks.ts`.
   - [x] ~~B1 tem `briefReview` só nos capítulos 12 e 13~~ — capítulos 1 a 11 preenchidos.
 
 ## Integração com backend real
