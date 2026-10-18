@@ -72,6 +72,10 @@ describe.each(A2_STANDARDIZED)("A2 chapter %i follows the reference standard", (
           const v = (b as Record<string, unknown>)[k];
           if (typeof v === "string") expect(v.includes("\n"),`${t.id}: ${v}`).toBe(false);
         }
+        if (b.kind === "list") for (const i of b.items) expect(i.includes("\n"), `${t.id}: ${i}`).toBe(false);
+        if (b.kind === "table") {
+          for (const c of [...b.headers, ...b.rows.flat()]) expect(c.includes("\n"), `${t.id}: ${c}`).toBe(false);
+        }
       }
     }
   });
@@ -80,7 +84,11 @@ describe.each(A2_STANDARDIZED)("A2 chapter %i follows the reference standard", (
     const texts = [
       ...all.map((e) => e.explanation ?? ""),
       ...all.flatMap((e) => [e.question, ...(e.options ?? [])]),
-      ...ch.topics.flatMap((t) => t.blocks.flatMap((b) => ("text" in b ? [b.text] : "pt" in b ? [b.pt] : []))),
+      ...ch.topics.flatMap((t) =>
+        t.blocks.flatMap((b) =>
+          "text" in b ? [b.text] : "pt" in b ? [b.pt] : b.kind === "list" ? b.items : b.kind === "table" ? [...b.headers, ...b.rows.flat()] : [],
+        ),
+      ),
       ...[...ch.lexicon, ...(ch.flashcards ?? [])].map((l) => l.pt),
       ch.briefReview ?? "",
     ];
@@ -90,5 +98,10 @@ describe.each(A2_STANDARDIZED)("A2 chapter %i follows the reference standard", (
 
 it("A2 exercise and quiz ids are unique across the level", () => {
   const ids = A2.chapters.flatMap((c) => [...c.topics.flatMap((t) => t.exercises), ...(c.quiz ?? [])].map((e) => e.id));
+  expect(new Set(ids).size).toBe(ids.length);
+});
+
+it("A2 topic ids are unique across the level", () => {
+  const ids = A2.chapters.flatMap((c) => c.topics.map((t) => t.id));
   expect(new Set(ids).size).toBe(ids.length);
 });
