@@ -20,7 +20,7 @@ import {
 } from "@/lib/course-progress";
 import { registerStudyHeartbeat, STUDY_HEARTBEAT_MS } from "@/lib/dashboard-stats";
 import type { LevelId } from "@/data/games";
-import { cn, normalizeAnswer } from "@/lib/utils";
+import { cn, isAnswerCorrect } from "@/lib/utils";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { AudioButton } from "@/components/course/AudioButton";
 import { Flashcards } from "@/components/course/Flashcards";
@@ -151,7 +151,7 @@ const ExerciseCard = ({
   const [status, setStatus] = useState<"idle" | "right" | "wrong">(alreadyDone ? "right" : "idle");
 
   const check = () => {
-    const ok = normalizeAnswer(answer) === normalizeAnswer(exercise.answer);
+    const ok = isAnswerCorrect(exercise, answer);
     setStatus(ok ? "right" : "wrong");
     if (ok) {
       markExerciseCorrect(level, chapterId, exercise.id);

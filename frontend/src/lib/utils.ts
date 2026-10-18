@@ -31,3 +31,12 @@ export function normalizeAnswer(s: string): string {
     .replace(/\s+/g, " ")
     .trim();
 }
+
+/**
+ * Checks an answer: multiple-choice options must match exactly (accents matter, since
+ * options often differ only by an accent); free-text types use the tolerant comparison.
+ */
+export function isAnswerCorrect(exercise: { type: string; answer: string }, given: string): boolean {
+  if (exercise.type === "multiple-choice") return given.trim() === exercise.answer.trim();
+  return normalizeAnswer(given) === normalizeAnswer(exercise.answer);
+}

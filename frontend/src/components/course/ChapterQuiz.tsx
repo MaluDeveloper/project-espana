@@ -8,7 +8,7 @@ import { CheckCircle2, XCircle, Trophy, RotateCcw, Sparkles } from "lucide-react
 import type { Exercise } from "@/data/courses";
 import type { LevelId } from "@/data/games";
 import { saveChapterQuiz, getChapterQuiz } from "@/lib/course-progress";
-import { cn, normalizeAnswer } from "@/lib/utils";
+import { cn, isAnswerCorrect } from "@/lib/utils";
 import { AudioButton } from "./AudioButton";
 
 interface ChapterQuizProps {
@@ -102,7 +102,7 @@ export const ChapterQuiz = ({ level, chapterId, questions, labels }: ChapterQuiz
   const progressPct = Math.round(((idx + (feedback !== "idle" ? 1 : 0)) / pool.length) * 100);
 
   const check = () => {
-    const ok = normalizeAnswer(answer) === normalizeAnswer(current.answer);
+    const ok = isAnswerCorrect(current, answer);
     setFeedback(ok ? "right" : "wrong");
     if (ok) {
       scoreRef.current += 1;
