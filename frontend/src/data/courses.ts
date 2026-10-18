@@ -3714,7 +3714,7 @@ const A2: CourseLevel = {
       topics: [
         {
           id: "indef-regulares",
-          title: "1. Verbos regulares e mudanças ortográficas",
+          title: "Verbos regulares e mudanças ortográficas",
           blocks: [
             { kind: "paragraph", text: "O Pretérito Indefinido é o tempo verbal mais importante do A2. Usa-se para narrar ações concluídas no passado, com ou sem referência de tempo. Nos verbos regulares, tira-se o -ar/-er/-ir e acrescentam-se as terminações abaixo." },
             { kind: "heading", text: "Verbos -AR (HABLAR)" },
@@ -3770,7 +3770,7 @@ const A2: CourseLevel = {
         },
         {
           id: "indef-irregulares-totais",
-          title: "2. Irregulares totais e ditongo na 3ª pessoa",
+          title: "Irregulares totais e ditongo na 3ª pessoa",
           blocks: [
             { kind: "paragraph", text: "Muitos verbos de alta frequência mudam a raiz e usam terminações sem acento: -e, -iste, -o, -imos, -isteis, -ieron (-eron após J)." },
             { kind: "tip", text: "SER e IR têm exatamente as mesmas formas: fui, fuiste, fue, fuimos, fuisteis, fueron. O contexto define o significado: 'Fui médico' (ser) vs 'Fui al médico' (ir)." },
@@ -3827,7 +3827,7 @@ const A2: CourseLevel = {
         },
         {
           id: "indef-marcadores-usos",
-          title: "3. Marcadores, usos e narração",
+          title: "Marcadores, usos e narração",
           blocks: [
             { kind: "paragraph", text: "O Indefinido costuma vir acompanhado de marcadores que situam a ação em um momento do passado já terminado. Conhecê-los ajuda a escolher o tempo certo." },
             { kind: "heading", text: "Marcadores temporais do Indefinido" },
@@ -3963,7 +3963,7 @@ const A2: CourseLevel = {
       topics: [
         {
           id: "imperf-ar",
-          title: "1. Verbos regulares -AR / -ER / -IR",
+          title: "Verbos regulares -AR / -ER / -IR",
           blocks: [
             { kind: "paragraph", text: "O Pretérito Imperfecto descreve ações habituais no passado, estados e situações de fundo. É o 'costumava' ou o 'ia fazendo' do espanhol. Nos verbos regulares, tira-se o -ar/-er/-ir e acrescentam-se as terminações abaixo." },
             { kind: "table", headers: ["Pessoa", "Hablar (-AR)", "Comer (-ER)", "Vivir (-IR)"], rows: [
@@ -3981,31 +3981,31 @@ const A2: CourseLevel = {
             { kind: "example", es: "Cuando vivía en Granada, comía tapas todos los viernes.", pt: "Quando morava em Granada, comia tapas todas as sextas." },
           ],
           exercises: [
-            { id: "a2-2-1", type: "fill-blank", question: "Yo ___ (cantar) en el coro de la escuela.", answer: "cantaba",
-              explanation: "Hábito no passado com verbo -AR: cant- + -aba." },
+            { id: "a2-2-1", type: "fill-blank", question: "De niño, yo ___ (cantar) en el coro de la escuela.", answer: "cantaba",
+              explanation: "'De niño' indica hábito no passado, então Imperfecto (um Indefinido marcaria um fato pontual); verbo -AR: cant- + -aba." },
             { id: "a2-2-2", type: "fill-blank", question: "Tú siempre ___ (estudiar) por la noche.", answer: "estudiabas",
               explanation: "'Siempre' indica hábito, então Imperfecto; 2ª pessoa de verbo -AR: estudi- + -abas." },
             { id: "a2-2-3", type: "fill-blank", question: "Nosotros ___ (jugar) en el parque cada tarde.", answer: "jugábamos",
               explanation: "Verbo -AR na 1ª pessoa do plural: jug- + -ábamos, com acento. Não há mudança g→gu como no Indefinido." },
-            { id: "a2-2-4", type: "fill-blank", question: "Ellos ___ (trabajar) en aquella fábrica.", answer: "trabajaban",
-              explanation: "'Aquella fábrica' remete a uma situação de fundo no passado; 3ª pessoa do plural de verbo -AR: trabaj- + -aban." },
+            { id: "a2-2-4", type: "fill-blank", question: "Antes, ellos ___ (trabajar) en aquella fábrica.", answer: "trabajaban",
+              explanation: "'Antes' e 'aquella fábrica' remetem a uma situação habitual de fundo no passado; 3ª pessoa do plural de verbo -AR: trabaj- + -aban." },
             { id: "a2-2-5", type: "fill-blank", question: "Yo ___ (leer) muchos libros de niño.", answer: "leía",
               explanation: "Verbo -ER: le- + -ía. A terminação -ía leva acento no í." },
-            { id: "a2-2-6", type: "fill-blank", question: "Tú ___ (escribir) cartas a tu abuela.", answer: "escribías",
-              explanation: "Verbo -IR usa as mesmas terminações que -ER: escrib- + -ías." },
-            { id: "a2-2-7", type: "fill-blank", question: "Nosotros ___ (vivir) en un piso pequeño.", answer: "vivíamos",
-              explanation: "Verbo -IR na 1ª pessoa do plural: viv- + -íamos, com acento no í." },
+            { id: "a2-2-6", type: "fill-blank", question: "Tú siempre ___ (escribir) cartas a tu abuela.", answer: "escribías",
+              explanation: "'Siempre' indica hábito, então Imperfecto (não Indefinido); verbo -IR usa as mesmas terminações que -ER: escrib- + -ías." },
+            { id: "a2-2-7", type: "fill-blank", question: "De niños, nosotros ___ (vivir) en un piso pequeño.", answer: "vivíamos",
+              explanation: "'De niños' descreve uma situação habitual no passado; verbo -IR na 1ª pessoa do plural: viv- + -íamos, com acento no í." },
             { id: "a2-2-8", type: "fill-blank", question: "Ellos ___ (salir) cada fin de semana.", answer: "salían",
               explanation: "'Cada fin de semana' indica hábito; verbo -IR na 3ª pessoa do plural: sal- + -ían." },
             { id: "a2-2-20", type: "multiple-choice", question: "Forma correta (nosotros, hablar):", options: ["hablábamos", "hablabamos", "hablamos"], answer: "hablábamos",
               explanation: "A 1ª pessoa do plural de -AR leva acento em -ábamos; 'hablamos' é presente e 'hablabamos' está sem o acento." },
-            { id: "a2-2-22", type: "fill-blank", question: "Vosotros ___ (escribir) cartas a mano.", answer: "escribíais",
-              explanation: "Vosotros em verbo -IR: escrib- + -íais, com acento no í." },
+            { id: "a2-2-22", type: "fill-blank", question: "Antes, vosotros ___ (escribir) cartas a mano.", answer: "escribíais",
+              explanation: "'Antes' indica hábito passado, então Imperfecto; vosotros em verbo -IR: escrib- + -íais, com acento no í." },
           ],
         },
         {
           id: "imperf-irregulares",
-          title: "2. Os 3 únicos irregulares: SER, IR, VER",
+          title: "Os 3 únicos irregulares: SER, IR, VER",
           blocks: [
             { kind: "paragraph", text: "Apenas três verbos são irregulares no Imperfecto. Todos os outros seguem o padrão regular, o que facilita muito!" },
             { kind: "table", headers: ["Pessoa", "Ser", "Ir", "Ver"], rows: [
@@ -4036,13 +4036,13 @@ const A2: CourseLevel = {
               explanation: "Em éramos o acento cai no primeiro e; 'eramos' sem acento está errado e 'somos' é presente." },
             { id: "a2-2-24", type: "multiple-choice", question: "Imperfecto de VER (nosotros):", options: ["veíamos", "veiamos", "vimos"], answer: "veíamos",
               explanation: "Ver segue o modelo -ER com acento no í: ve- + -íamos. 'Vimos' é Indefinido." },
-            { id: "a2-2-25", type: "fill-blank", question: "Yo ___ (ir) a la escuela a pie.", answer: "iba",
-              explanation: "Ir no Imperfecto usa a raiz ib-, e yo e él têm a mesma forma: iba." },
+            { id: "a2-2-25", type: "fill-blank", question: "De niño, yo ___ (ir) a la escuela a pie.", answer: "iba",
+              explanation: "'De niño' indica hábito passado; ir no Imperfecto usa a raiz ib-, e yo e él têm a mesma forma: iba." },
           ],
         },
         {
           id: "imperf-usos",
-          title: "3. Usos, marcadores e contraste com o Indefinido",
+          title: "Usos, marcadores e contraste com o Indefinido",
           blocks: [
             { kind: "paragraph", text: "O Imperfecto não conta fatos concluídos: ele mostra como as coisas eram ou costumavam ser. Cada uso abaixo costuma vir com seus marcadores." },
             { kind: "list", items: [
@@ -4068,7 +4068,7 @@ const A2: CourseLevel = {
             ]},
             { kind: "example", es: "Cuando vivía en Lima (cenário), un día conocí a María (ação pontual).", pt: "Quando morava em Lima (cenário), um dia conheci Maria (ação pontual)." },
             { kind: "tip", text: "Não use Indefinido para idade ou hábitos: 'Cuando fui niño' (errado) → 'Cuando era niño' (certo). Também não use Imperfecto para um fato concluído e datado: 'En 2018 visitaban Argentina' (errado) → 'En 2018 visitaron Argentina'." },
-            { kind: "example", es: "– ¿Cómo eras de pequeño?", pt: "– Como você era pequeno?" },
+            { kind: "example", es: "– ¿Cómo eras de pequeño?", pt: "– Como você era quando pequeno?" },
             { kind: "example", es: "– Era muy tímido y tranquilo. Leía mucho y escuchaba música.", pt: "– Era muito tímido e tranquilo. Lia muito e ouvia música." },
             { kind: "example", es: "– ¿Dónde vivías?", pt: "– Onde você morava?" },
             { kind: "example", es: "– Vivía en un pueblo pequeño con mis abuelos. La vida era muy tranquila allí.", pt: "– Morava num povoado pequeno com meus avós. A vida era muito tranquila ali." },
@@ -4147,8 +4147,8 @@ const A2: CourseLevel = {
           explanation: "'De joven' indica um hábito ou estado no passado; verbo -AR na 2ª pessoa: cant- + -abas." },
         { id: "a2-2-q12", type: "fill-blank", question: "Yo ___ (comer) verduras cada día.", answer: "comía",
           explanation: "'Cada día' indica hábito; verbo -ER: com- + -ía." },
-        { id: "a2-2-q14", type: "fill-blank", question: "Nosotros ___ (leer) muchos cómics.", answer: "leíamos",
-          explanation: "Verbo -ER na 1ª pessoa do plural: le- + -íamos, com acento no í." },
+        { id: "a2-2-q14", type: "fill-blank", question: "Cuando éramos pequeños, nosotros ___ (leer) muchos cómics.", answer: "leíamos",
+          explanation: "'Cuando éramos pequeños' indica hábito passado, então Imperfecto; verbo -ER na 1ª pessoa do plural: le- + -íamos, com acento no í." },
         { id: "a2-2-q17", type: "multiple-choice", question: "Marcador típico do Imperfecto:", options: ["en 2018", "todos los veranos", "ayer"], answer: "todos los veranos",
           explanation: "'Todos los veranos' indica repetição; 'en 2018' e 'ayer' marcam momentos concluídos." },
         { id: "a2-2-q19", type: "multiple-choice", question: "Frase correta para idade no passado:", options: [
@@ -4175,7 +4175,7 @@ const A2: CourseLevel = {
       topics: [
         {
           id: "ir-a-estructura",
-          title: "1. IR no presente e a estrutura IR A + INFINITIVO",
+          title: "IR no presente e a estrutura IR A + INFINITIVO",
           blocks: [
             { kind: "paragraph", text: "A estrutura IR (conjugado no presente) + A + INFINITIVO é a forma mais natural e frequente de expressar o futuro próximo, planos e intenções no espanhol cotidiano. Por isso o primeiro passo é dominar o presente de IR." },
             { kind: "table", headers: ["Pessoa", "IR (presente)", "+ A + INFINITIVO"], rows: [
@@ -4219,7 +4219,7 @@ const A2: CourseLevel = {
         },
         {
           id: "ir-usos",
-          title: "2. Usos de IR A + INFINITIVO, planos e expressões de tempo",
+          title: "Usos de IR A + INFINITIVO, planos e expressões de tempo",
           blocks: [
             { kind: "paragraph", text: "IR A + INFINITIVO serve para planos concretos, intenções, previsões baseadas em evidências e futuro imediato. Costuma vir com marcadores de tempo futuro, e também é a estrutura das perguntas sobre planos." },
             { kind: "list", items: [
@@ -4275,7 +4275,7 @@ const A2: CourseLevel = {
         },
         {
           id: "querer-pensar",
-          title: "3. QUERER, PENSAR, TENER QUE e DEBER + INFINITIVO",
+          title: "QUERER, PENSAR, TENER QUE e DEBER + INFINITIVO",
           blocks: [
             { kind: "paragraph", text: "Para desejos e intenções use QUERER + INFINITIVO ou PENSAR + INFINITIVO. Para obrigação, TENER QUE + INFINITIVO (forte e pessoal: não há escolha) e DEBER + INFINITIVO (mais um conselho ou dever moral). Depois de qualquer um deles vem sempre o infinitivo." },
             { kind: "table", headers: ["Estrutura", "Ideia", "Exemplo"], rows: [
@@ -4312,7 +4312,7 @@ const A2: CourseLevel = {
               explanation: "Expressar um desejo pessoal pede QUERER + infinitivo; com yo, 'quiero' (e → ie)." },
             { id: "a2-3-47", type: "fill-blank", question: "Este verano ___ viajar a Perú: ya busqué vuelos. (pensar, yo)", answer: "pienso",
               explanation: "PENSAR + infinitivo expressa intenção; com yo, o e vira ie: pienso." },
-            { id: "a2-3-38", type: "fill-blank", question: "Tengo que ___ más dinero. (economizar)", answer: "ahorrar",
+            { id: "a2-3-38", type: "fill-blank", question: "Tengo que ___ más dinero. (poupar)", answer: "ahorrar",
               explanation: "'Ahorrar' é economizar/poupar dinheiro; vem em infinitivo depois de 'tener que'." },
           ],
         },
@@ -4345,8 +4345,8 @@ const A2: CourseLevel = {
           explanation: "'Tener que' + infinitivo expressa obrigação; o desejo seria 'quiero estudiar'." },
         { id: "a2-3-q5", type: "fill-blank", question: "Quiero ___ (aprender) español.", answer: "aprender",
           explanation: "Depois de 'querer' vem o infinitivo: aprender." },
-        { id: "a2-3-q10", type: "fill-blank", question: "Pensamos ___ (mudar) de casa el año próximo.", answer: "mudar",
-          explanation: "'Pensar' + infinitivo expressa intenção; o verbo fica no infinitivo." },
+        { id: "a2-3-q10", type: "fill-blank", question: "Pensamos ___ (mudarse) de casa el año próximo.", answer: "mudarnos",
+          explanation: "'Pensar' + infinitivo expressa intenção; mudarse é pronominal e o pronome concorda com nosotros: mudarnos." },
         { id: "a2-3-q11", type: "multiple-choice", question: "Tradução de 'dentro de dos días':", options: ["há dois dias", "daqui a dois dias", "em dois anos"], answer: "daqui a dois dias",
           explanation: "'Dentro de' + período aponta para o futuro; 'há dois dias' seria 'hace dos días'." },
         { id: "a2-3-q12", type: "fill-blank", question: "Yo ___ a aprender a conducir. (ir)", answer: "voy",
@@ -4605,7 +4605,7 @@ const A2: CourseLevel = {
       topics: [
         {
           id: "compar-basico",
-          title: "1. Comparativos: más, menos, tan, tanto e irregulares",
+          title: "Comparativos: más, menos, tan, tanto e irregulares",
           blocks: [
             { kind: "paragraph", text: "Comparar é dizer se algo é maior, menor ou igual a outra coisa. Em espanhol cada tipo de comparação usa uma estrutura fixa, e alguns adjetivos têm formas próprias." },
             { kind: "heading", text: "Superioridade e inferioridade" },
@@ -4664,7 +4664,7 @@ const A2: CourseLevel = {
         },
         {
           id: "superlativo-relativo",
-          title: "2. Superlativos: relativo e absoluto (-ísimo)",
+          title: "Superlativos: relativo e absoluto (-ísimo)",
           blocks: [
             { kind: "heading", text: "Superlativo relativo" },
             { kind: "paragraph", text: "Estrutura: el/la/los/las + (substantivo) + más/menos + adjetivo + de + grupo. Compara uma pessoa ou coisa com todo um grupo." },
@@ -4712,7 +4712,7 @@ const A2: CourseLevel = {
         },
         {
           id: "descripciones",
-          title: "3. Descrever pessoas: físico e caráter",
+          title: "Descrever pessoas: físico e caráter",
           blocks: [
             { kind: "paragraph", text: "Para descrever uma pessoa, combine vocabulário de físico e de caráter com os comparativos e superlativos dos tópicos anteriores. Cada tipo de informação pede um verbo diferente." },
             { kind: "table", headers: ["Verbo", "Para quê", "Exemplo"], rows: [
@@ -4821,7 +4821,7 @@ const A2: CourseLevel = {
           id: "dipt-eie",
           title: "Diptongação E → IE e O → UE (e JUGAR)",
           blocks: [
-            { kind: "paragraph", text: "Em alguns verbos, a vogal do radical muda quando é tônica: e vira ie e o vira ue. Isso acontece em yo, tú, él e ellos, mas NÃO em nosotros/vosotros. É a 'regra da bota': as formas que mudam, marcadas na tabela, desenham o contorno de uma bota. Todos os exemplos deste capítulo estão no Presente." },
+            { kind: "paragraph", text: "Em alguns verbos, a vogal do radical muda quando é tônica: e vira ie e o vira ue. Isso acontece em yo, tú, él e ellos, mas NÃO em nosotros/vosotros. É a 'regra da bota': as formas que mudam (yo, tú, él/ella e ellos) desenham o contorno de uma bota. Todos os exemplos deste capítulo estão no Presente." },
             { kind: "table", headers: ["", "QUERER (e→ie)", "PENSAR (e→ie)", "EMPEZAR (e→ie)", "ENTENDER (e→ie)"], rows: [
               ["yo", "quiero", "pienso", "empiezo", "entiendo"],
               ["tú", "quieres", "piensas", "empiezas", "entiendes"],
@@ -4909,7 +4909,7 @@ const A2: CourseLevel = {
           exercises: [
             { id: "a2-6-13", type: "fill-blank", question: "Ahora yo ___ (pedir) un té.", answer: "pido",
               explanation: "PEDIR é -IR e faz e→i na 1ª pessoa do singular: pido. Não confunda com e→ie ('piedo')." },
-            { id: "a2-6-14", type: "fill-blank", question: "Hoy el camarero ___ (servir) la comida.", answer: "sirve",
+            { id: "a2-6-14", type: "fill-blank", question: "Siempre el camarero ___ (servir) la comida.", answer: "sirve",
               explanation: "SERVIR é -IR: e→i com él, então sirve." },
             { id: "a2-6-15", type: "fill-blank", question: "En este momento yo ___ (seguir) tu consejo.", answer: "sigo",
               explanation: "SEGUIR faz e→i e ainda perde o u no yo: sigo (não 'sigio' nem 'seguo')." },
@@ -4969,7 +4969,7 @@ const A2: CourseLevel = {
               explanation: "VER tem yo irregular: veo. Nas outras pessoas é regular (ves, ve)." },
             { id: "a2-6-33", type: "fill-blank", question: "Yo no ___ (saber) la respuesta.", answer: "sé",
               explanation: "SABER tem yo irregular: sé (com acento, para não confundir com o pronome 'se')." },
-            { id: "a2-6-34", type: "fill-blank", question: "Hoy yo ___ (traer) el postre a la cena.", answer: "traigo",
+            { id: "a2-6-34", type: "fill-blank", question: "Todos los días yo ___ (traer) el postre a la cena.", answer: "traigo",
               explanation: "TRAER tem yo em -igo: traigo (não 'trao' nem 'traego')." },
             { id: "a2-6-35", type: "fill-blank", question: "Yo siempre ___ (caer) en el mismo error.", answer: "caigo",
               explanation: "CAER tem yo em -igo, como TRAER: caigo." },
