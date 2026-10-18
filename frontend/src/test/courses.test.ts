@@ -13,7 +13,7 @@ describe("COURSE data", () => {
   });
 });
 
-const A2_STANDARDIZED: number[] = [1];
+const A2_STANDARDIZED: number[] = [1, 2];
 const A2 = COURSE.find((c) => c.level === "A2")!;
 const ENGLISH = /\b(the|and|you|your|with|this|which)\b/i;
 
