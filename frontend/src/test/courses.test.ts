@@ -116,7 +116,7 @@ it("A2 topic ids are unique across the level", () => {
   expect(new Set(ids).size).toBe(ids.length);
 });
 
-const EXPLAINED_CHAPTERS: Record<string, number[]> = { B1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], B2: [1, 2, 3, 4, 5, 6, 7] };
+const EXPLAINED_CHAPTERS: Record<string, number[]> = { B1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], B2: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] };
 
 describe.each(Object.entries(EXPLAINED_CHAPTERS).flatMap(([lv, ns]) => ns.map((n) => [lv, n] as const)))(
   "%s chapter %i explains every exercise",
