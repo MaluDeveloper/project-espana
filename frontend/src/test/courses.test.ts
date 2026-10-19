@@ -115,3 +115,19 @@ it("A2 topic ids are unique across the level", () => {
   const ids = A2.chapters.flatMap((c) => c.topics.map((t) => t.id));
   expect(new Set(ids).size).toBe(ids.length);
 });
+
+const EXPLAINED_CHAPTERS: Record<string, number[]> = { B1: [1, 2, 3, 4, 5, 6, 7], B2: [] };
+
+describe.each(Object.entries(EXPLAINED_CHAPTERS).flatMap(([lv, ns]) => ns.map((n) => [lv, n] as const)))(
+  "%s chapter %i explains every exercise",
+  (lv, n) => {
+    const ch = COURSE.find((c) => c.level === lv)!.chapters.find((c) => c.number === n)!;
+    const all = [...ch.topics.flatMap((t) => t.exercises), ...(ch.quiz ?? [])];
+    it("has an explanation on every exercise and quiz question", () => {
+      for (const e of all) expect(e.explanation?.trim(), e.id).toBeTruthy();
+    });
+    it("tells the learner when a blank needs two words", () => {
+      for (const e of all) if ((e.question.match(/___/g) ?? []).length >= 2) expect(e.question, e.id).toContain("duas palavras");
+    });
+  },
+);
