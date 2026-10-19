@@ -5425,7 +5425,7 @@ const A2: CourseLevel = {
               "Frases úteis: Me duele mucho. Desde hace tres días. ¿Puede recetarme algo? ¿Cuántas veces al día?",
             ]},
             { kind: "example", es: "—Me duele la garganta y tengo un poco de fiebre. —Le voy a recetar este jarabe; tome una cucharada cada ocho horas.", pt: "—Dói a garganta e estou com um pouco de febre. —Vou receitar este xarope; tome uma colher a cada oito horas." },
-            { kind: "example", es: "Me duelen los pies de tanto caminar.", pt: "Doem-me os pés de tanto caminhar." },
+            { kind: "example", es: "Me duelen los pies de tanto caminar.", pt: "Meus pés doem de tanto caminhar." },
             { kind: "tip", text: "DOLER concorda com o que dói: me duele la cabeza (singular) / me duelen los pies (plural). Para outra pessoa: le duele, nos duelen." },
           ],
           exercises: [
@@ -5453,7 +5453,7 @@ const A2: CourseLevel = {
           blocks: [
             { kind: "paragraph", text: "Em viagens e compras o vocabulário vem em situações fixas: comprar a passagem, ir ao aeroporto, reservar o hotel, experimentar a roupa e pagar. Aprenda as palavras junto com o verbo que as acompanha: reservar una habitación, facturar la maleta, probarse la ropa, pagar con tarjeta." },
             { kind: "list", items: [
-              "Viagem: el viaje, el billete (Espanha) / el boleto (América Latina), de ida, de ida y vuelta, el pasaporte, la maleta, el equipaje, facturar, la sala de espera, la salida, la llegada, el retraso, cancelado, la parada, el destino.",
+              "Viagem: el viaje, el billete (Espanha) / el boleto (América Latina), de ida, de ida y vuelta, el pasaporte, la maleta, el equipaje, facturar, la sala de espera, la salida, la llegada, el retraso, cancelado, el andén, la parada, el destino.",
               "Alojamento: el hotel, el hostal, la habitación individual/doble, reservar, el check-in/check-out, la temporada alta/baja.",
               "Loja: la tienda, el centro comercial, el mercado, el precio, caro/barato, la oferta, el descuento.",
               "Roupa: la talla (S/M/L/XL), ¿Me lo puedo probar?, el probador, me queda bien/mal/grande/pequeño.",
@@ -5466,7 +5466,7 @@ const A2: CourseLevel = {
           exercises: [
             { id: "a2-9-5", type: "multiple-choice", question: "'Billete de ida y vuelta':", options: ["só ida", "ida e volta", "cancelado"], answer: "ida e volta",
               explanation: "Ida y vuelta é ida e volta. Só ida seria 'de ida'." },
-            { id: "a2-9-6", type: "fill-blank", question: "Quiero ___ (reservar) una habitación doble para este fin de semana.", answer: "reservar",
+            { id: "a2-9-6", type: "fill-blank", question: "Quiero ___ (fazer reserva de) una habitación doble para este fin de semana.", answer: "reservar",
               explanation: "Depois de 'quiero' vai o infinitivo: reservar una habitación é fazer a reserva do quarto." },
             { id: "a2-9-7", type: "multiple-choice", question: "El tren sale a las nueve, pero hay un ___ de media hora.", options: ["retraso", "pasaporte", "destino"], answer: "retraso",
               explanation: "Retraso é atraso. Destino é o lugar aonde se vai." },
@@ -5563,7 +5563,7 @@ const A2: CourseLevel = {
           explanation: "Só a ida: 'de ida'. 'De ida y vuelta' inclui a volta e 'de salida' não existe para passagem." },
         { id: "a2-9-q4", type: "multiple-choice", question: "Busco una ___ para comprar la chaqueta más barata.", options: ["oferta", "talla", "entrevista"], answer: "oferta",
           explanation: "La oferta é a promoção. La talla é o tamanho, não o preço." },
-        { id: "a2-9-q5", type: "multiple-choice", question: "Los zapatos me quedan pequeños: los devuelvo y pido el ___.", options: ["reembolso", "la llegada", "jarabe"], answer: "reembolso",
+        { id: "a2-9-q5", type: "multiple-choice", question: "Los zapatos me quedan pequeños: los devuelvo y pido el ___.", options: ["reembolso", "el retraso", "jarabe"], answer: "reembolso",
           explanation: "Ao devolver um produto, pede-se o reembolso (dinheiro de volta)." },
         { id: "a2-9-q6", type: "multiple-choice", question: "Antes del examen, repaso mis ___ de clase.", options: ["apuntes", "recetas", "maletas"], answer: "apuntes",
           explanation: "Los apuntes são as anotações de aula. Receta é a receita médica e maleta é a mala." },

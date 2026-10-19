@@ -15,7 +15,7 @@ describe("COURSE data", () => {
 
 const A2_STANDARDIZED: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const A2 = COURSE.find((c) => c.level === "A2")!;
-const ENGLISH = /\b(the|and|you|your|with|this|which)\b/i;
+const ENGLISH = /(?<!\p{L})(the|and|you|your|with|this|which)(?!\p{L})/iu;
 
 describe.each(A2_STANDARDIZED)("A2 chapter %i follows the reference standard", (n) => {
   const ch = A2.chapters.find((c) => c.number === n)!;
