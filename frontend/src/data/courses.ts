@@ -5563,7 +5563,7 @@ const A2: CourseLevel = {
           explanation: "Só a ida: 'de ida'. 'De ida y vuelta' inclui a volta e 'de salida' não existe para passagem." },
         { id: "a2-9-q4", type: "multiple-choice", question: "Busco una ___ para comprar la chaqueta más barata.", options: ["oferta", "talla", "entrevista"], answer: "oferta",
           explanation: "La oferta é a promoção. La talla é o tamanho, não o preço." },
-        { id: "a2-9-q5", type: "multiple-choice", question: "Los zapatos me quedan pequeños: los devuelvo y pido el ___.", options: ["reembolso", "el retraso", "jarabe"], answer: "reembolso",
+        { id: "a2-9-q5", type: "multiple-choice", question: "Los zapatos me quedan pequeños: los devuelvo y pido el ___.", options: ["reembolso", "retraso", "jarabe"], answer: "reembolso",
           explanation: "Ao devolver um produto, pede-se o reembolso (dinheiro de volta)." },
         { id: "a2-9-q6", type: "multiple-choice", question: "Antes del examen, repaso mis ___ de clase.", options: ["apuntes", "recetas", "maletas"], answer: "apuntes",
           explanation: "Los apuntes são as anotações de aula. Receta é a receita médica e maleta é a mala." },
