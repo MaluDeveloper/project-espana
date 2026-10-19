@@ -6646,7 +6646,7 @@ const B1: CourseLevel = {
           exercises: [
             { id: "b1-1-4", type: "multiple-choice", question: "Hoy ___ mucho café.", options: ["beberé", "he bebido", "bebía"], answer: "he bebido", explanation: "HOY é um período que ainda não terminou → Perfecto: he bebido. 'Bebía' descreve hábito e 'beberé' é futuro." },
             { id: "b1-1-5", type: "multiple-choice", question: "El año pasado ___ a Madrid.", options: ["he ido", "fui", "iba"], answer: "fui", explanation: "El año pasado é um tempo fechado → Indefinido: fui. 'He ido' (Perfecto) só vale para períodos ainda abertos." },
-            { id: "b1-1-6", type: "translate", question: "Eu nunca comi sushi. (comece por 'Nunca')", answer: "Nunca he comido sushi.", explanation: "NUNCA fala de experiência de vida até agora → Perfecto: nunca he comido. O auxiliar é HABER, nunca TENER." },
+            { id: "b1-1-6", type: "translate", question: "Eu nunca comi sushi. (comece por 'Nunca'; use o Pretérito Perfecto)", answer: "Nunca he comido sushi.", explanation: "NUNCA fala de experiência de vida até agora → Perfecto: nunca he comido. 'Nunca comí' (Indefinido) também ocorre, sobretudo na América Latina, mas aqui o alvo é o Perfecto. O auxiliar é HABER, nunca TENER." },
             { id: "b1-1-11", type: "multiple-choice", question: "¿___ alguna vez en México?", options: ["Estuviste", "Has estado", "Estabas"], answer: "Has estado", explanation: "'Alguna vez' pergunta por experiência de vida sem data → Perfecto." },
             { id: "b1-1-12", type: "multiple-choice", question: "En 2015 ___ mi primer trabajo.", options: ["he tenido", "tuve", "tenía"], answer: "tuve", explanation: "Data fechada no passado (en 2015) → Indefinido." },
             { id: "b1-1-13", type: "fill-blank", question: "Esta semana (nosotros) ___ (trabajar) mucho. (Perfecto)", answer: "hemos trabajado", explanation: "'Esta semana' é um período que ainda não terminou → Perfecto." },
@@ -7068,7 +7068,7 @@ const B1: CourseLevel = {
       ],
       quiz: [
         { id: "b1-4-q1", type: "multiple-choice", question: "Tipo II usa…", options: ["Si + Futuro + Presente", "Si + Imperfecto Subj. + Condicional", "Si + Presente + Imperfecto"], answer: "Si + Imperfecto Subj. + Condicional", explanation: "O Tipo II expressa hipótese: si + imperfecto de subjuntivo + condicional. As outras combinações não são condicionais reais." },
-        { id: "b1-4-q2", type: "translate", question: "Você poderia me ajudar? (tú; comece por 'Podrías')", answer: "¿Podrías ayudarme?", explanation: "PODER no condicional (podrías) suaviza o pedido; com tú, o pronome pode ir colado ao infinitivo: ayudarme." },
+        { id: "b1-4-q2", type: "translate", question: "Você poderia me ajudar? (tú; comece por 'Podrías')", answer: "¿Podrías ayudarme?", explanation: "PODER no condicional (podrías) suaviza o pedido; o pronome pode ir colado ao infinitivo (ayudarme)." },
         { id: "b1-4-q3", type: "multiple-choice", question: "Condicional de 'tener' (yo):", options: ["tenería", "tendría", "tuviera"], answer: "tendría", explanation: "Mesmo radical do futuro: tendr- + ía." },
         { id: "b1-4-q4", type: "fill-blank", question: "¿Te ___ (importar) ayudarme con esto? (Condicional)", answer: "importaría", explanation: "¿Te importaría…? = pedido educado." },
         { id: "b1-4-q5", type: "multiple-choice", question: "Si ___ frío, me pongo el abrigo.", options: ["hace", "hiciera", "haría"], answer: "hace", explanation: "Situação real e habitual: si + presente." },
