@@ -13,7 +13,8 @@ describe("COURSE data", () => {
   });
 });
 
-const A2_STANDARDIZED: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const A2_STANDARDIZED: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const A2_FINAL_CHAPTERS = new Set([12, 13]);
 const A2 = COURSE.find((c) => c.level === "A2")!;
 const ENGLISH = /(?<!\p{L})(the|and|you|your|with|this|which)(?!\p{L})/iu;
 
@@ -22,14 +23,23 @@ describe.each(A2_STANDARDIZED)("A2 chapter %i follows the reference standard", (
   const exercises = ch.topics.flatMap((t) => t.exercises);
   const all: Exercise[] = [...exercises, ...(ch.quiz ?? [])];
 
-  it("has 3 topics with 5–12 exercises each", () => {
-    expect(ch.topics).toHaveLength(3);
+  it("has the expected topic count with 5–12 exercises each", () => {
+    if (A2_FINAL_CHAPTERS.has(n)) {
+      expect(ch.topics.length).toBeGreaterThanOrEqual(3);
+      expect(ch.topics.length).toBeLessThanOrEqual(6);
+    } else {
+      expect(ch.topics).toHaveLength(3);
+    }
     for (const t of ch.topics) expect(t.exercises.length).toBeGreaterThanOrEqual(5);
     for (const t of ch.topics) expect(t.exercises.length).toBeLessThanOrEqual(12);
   });
 
   it("has theory with paragraph and example in every topic", () => {
     for (const t of ch.topics) {
+      if (n === 13) {
+        expect(t.blocks.some((b) => b.kind === "paragraph" || b.kind === "tip"), t.id).toBe(true);
+        continue;
+      }
       expect(t.blocks.length).toBeGreaterThanOrEqual(4);
       expect(t.blocks.some((b) => b.kind === "paragraph")).toBe(true);
       expect(t.blocks.some((b) => b.kind === "example")).toBe(true);
