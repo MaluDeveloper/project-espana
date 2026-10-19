@@ -13,7 +13,7 @@ describe("COURSE data", () => {
   });
 });
 
-const A2_STANDARDIZED: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const A2_STANDARDIZED: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 const A2_FINAL_CHAPTERS = new Set([12, 13]);
 const A2 = COURSE.find((c) => c.level === "A2")!;
 const ENGLISH = /(?<!\p{L})(the|and|you|your|with|this|which)(?!\p{L})/iu;
