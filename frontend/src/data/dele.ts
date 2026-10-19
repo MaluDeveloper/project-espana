@@ -688,7 +688,7 @@ export const DELE_COURSES: DeleCourse[] = [
         blocks: [
           {
             kind: "paragraph",
-            text: "O DELE C1 (Diploma de Español como Lengua Extranjera, nível C1) certifica um domínio operativo eficaz do espanhol. O candidato deve ser capaz de compreender textos longos e complexos, expressar-se com fluidez e espontaneidade, utilizar o idioma de forma flexível em contextos sociais, académicos e profissionais, e produzir textos claros, bem estruturados e de tom adequado.",
+            text: "O DELE C1 (Diploma de Español como Lengua Extranjera, nível C1) certifica um domínio operativo eficaz do espanhol. O candidato deve ser capaz de compreender textos longos e complexos, expressar-se com fluidez e espontaneidade, utilizar o idioma de forma flexível em contextos sociais, acadêmicos e profissionais, e produzir textos claros, bem estruturados e de tom adequado.",
           },
         ],
       },
@@ -750,8 +750,8 @@ export const DELE_COURSES: DeleCourse[] = [
           {
             kind: "list",
             items: [
-              "LEITURA: textos complexos e extensos (500-700 palavras) de diferentes registos (literário, jornalístico, académico). Estratégia: identifique a tese, os argumentos, o tom e as inferências; domine conectores sofisticados e referentes encadeados.",
-              "AUDIÇÃO: entrevistas, conferências, debates, palestras e conversas informais em velocidade natural. Os áudios são reproduzidos 2 vezes. Atenção aos registos, ironias, implícitos e funções comunicativas.",
+              "LEITURA: textos complexos e extensos (500-700 palavras) de diferentes registros (literário, jornalístico, acadêmico). Estratégia: identifique a tese, os argumentos, o tom e as inferências; domine conectores sofisticados e referentes encadeados.",
+              "AUDIÇÃO: entrevistas, conferências, debates, palestras e conversas informais em velocidade natural. Os áudios são reproduzidos 2 vezes. Atenção aos registros, ironias, implícitos e funções comunicativas.",
               "ESCRITA — Tarefa 1: texto argumentativo (150-200 palavras) sobre tema de ordem geral, com posição clara, argumentos bem fundamentaldos e conclusão consistente. Tarefa 2: reformulação, resposta formal ou texto expositivo (150-200 palavras) a partir de uma situação. Avaliam: precisão, riqueza lexical, adequação registal, coesão e coerência.",
               "ORAL — Tarefa 1: exposição preparada (4-5 min) sobre tema dado no exame, com introdução, desenvolvimento e conclusão. Tarefa 2: diálogo estruturado com o examinador (4-5 min) sobre o tema da Tarefa 1, aprofundando ideias e exemplos. Tarefa 3: debate (4-5 min) sobre um tema diferente, defendendo uma posição com argumentos, exemplos e contra-argumentos.",
             ],
@@ -767,12 +767,12 @@ export const DELE_COURSES: DeleCourse[] = [
             items: [
               "Domine todos os tempos do Subjuntivo e as estruturas de relativo (cuyo, el cual, quien, lo que) em contextos formais.",
               "Pratique o uso de orações concessivas, condicionais e finais sofisticadas (aun cuando, siempre y cuando, con tal de que, para que, de modo que).",
-              "Amplie o vocabulário abstracto e académico: nominações (sufixos -ción, -miento, -aje), latinismos (a priori, ex officio, sine qua non) e expressões idiomáticas cultas.",
+              "Amplie o vocabulário abstrato e acadêmico: nominações (sufixos -ción, -miento, -aje), latinismos (a priori, ex officio, sine qua non) e expressões idiomáticas cultas.",
               "Treine a leitura de textos jornalísticos e ensaios: resuma argumentos, reconheça tom e identifique falácias ou pressupostos.",
               "Escrita argumentativa: estruture com tese, antítese, síntese; use exemplos concretos, dados e citações; evite repetições com sinónimos e referentes.",
               "Audição: ouça podcasts, rádio e conferências em velocidade real; pratique notas em português/inglês e reconstituição do discurso.",
               "Oral: prepare argumentos de ambos os lados de temas controversos (tecnologia, ética, ambiente, migração, cultura) e pratique a reformulação e a cortesia discursiva.",
-              "Registo: distingua formal, informal e neutro; domine fórmulas de abertura e encerramento em correspondência académica e profissional.",
+              "Registro: distingua formal, informal e neutro; domine fórmulas de abertura e encerramento em correspondência acadêmica e profissional.",
               "Faça pelo menos 3 simulados completos cronometrados antes do exame real, incluindo a prova oral gravada.",
               "No dia: gerencie bem o tempo, especialmente na leitura (90 min é longa mas exige atenção constante); revise concordância, tempos verbais e pontuação.",
             ],
@@ -794,11 +794,11 @@ export const DELE_COURSES: DeleCourse[] = [
           {
             kind: "list",
             items: [
-              "Exercício 1: ler 6 textos extensos (anúncios, crónicas, críticas) e associar com afirmações ou reações.",
+              "Exercício 1: ler 6 textos extensos (anúncios, crônicas, críticas) e associar com afirmações ou reações.",
               "Exercício 2: ler texto opinativo ou ensaístico (500-600 palavras) e responder múltipla escolha com inferências.",
               "Exercício 3: completar texto com frases desordenadas, identificando referentes e conectores lógicos.",
-              "Exercício 4: ler correspondência formal/académica e responder perguntas de compreensão detalhada.",
-              "Exercício 5: identificar o tom, o propósito e a posição do autor em textos de diferentes registos.",
+              "Exercício 4: ler correspondência formal/acadêmica e responder perguntas de compreensão detalhada.",
+              "Exercício 5: identificar o tom, o propósito e a posição do autor em textos de diferentes registros.",
             ],
           },
           {
@@ -823,7 +823,7 @@ export const DELE_COURSES: DeleCourse[] = [
             kind: "list",
             items: [
               "Tarefa 1: escrever texto argumentativo (150-200 palavras) sobre tema de interesse geral. Estruture em tese, argumentos fundamentados e conclusão.",
-              "Tarefa 2: escrever resposta formal, artigo de opinião ou reformulação de documento (150-200 palavras). Atente ao registo, à coesão e ao alcance lexical.",
+              "Tarefa 2: escrever resposta formal, artigo de opinião ou reformulação de documento (150-200 palavras). Atente ao registro, à coesão e ao alcance lexical.",
             ],
           },
           {
@@ -935,9 +935,9 @@ export const DELE_COURSES: DeleCourse[] = [
           {
             kind: "list",
             items: [
-              "LEITURA: textos complexos, extensos e de alta densidade argumentativa (600-900 palavras), incluindo ensaios, artigos académicos, literários e jurídico-administrativos. Estratégia: identifique a tese central, a estrutura retórica, inferências profundas, pressupostos implícitos e o registo do autor.",
-              "AUDIÇÃO: conferências, palestras académicas, debates televisivos, entrevistas jornalísticas, diálogos coloquiais e registos orais variados em velocidade natural. Os áudios são reproduzidos 2 vezes. Exige-se compreensão de implícitos, ironia, atitudes, relações de poder e funções comunicativas sutis.",
-              "ESCRITA — Tarefa 1: texto argumentativo (200-250 palavras) sobre tema abstracto ou de ordem geral, com posição clara, argumentos sólidos, dados, exemplos e conclusão consistente. Tarefa 2: reformulação, síntese crítica, análise ou resposta formal (200-250 palavras) a partir de um documento complexo. Avaliam: precisão gramatical, riqueza lexical, adequação registal, coesão sofisticada, coerência e originalidade argumentativa.",
+              "LEITURA: textos complexos, extensos e de alta densidade argumentativa (600-900 palavras), incluindo ensaios, artigos acadêmicos, literários e jurídico-administrativos. Estratégia: identifique a tese central, a estrutura retórica, inferências profundas, pressupostos implícitos e o registro do autor.",
+              "AUDIÇÃO: conferências, palestras acadêmicas, debates televisivos, entrevistas jornalísticas, diálogos coloquiais e registros orais variados em velocidade natural. Os áudios são reproduzidos 2 vezes. Exige-se compreensão de implícitos, ironia, atitudes, relações de poder e funções comunicativas sutis.",
+              "ESCRITA — Tarefa 1: texto argumentativo (200-250 palavras) sobre tema abstrato ou de ordem geral, com posição clara, argumentos sólidos, dados, exemplos e conclusão consistente. Tarefa 2: reformulação, síntese crítica, análise ou resposta formal (200-250 palavras) a partir de um documento complexo. Avaliam: precisão gramatical, riqueza lexical, adequação registal, coesão sofisticada, coerência e originalidade argumentativa.",
               "ORAL — Tarefa 1: exposição preparada (5-6 min) sobre tema dado no exame, com introdução contextualizada, desenvolvimento argumentado e conclusão. Tarefa 2: diálogo aprofundado com o examinador (5-6 min) sobre o tema da Tarefa 1, explorando nuances, implicações e exemplos. Tarefa 3: debate (5-6 min) sobre um tema diferente, defendendo e matizando uma posição com argumentos, contra-argumentos e conectores formais.",
             ],
           },
@@ -952,14 +952,14 @@ export const DELE_COURSES: DeleCourse[] = [
             items: [
               "Domine todos os tempos do Modo Subjuntivo, as formas arcaicas do Futuro Subjuntivo (-re) em textos jurídicos e literários, e as perífrases verbais avançadas (haber de, deber de, llegar a, acabar de, dejar de).",
               "Pratique estruturas de relativo cultas (cuyo, el cual, quien, lo que, cualesquiera que sean) e orações concessivas, condicionais, finais, consecutivas e modais sofisticadas.",
-              "Amplie o vocabulário de registo elevado: latinismos (a priori, ipso facto, sui generis, mutatis mutandis), cultismos, terminologia académica, jurídica, filosófica e literária.",
+              "Amplie o vocabulário de registro elevado: latinismos (a priori, ipso facto, sui generis, mutatis mutandis), cultismos, terminologia acadêmica, jurídica, filosófica e literária.",
               "Treine a reformulação e a síntese: leia textos complexos e reescreva-os de forma concisa sem perder a tese nem os argumentos principais.",
               "Escrita argumentativa: use estrutura dialectal (tese, antítese, síntese), dados, exemplos históricos ou actuais, citações e conectores de alta formalidade (no obstante, con todo, por el contrario, en consecuencia, en lo que respecto a).",
-              "Audição: ouça conferências académicas, programas de rádio de análise política e entrevistas a especialistas; pratique notas hierárquicas e reconstrução oral do conteúdo.",
-              "Oral: prepare temas abstractos (ética, estética, política, ciência, identidade, globalização) e pratique argumentar com nuances, reconhecer falácias, reformular e usar cortesia estratégica.",
-              "Registo e estilo: distingua formal culto, formal neutro, informal e coloquial; domine transições registrais e adaptação ao interlocutor.",
+              "Audição: ouça conferências acadêmicas, programas de rádio de análise política e entrevistas a especialistas; pratique notas hierárquicas e reconstrução oral do conteúdo.",
+              "Oral: prepare temas abstratos (ética, estética, política, ciência, identidade, globalização) e pratique argumentar com nuances, reconhecer falácias, reformular e usar cortesia estratégica.",
+              "Registro e estilo: distingua formal culto, formal neutro, informal e coloquial; domine transições registrais e adaptação ao interlocutor.",
               "Faça pelo menos 3 simulados completos cronometrados antes do exame real, incluindo gravação da prova oral com revisão detalhada.",
-              "No dia: gerencie o tempo com disciplina, especialmente na leitura (105 min exige concentração prolongada); revise concordância, tempos verbais, registo e pontuação antes de entregar.",
+              "No dia: gerencie o tempo com disciplina, especialmente na leitura (105 min exige concentração prolongada); revise concordância, tempos verbais, registro e pontuação antes de entregar.",
             ],
           },
           {
@@ -980,10 +980,10 @@ export const DELE_COURSES: DeleCourse[] = [
             kind: "list",
             items: [
               "Exercício 1: ler 6 textos complexos (ensaios, editoriais, críticas literárias) e associar com afirmações, reações ou inferências.",
-              "Exercício 2: ler texto ensaístico ou académico (700-900 palavras) e responder múltipla escolha com inferências e análise de tom.",
+              "Exercício 2: ler texto ensaístico ou acadêmico (700-900 palavras) e responder múltipla escolha com inferências e análise de tom.",
               "Exercício 3: completar texto com frases desordenadas, identificando referentes encadeados, conectores lógicos e progressão argumentativa.",
-              "Exercício 4: ler correspondência formal, jurídica ou académica e responder perguntas de compreensão detalhada e de intenção.",
-              "Exercício 5: identificar o tom, o propósito, a linha argumentativa e eventuais falácias ou pressupostos em textos de diferentes registos.",
+              "Exercício 4: ler correspondência formal, jurídica ou acadêmica e responder perguntas de compreensão detalhada e de intenção.",
+              "Exercício 5: identificar o tom, o propósito, a linha argumentativa e eventuais falácias ou pressupostos em textos de diferentes registros.",
             ],
           },
           {
@@ -993,9 +993,9 @@ export const DELE_COURSES: DeleCourse[] = [
           {
             kind: "list",
             items: [
-              "Exercício 1: ouvir 6 excertos curtos de registos variados e associar com intenção, atitude ou contexto sociocultural.",
+              "Exercício 1: ouvir 6 excertos curtos de registros variados e associar com intenção, atitude ou contexto sociocultural.",
               "Exercício 2: ouvir entrevista jornalística e marcar verdadeiro/falso/não mencionado, justificando inferências.",
-              "Exercício 3: ouvir conferência académica ou palestra e completar notas, esquema ou tabela com informações implícitas.",
+              "Exercício 3: ouvir conferência acadêmica ou palestra e completar notas, esquema ou tabela com informações implícitas.",
               "Exercício 4: ouvir debate televisivo e identificar posições, argumentos, estratégias retóricas e relações entre interlocutores.",
               "Exercício 5: ouvir diálogo coloquial ou literário e inferir atitudes, subtextos, relações de poder e matizes de significado.",
             ],
@@ -1007,8 +1007,8 @@ export const DELE_COURSES: DeleCourse[] = [
           {
             kind: "list",
             items: [
-              "Tarefa 1: escrever texto argumentativo (200-250 palavras) sobre tema abstracto de ordem geral. Estruture em tese, antítese, argumentos fundamentados com dados/exemplos e conclusão sintética.",
-              "Tarefa 2: escrever reformulação, síntese crítica, análise de documento ou resposta formal (200-250 palavras). Atente ao registo elevado, à coesão sofisticada e ao alcance lexical.",
+              "Tarefa 1: escrever texto argumentativo (200-250 palavras) sobre tema abstrato de ordem geral. Estruture em tese, antítese, argumentos fundamentados com dados/exemplos e conclusão sintética.",
+              "Tarefa 2: escrever reformulação, síntese crítica, análise de documento ou resposta formal (200-250 palavras). Atente ao registro elevado, à coesão sofisticada e ao alcance lexical.",
             ],
           },
           {

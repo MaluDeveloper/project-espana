@@ -4072,7 +4072,7 @@ const A2: CourseLevel = {
             { kind: "example", es: "– Era muy tímido y tranquilo. Leía mucho y escuchaba música.", pt: "– Era muito tímido e tranquilo. Lia muito e ouvia música." },
             { kind: "example", es: "– ¿Dónde vivías?", pt: "– Onde você morava?" },
             { kind: "example", es: "– Vivía en un pueblo pequeño con mis abuelos. La vida era muy tranquila allí.", pt: "– Morava num povoado pequeno com meus avós. A vida era muito tranquila ali." },
-            { kind: "example", es: "Mi abuelo se levantaba a las cinco y trabajaba en el campo. No tenía coche, así que iba siempre a pie.", pt: "Meu avô levantava-se às cinco e trabalhava no campo. Não tinha carro, então sempre ia a pé." },
+            { kind: "example", es: "Mi abuelo se levantaba a las cinco y trabajaba en el campo. No tenía coche, así que iba siempre a pie.", pt: "Meu avô se levantava às cinco e trabalhava no campo. Não tinha carro, então sempre ia a pé." },
             { kind: "example", es: "Hace diez años yo vivía en una ciudad más pequeña. Tenía más tiempo libre y por las tardes salía con mis amigos. En aquella época todo parecía más tranquilo.", pt: "Há dez anos eu morava numa cidade menor. Tinha mais tempo livre e à tarde saía com meus amigos. Naquela época tudo parecia mais tranquilo." },
           ],
           exercises: [
@@ -4496,7 +4496,7 @@ const A2: CourseLevel = {
               "preocuparse (preocupar-se), enfadarse/enojarse (zangar-se), divertirse (divertir-se)",
               "enamorarse (apaixonar-se), casarse (casar-se), divorciarse, mudarse",
             ]},
-            { kind: "example", es: "Me siento muy cansado hoy.", pt: "Sinto-me muito cansado hoje." },
+            { kind: "example", es: "Me siento muy cansado hoy.", pt: "Me sinto muito cansado hoje." },
             { kind: "paragraph", text: "Alguns verbos mudam de sentido quando ganham o pronome reflexivo:" },
             { kind: "table", headers: ["Não reflexivo", "Reflexivo", "Diferença"], rows: [
               ["ir", "irse", "ir / ir embora"],
@@ -4512,7 +4512,7 @@ const A2: CourseLevel = {
             { kind: "example", es: "– ¿A qué hora te levantas normalmente?", pt: "– A que horas você se levanta normalmente?" },
             { kind: "example", es: "– Me levanto a las siete. Primero me ducho, luego me visto y desayuno.", pt: "– Levanto às sete. Primeiro tomo banho, depois me visto e tomo café." },
             { kind: "example", es: "– ¿Y cuándo te acuestas?", pt: "– E quando você se deita?" },
-            { kind: "example", es: "– Me acuesto sobre las doce. Me cuesta dormirme cuando estoy estresado.", pt: "– Deito por volta das doze. Custa-me adormecer quando estou estressado." },
+            { kind: "example", es: "– Me acuesto sobre las doce. Me cuesta dormirme cuando estoy estresado.", pt: "– Me deito por volta da meia-noite. Tenho dificuldade para dormir quando estou estressado." },
             { kind: "example", es: "– ¿Cómo te llamas?", pt: "– Como você se chama?" },
             { kind: "example", es: "– Me llamo Sofía. ¿Y tú?", pt: "– Eu me chamo Sofía. E você?" },
             { kind: "list", items: [
@@ -4591,7 +4591,7 @@ const A2: CourseLevel = {
           explanation: "'Por último' fecha a sequência; 'primero' a abre e 'luego' vem no meio." },
         { id: "a2-4-q9", type: "translate", question: "Nós nos deitamos tarde.", answer: "Nos acostamos tarde.",
           explanation: "Acostarse com 'nosotros': pronome NOS e verbo acostamos (sem mudança de radical)." },
-        { id: "a2-4-q10", type: "translate", question: "Sinto-me bem hoje.", answer: "Me siento bien hoy.",
+        { id: "a2-4-q10", type: "translate", question: "Me sinto bem hoje.", answer: "Me siento bien hoy.",
           explanation: "Sentirse ditonga (e → ie) na 1ª pessoa: me siento." },
       ],
     },
@@ -5475,7 +5475,7 @@ const A2: CourseLevel = {
             { id: "a2-9-9", type: "multiple-choice", question: "Esta camisa me queda grande; necesito una ___ menor.", options: ["talla", "oferta", "receta"], answer: "talla",
               explanation: "La talla é o tamanho da roupa. Oferta é promoção e receta é a receita médica." },
             { id: "a2-9-10", type: "multiple-choice", question: "No llevo efectivo, así que pago ___ tarjeta.", options: ["con", "en", "de"], answer: "con",
-              explanation: "Diz-se pagar con tarjeta; a preposição EN só aparece em pagar en efectivo." },
+              explanation: "Em espanhol se diz pagar con tarjeta; a preposição EN só aparece em pagar en efectivo." },
             { id: "a2-9-22", type: "multiple-choice", question: "Los zapatos no me gustan: voy a ___ y pedir el reembolso.", options: ["devolverlos", "facturarlos", "reservarlos"], answer: "devolverlos",
               explanation: "Para receber o dinheiro de volta, devolve-se o produto. Facturar é despachar bagagem e reservar é guardar com antecedência." },
             { id: "a2-9-23", type: "multiple-choice", question: "En el aeropuerto, antes de pasar el control, tengo que ___ la maleta.", options: ["facturar", "probar", "devolver"], answer: "facturar",
@@ -9410,7 +9410,7 @@ const B2: CourseLevel = {
             { id: "b2-9-7", type: "multiple-choice", question: "'Derogar una ley' significa:", options: ["criar uma lei", "revogar uma lei", "cumprir uma lei"], answer: "revogar uma lei", explanation: "DEROGAR = anular uma lei; o contrário é APROBAR." },
             { id: "b2-9-8", type: "multiple-choice", question: "'La huelga' é:", options: ["a greve", "a eleição", "a passeata festiva"], answer: "a greve", explanation: "HUELGA = paralisação do trabalho; MANIFESTACIÓN = protesto na rua." },
             { id: "b2-9-9", type: "multiple-choice", question: "'La hipoteca' é:", options: ["o financiamento imobiliário", "a hipótese", "o imposto"], answer: "o financiamento imobiliário", explanation: "HIPOTECA = empréstimo para comprar imóvel, com o imóvel como garantia." },
-            { id: "b2-9-10", type: "fill-blank", question: "El Gobierno presentó los ___ Generales del Estado. (orçamento)", answer: "Presupuestos", explanation: "Na Espanha, o orçamento anual do Estado chama-se 'los Presupuestos Generales del Estado'." },
+            { id: "b2-9-10", type: "fill-blank", question: "El Gobierno presentó los ___ Generales del Estado. (orçamento)", answer: "Presupuestos", explanation: "Na Espanha, o orçamento anual do Estado se chama 'los Presupuestos Generales del Estado'." },
           ],
         },
         {
@@ -11882,7 +11882,7 @@ const C2: CourseLevel = {
           exercises: [
             { id: "c2-01-4", type: "multiple-choice", question: "'Le lo dije' corrige-se como:", options: ["Le lo dije", "Se lo dije", "Lo le dije"], answer: "Se lo dije" },
             { id: "c2-01-5", type: "multiple-choice", question: "'Se venden pisos' é SE:", options: ["reflexivo", "pasivo", "recíproco"], answer: "pasivo" },
-            { id: "c2-01-6", type: "translate", question: "Dá-me isso.", answer: "Dámelo." },
+            { id: "c2-01-6", type: "translate", question: "Me dá isso.", answer: "Dámelo." },
           ],
         },
         {
@@ -12043,7 +12043,7 @@ const C2: CourseLevel = {
           ],
           exercises: [
             { id: "c2-03-3", type: "multiple-choice", question: "'Hogaño' significa:", options: ["outrora", "hoje em dia", "amanhã"], answer: "hoje em dia" },
-            { id: "c2-03-4", type: "translate", question: "Mando-te WhatsApp depois.", answer: "Te wasapeo luego." },
+            { id: "c2-03-4", type: "translate", question: "Te mando um WhatsApp depois.", answer: "Te wasapeo luego." },
           ],
         },
         {
@@ -12366,7 +12366,7 @@ const C2: CourseLevel = {
               ["borracha", "bêbada", "borracha (material)"],
               ["embarazada", "grávida", "embaraçada"],
               ["salada", "salgada", "salada (alface)"],
-              ["propina", "gorjeta", "propina (mensalidade)"],
+              ["propina", "gorjeta", "propina (suborno)"],
               ["suceso", "acontecimento", "sucesso"],
               ["polvo", "pó", "polvo (animal)"],
             ]},
@@ -12456,7 +12456,7 @@ const C2: CourseLevel = {
           blocks: [
             { kind: "list", items: [
               "1714: Felipe V abole foros catalães.",
-              "Renaixença (séc. XIX); II República autonómica.",
+              "Renaixença (séc. XIX); II República autonômica.",
               "Franquismo reprime línguas regionais.",
               "Constitución de 1978 — Estado das Autonomías.",
               "Argumentos unionistas e independentistas — apresentados sem tomar partido.",
@@ -12588,7 +12588,7 @@ const C2: CourseLevel = {
             ]},
           ],
           exercises: [
-            { id: "c2-11-2", type: "multiple-choice", question: "Em retórica clássica, a refutação chama-se:", options: ["exordio", "refutatio", "peroratio"], answer: "refutatio" },
+            { id: "c2-11-2", type: "multiple-choice", question: "Em retórica clássica, a refutação se chama:", options: ["exordio", "refutatio", "peroratio"], answer: "refutatio" },
           ],
         },
         {
