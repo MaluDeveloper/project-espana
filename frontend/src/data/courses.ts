@@ -5258,6 +5258,8 @@ const A2: CourseLevel = {
               explanation: "'Ni' = nem e liga dois elementos negados. Com o 'no' antes do verbo, basta um 'ni' antes do segundo item." },
             { id: "a2-8-18", type: "multiple-choice", question: "Todos vinieron, ___ mi abuelo. (até, inclusive)", options: ["incluso", "tampoco", "pero"], answer: "incluso",
               explanation: "'Incluso' = até/inclusive e destaca algo inesperado. 'Tampoco' exige frase negativa e 'pero' marcaria um contraste." },
+            { id: "a2-8-29", type: "multiple-choice", question: "Este piso es barato; ___, está cerca del metro.", options: ["además", "sin embargo", "por eso"], answer: "además",
+              explanation: "As duas informações são vantagens e se somam, então 'además' (além disso). 'Sin embargo' marcaria contraste e 'por eso' faria da segunda ideia uma consequência." },
           ],
         },
         {
