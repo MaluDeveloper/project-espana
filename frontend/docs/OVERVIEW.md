@@ -9,7 +9,7 @@
 **SpanishAI Platform** é um curso de espanhol **100% guiado por IA**, vendido por assinatura. A jornada do usuário é:
 
 1. **Landing page pública** (`Landing.tsx`) — apresenta o produto para quem ainda não é cliente: o que é o curso, os módulos/níveis (A1 → C2, os seis níveis do CEFR), os jogos, a preparação para o DELE, e o valor da assinatura. Informativa e aberta a todos, sem gate.
-2. **Cadastro** (`Cadastro.tsx`) — a pessoa cria a conta (nome/e-mail/senha ou login social Google) **e** informa os dados de pagamento da assinatura. Os dados bancários/cartão devem passar por um **gateway de pagamento externo** (nunca processados diretamente pela aplicação) — decisão de fornecedor (Stripe vs. Mercado Pago/Asaas) ainda pendente, ver [backend/docs/OVERVIEW.md §7](../../backend/docs/OVERVIEW.md#7-modelo-de-negócio-assinatura--sem-código-ainda).
+2. **Cadastro** (`Cadastro.tsx`) — a pessoa cria a conta (nome/e-mail/senha ou login social Google) **e** informa os dados de pagamento da assinatura. Os dados bancários/cartão devem passar por um **gateway de pagamento externo** (nunca processados diretamente pela aplicação) — decisão de fornecedor (Stripe vs. Mercado Pago/Asaas) ainda pendente, ver [project-espana-backend/docs/OVERVIEW.md §7](../../../project-espana-backend/docs/OVERVIEW.md#7-modelo-de-negócio-assinatura--sem-código-ainda).
 3. **Área logada** (`/dashboard/*`, `/jogos/*`, `/cursos/*`, `/aula/:id`, `/dele/:id`) — depois do cadastro/login, o usuário entra direto na experiência completa: dashboard com progresso, jogos, todos os níveis de curso, provas/exercícios, preparação para o DELE e configurações pessoais. Não existe uma área de administração separada para equipe interna — é a mesma área do aluno, só que logada (às vezes chamada informalmente de "backoffice" — é a mesma coisa).
 
 **Planos de assinatura:** Free (acesso limitado, escopo exato ainda a definir), Mensal (R$ 89,90/mês) e Anual (R$ 699,90/ano, ~35% mais barato que 12 meses do mensal) — os dois pagos dão acesso completo (todos os níveis, jogos, DELE, correção de IA). A tela de preços (`LandingPricing.tsx`) já mostra esses três planos.
@@ -109,7 +109,7 @@ ErrorBoundary
 
 ## 6. Regras de negócio implementadas hoje no cliente
 
-Hoje todas calculadas em `src/lib/`; o roadmap do backend move este cálculo para o servidor (ver [backend/docs/OVERVIEW.md §5](../../backend/docs/OVERVIEW.md#5-banco-de-dados)).
+Hoje todas calculadas em `src/lib/`; o roadmap do backend move este cálculo para o servidor (ver [project-espana-backend/docs/OVERVIEW.md §5](../../../project-espana-backend/docs/OVERVIEW.md#5-banco-de-dados)).
 
 - **Conclusão de capítulo:** `% = (tópicos lidos/total)×50 + (exercícios corretos/total)×30 + (quiz ≥ 70% ? 20 : 0)`. Nível = média dos capítulos × 0.9 + 10% se a prova final foi feita.
 - **Desbloqueio:** capítulo/nível anterior precisa ter ≥ 80% de conclusão. A1 e Capítulo 1 sempre desbloqueados.
@@ -143,4 +143,4 @@ Hoje todas calculadas em `src/lib/`; o roadmap do backend move este cálculo par
 
 ## 9. Estado de integração com o backend
 
-**Zero hoje.** Nenhuma chamada `fetch`/`axios` sai de `frontend/src` — login, cadastro, Google Auth, `ProtectedRoute` e a tela de preços são 100% mock/estático. `TanStack Query` está montado em `App.tsx` mas não busca nada remoto — é scaffolding para a integração futura (ver [backend/docs/OVERVIEW.md](../../backend/docs/OVERVIEW.md) e [ROADMAP.md](ROADMAP.md)).
+**Zero hoje.** Nenhuma chamada `fetch`/`axios` sai de `frontend/src` — login, cadastro, Google Auth, `ProtectedRoute` e a tela de preços são 100% mock/estático. `TanStack Query` está montado em `App.tsx` mas não busca nada remoto — é scaffolding para a integração futura (ver [project-espana-backend/docs/OVERVIEW.md](../../../project-espana-backend/docs/OVERVIEW.md) e [ROADMAP.md](ROADMAP.md)).

@@ -1,14 +1,14 @@
 # Frontend — Roadmap
 
-> Tudo que falta implementar/corrigir no frontend, em ordem de prioridade. Para o que o frontend já é hoje, ver [OVERVIEW.md](OVERVIEW.md). Para o roadmap do backend, ver [backend/docs/ROADMAP.md](../../backend/docs/ROADMAP.md).
+> Tudo que falta implementar/corrigir no frontend, em ordem de prioridade. Para o que o frontend já é hoje, ver [OVERVIEW.md](OVERVIEW.md). Para o roadmap do backend, ver [project-espana-backend/docs/ROADMAP.md](../../../project-espana-backend/docs/ROADMAP.md).
 
 ---
 
 ## Pendências abertas
 
-- [ ] **Correção de IA real em "Aula"** (`Aula.tsx`, `mockAnalyze`) — hoje 100% mockada, devolve feedback fixo pra qualquer texto. É a promessa central do produto sem implementação real por trás; alto impacto. Depende da Fase 7 do [backend/docs/ROADMAP.md](../../backend/docs/ROADMAP.md).
+- [ ] **Correção de IA real em "Aula"** (`Aula.tsx`, `mockAnalyze`) — hoje 100% mockada, devolve feedback fixo pra qualquer texto. É a promessa central do produto sem implementação real por trás; alto impacto. Depende da Fase 7 do [project-espana-backend/docs/ROADMAP.md](../../../project-espana-backend/docs/ROADMAP.md).
 - [ ] **`GoogleAuthButton.tsx` é só visual** — não implementa OAuth real, grava um usuário fake no `localStorage`. Resolvido "de graça" assim que a Fase 1/2 de integração com o backend (Supabase Auth com Google como provider) entrar.
-- [ ] **Cadastro precisa coletar dados de pagamento** — hoje `Cadastro.tsx` só pede nome/e-mail/senha. Falta integrar com o gateway de pagamento externo escolhido (ver [backend/docs/OVERVIEW.md §7](../../backend/docs/OVERVIEW.md#7-modelo-de-negócio-assinatura--sem-código-ainda)) antes de liberar acesso à área logada.
+- [ ] **Cadastro precisa coletar dados de pagamento** — hoje `Cadastro.tsx` só pede nome/e-mail/senha. Falta integrar com o gateway de pagamento externo escolhido (ver [project-espana-backend/docs/OVERVIEW.md §7](../../../project-espana-backend/docs/OVERVIEW.md#7-modelo-de-negócio-assinatura--sem-código-ainda)) antes de liberar acesso à área logada.
 - [ ] Notificações/lembretes sem implementação real (`DashboardConfig.tsx`, `preferences.ts`) — toggles existem na UI mas não disparam nada.
 - [ ] Senha em texto puro no `localStorage` (`DashboardPerfilEditar.tsx`) — aceitável só até existir backend; nunca reintroduzir comparação client-side depois que a auth migrar.
 - [ ] Testar `AudioButton` em Firefox (Web Speech API tem suporte inconsistente).
@@ -37,7 +37,7 @@
 
 ## Integração com backend real
 
-- [ ] Trocar login/cadastro mockado por `supabase-js` real (`signUp`/`signInWithPassword`/`signInWithOAuth({provider:'google'})`) + chamada ao backend (ver [backend/docs/OVERVIEW.md](../../backend/docs/OVERVIEW.md))
+- [ ] Trocar login/cadastro mockado por `supabase-js` real (`signUp`/`signInWithPassword`/`signInWithOAuth({provider:'google'})`) + chamada ao backend (ver [project-espana-backend/docs/OVERVIEW.md](../../../project-espana-backend/docs/OVERVIEW.md))
 - [ ] Migrar os `localStorage` writes para chamadas de API via TanStack Query
 - [ ] Gate de rota por assinatura ativa — `ProtectedRoute` passa a checar assinatura, não só sessão
 - [ ] Sincronização de progresso entre dispositivos
