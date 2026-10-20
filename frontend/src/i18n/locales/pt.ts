@@ -101,36 +101,48 @@ export const pt = {
 
   features: {
     eyebrow: "COMO FUNCIONA",
-    titlePart1: "Tudo o que você precisa.",
-    titleHighlight: "Nada que você não precise.",
+    titlePart1: "Aprenda espanhol,",
+    titleHighlight: "passo a passo.",
     subtitle:
-      "Uma plataforma completa, desenhada para quem quer falar espanhol de verdade.",
-    items: {
-      book: {
-        title: "Livro online A1 → C2",
-        desc: "Currículo estruturado com gramática, léxico profissional e exercícios de fixação.",
+      "Do primeiro conteúdo à prática, tudo o que você precisa para evoluir no espanhol em um só lugar: cursos do A1 ao C2, exercícios e jogos para fixar o que aprendeu, correção da sua escrita com IA e um painel que mostra cada conquista. Tudo no seu ritmo, com poucos minutos por dia.",
+    imageAlt: "Rua de Madri, na Espanha",
+    steps: [
+      {
+        id: "conta",
+        label: "01",
+        title: "Crie sua conta e comece",
+        content:
+          "Cadastre-se gratuitamente e acesse a plataforma para começar sua jornada no espanhol.",
       },
-      ai: {
-        title: "IA que corrige você",
-        desc: "Feedback instantâneo na sua escrita, com sugestões de conectores e vocabulário.",
+      {
+        id: "cursos",
+        label: "02",
+        title: "Explore os cursos",
+        content:
+          "Aprenda no seu ritmo com conteúdos organizados por níveis, do A1 ao C2, com gramática, vocabulário, exemplos e atividades interativas.",
       },
-      games: {
-        title: "Jogos interativos",
-        desc: "Memória, caça-palavras, lacunas e mais — aprenda jogando, sem cair em rotina.",
+      {
+        id: "pratica",
+        label: "03",
+        title: "Aprenda praticando",
+        content:
+          "Coloque o que aprendeu em prática com exercícios interativos e jogos que ajudam a fixar o conteúdo de forma leve e dinâmica.",
       },
-      tests: {
-        title: "Provas para avançar",
-        desc: "Cada nível termina com uma prova de 10 questões. Só passa quem realmente aprendeu.",
+      {
+        id: "ia",
+        label: "04",
+        title: "Receba feedback da IA",
+        content:
+          "Pratique sua escrita e receba correções, explicações e sugestões de vocabulário para entender seus erros e melhorar cada vez mais.",
       },
-      spain: {
-        title: "Espanhol da Espanha",
-        desc: "Vocabulário, expressões e contexto cultural reais — não traduções genéricas.",
+      {
+        id: "evolucao",
+        label: "05",
+        title: "Acompanhe sua evolução",
+        content:
+          "Veja seu progresso, acumule XP, mantenha sua sequência de estudos e desbloqueie novas etapas à medida que avança nos cursos.",
       },
-      progress: {
-        title: "Progresso visível",
-        desc: "Sequências, XP, conquistas e ranking. Sua evolução em tempo real.",
-      },
-    },
+    ],
   },
 
   landingCourses: {
@@ -174,59 +186,39 @@ export const pt = {
   landingGames: {
     eyebrow: "JOGOS",
     titlePart1: "Aprenda espanhol",
-    titleHighlight: "jogando de verdade",
+    titleHighlight: "jogando",
     subtitle: (available: number, total: number) =>
       `${available} jogos disponíveis e mais a caminho — ${total}+ fases para treinar vocabulário, gramática e compreensão sem cair em rotina.`,
-    emBreve: "Em breve",
-    fases: "fases",
-    jogar: "Jogar",
     verTodos: "Ver todos os jogos",
-    cards: {
-      memoria: {
-        title: "Jogo da memória",
-        tagline: "Combine palavra e tradução",
-        description:
-          "Encontre os pares de cartas escondidas. Treine vocabulário rapidamente.",
-      },
-      "caza-palabras": {
+    prev: "Jogo anterior",
+    next: "Próximo jogo",
+    slides: [
+      {
         title: "Caça-palavras",
-        tagline: "Encontre palavras na sopa",
-        description:
-          "Sopa de letras temática. Encontre todas as palavras antes que o tempo acabe.",
+        description: "Encontre as palavras escondidas na sopa de letras antes que o tempo acabe.",
+        badge: "Vocabulário",
       },
-      lacunas: {
-        title: "Preencher lacunas",
-        tagline: "Frases com palavras faltando",
-        description:
-          "Escolha a palavra certa para completar a frase. Gramática em contexto.",
+      {
+        title: "Jogo da memória",
+        description: "Vire as cartas e combine cada palavra com a sua tradução.",
+        badge: "Memorização",
       },
-      crucigrama: {
+      {
         title: "Palavras cruzadas",
-        tagline: "Pistas e palavras cruzadas",
-        description: "Resolva definições e complete a grade. Em breve.",
+        description: "Resolva as pistas e complete a grade com as palavras certas.",
+        badge: "Em breve",
       },
-      historias: {
-        title: "Ler histórias",
-        tagline: "Compreensão de leitura",
-        description: "Contos curtos com perguntas. Aprenda lendo. Em breve.",
+      {
+        title: "Descrever imagem",
+        description: "Escreva o que você vê na foto e receba a correção da IA.",
+        badge: "Em breve",
       },
-      objetos: {
-        title: "Encontrar objetos",
-        tagline: "Procure na imagem",
-        description:
-          "Localize objetos em cenas reais. Vocabulário visual. Em breve.",
+      {
+        title: "Preencher lacunas",
+        description: "Escolha a palavra que completa a frase e pratique a gramática em contexto.",
+        badge: "Gramática",
       },
-      describir: {
-        title: "Descrever imagens",
-        tagline: "Escreva o que você vê",
-        description: "A IA avalia a sua descrição. Em breve.",
-      },
-      "crear-historia": {
-        title: "Criar histórias",
-        tagline: "Escreva com palavras dadas",
-        description: "A IA fornece palavras e você cria a história. Em breve.",
-      },
-    },
+    ],
   },
 
   landingDestinations: {

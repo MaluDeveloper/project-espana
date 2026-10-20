@@ -9,15 +9,11 @@ import { LandingGames } from "@/components/landing/LandingGames";
 import { LandingCourses } from "@/components/landing/LandingCourses";
 import { LandingPricing } from "@/components/landing/LandingPricing";
 
-import { InlineCta } from "@/components/landing/InlineCta";
-
 import { LandingFooter } from "@/components/landing/LandingFooter";
 import { Preloader } from "@/components/Preloader";
-import { useT } from "@/i18n/LanguageContext";
 
 const Landing = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const t = useT();
 
   // Every load of the landing starts from the top so the preloader and all scroll animations
   // replay: stop the browser from restoring the old scroll position and drop any "#section"
@@ -73,6 +69,9 @@ const Landing = () => {
         initial={{ y: 80, opacity: 0 }}
         animate={isLoading ? { y: 80, opacity: 0 } : { y: 0, opacity: 1 }}
         transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1], delay: isLoading ? 0 : 0.1 }}
+        // ScrollTrigger measured the sections while the page was still offset by the slide-in,
+        // so re-measure once it lands or the pinned "how it works" timeline starts 80px late.
+        onAnimationComplete={() => ScrollTrigger.refresh()}
         className="min-h-screen bg-background"
       >
         <LandingNav />
@@ -82,13 +81,6 @@ const Landing = () => {
           <section id="como-funciona" className="scroll-mt-24">
             <LandingFeatures />
           </section>
-
-          {/* CTA after "How it works" — tight spacing to stay close to the section */}
-          <InlineCta
-            label={t.inlineCtas.afterFeatures.label}
-            variant="hero"
-            className="!pt-0 !pb-16 md:!pb-20 -mt-12 md:-mt-20"
-          />
 
           <section id="cursos" className="scroll-mt-24 -mt-2 sm:-mt-4 md:-mt-6">
             <LandingCourses />
